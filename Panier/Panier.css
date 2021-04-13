@@ -1,0 +1,863 @@
+.mediaViewInfo {
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1920__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Web_1920__1 {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Icon_material-person {
+	fill: rgba(0,0,0,1);
+}
+.Icon_material-person {
+	overflow: visible;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 1448px;
+	top: 52px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Icon_material-favorite-border {
+	fill: rgba(0,0,0,1);
+}
+.Icon_material-favorite-border {
+	overflow: visible;
+	position: absolute;
+	width: 30.132px;
+	height: 24.646px;
+	left: 1790.501px;
+	top: 50.177px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Icon_awesome-shopping-basket {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-shopping-basket {
+	overflow: visible;
+	position: absolute;
+	width: 35.544px;
+	height: 24.646px;
+	left: 1838.857px;
+	top: 50.177px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#logo22 {
+	position: absolute;
+	width: 280px;
+	height: 100px;
+	left: 43px;
+	top: 14px;
+	overflow: visible;
+}
+#Trac_1 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Trac_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1920px;
+	height: 2px;
+	left: 0px;
+	top: 121.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ligne_1 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Ligne_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 122.5px;
+	left: 1747.5px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Sinscrire_ {
+	left: 1499px;
+	top: 50px;
+	position: absolute;
+	overflow: visible;
+	width: 75px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 19px;
+	color: rgba(0,0,0,1);
+}
+#Se_Connecter__ {
+	left: 1591px;
+	top: 50px;
+	position: absolute;
+	overflow: visible;
+	width: 124px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 19px;
+	color: rgba(0,0,0,1);
+}
+#Instrument {
+	left: 173px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 131px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Livre {
+	left: 353px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 57px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Accueil {
+	left: 43px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 86px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Service {
+	left: 1319px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 85px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Ticket {
+	left: 1205px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 71px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Consomi_Tousi {
+	left: 973px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 178px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Photographie {
+	left: 757px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 163px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Peinture {
+	left: 612px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 99px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Sculpture {
+	left: 451px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 113px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Blog {
+	left: 1448px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 55px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+#Icon_awesome-search {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-search {
+	overflow: visible;
+	position: absolute;
+	width: 35.997px;
+	height: 36.004px;
+	left: 1820.632px;
+	top: 154.996px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Rechercher_ {
+	left: 1600px;
+	top: 157px;
+	position: absolute;
+	overflow: visible;
+	width: 80px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(0,0,0,1);
+}
+input[type=text] {
+    opacity: 50;
+	left: 1564px;
+	top: 198px;
+	overflow: visible;
+	width: 184px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+
+	
+}
+::placeholder {
+	color: black;
+	opacity: 50;
+	
+  }
+a:link {
+    text-decoration: none;
+}
+a:hover {
+	border-bottom: 2px solid black; 
+	
+}
+input:focus{
+	outline: none;
+}
+#Rectangle_1 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: bevel;
+	stroke-linecap: square;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_1 {
+	filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 552px;
+	height: 217px;
+	left: 1319px;
+	top: 743px;
+}
+#Icon_awesome-truck {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-truck {
+	overflow: visible;
+	position: absolute;
+	width: 49.014px;
+	height: 39.211px;
+	left: 1364px;
+	top: 779.789px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Expdi_en_24_heures_maximum {
+	left: 1440px;
+	top: 783px;
+	position: absolute;
+	overflow: visible;
+	width: 379px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Icon_material-security {
+	fill: rgba(0,0,0,1);
+}
+.Icon_material-security {
+	overflow: visible;
+	position: absolute;
+	width: 27px;
+	height: 33px;
+	left: 1373px;
+	top: 851.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Paiement_ultra_scuris {
+	left: 1440px;
+	top: 852px;
+	position: absolute;
+	overflow: visible;
+	width: 275px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Rectangle_2 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: bevel;
+	stroke-linecap: square;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_2 {
+	filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 552px;
+	height: 499px;
+	left: 1319px;
+	top: 236px;
+}
+#Rectangle_3 {
+	fill: rgba(128,200,240,1);
+}
+.Rectangle_3 {
+	position: absolute;
+	overflow: visible;
+	width: 418px;
+	height: 70px;
+	left: 1373px;
+	top: 608px;
+}
+#valider_ma_commande {
+	left: 1438px;
+	top: 625px;
+	position: absolute;
+	overflow: visible;
+	width: 289px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(255,255,255,1);
+	text-transform: capitalize;
+}
+#Total_produit_ {
+	left: 1373px;
+	top: 306px;
+	position: absolute;
+	overflow: visible;
+	width: 181px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Total_ {
+	left: 1373px;
+	top: 513px;
+	position: absolute;
+	overflow: visible;
+	width: 78px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Livraison_ {
+	left: 1373px;
+	top: 375px;
+	position: absolute;
+	overflow: visible;
+	width: 130px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#TAX_ {
+	left: 1373px;
+	top: 444px;
+	position: absolute;
+	overflow: visible;
+	width: 66px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#ID100 {
+	left: 1606px;
+	top: 306px;
+	position: absolute;
+	overflow: visible;
+	width: 48px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#ID125 {
+	left: 1603px;
+	top: 513px;
+	position: absolute;
+	overflow: visible;
+	width: 48px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#ID5 {
+	left: 1606px;
+	top: 375px;
+	position: absolute;
+	overflow: visible;
+	width: 17px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#ID20 {
+	left: 1606px;
+	top: 444px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#DT {
+	left: 1730px;
+	top: 306px;
+	position: absolute;
+	overflow: visible;
+	width: 36px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#DT_bh {
+	left: 1730px;
+	top: 513px;
+	position: absolute;
+	overflow: visible;
+	width: 36px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#DT_bi {
+	left: 1730px;
+	top: 444px;
+	position: absolute;
+	overflow: visible;
+	width: 36px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#DT_bj {
+	left: 1730px;
+	top: 375px;
+	position: absolute;
+	overflow: visible;
+	width: 36px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Rectangle_4 {
+	fill: rgba(128,200,240,1);
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 99px;
+	left: 0px;
+	top: 981px;
+}
+#Rectangle_5 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: bevel;
+	stroke-linecap: square;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_5 {
+	filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 1250px;
+	height: 724px;
+	left: 43px;
+	top: 236px;
+}
+#ID1 {
+	position: absolute;
+	width: 181px;
+	height: 181px;
+	left: 128px;
+	top: 271px;
+	overflow: visible;
+}
+#l-insoutenable-legerete-de-l-e {
+	position: absolute;
+	width: 101.614px;
+	height: 169px;
+	left: 154px;
+	top: 502.5px;
+	overflow: visible;
+}
+#bags-by-jassz-fir-tote-bag3308 {
+	position: absolute;
+	width: 145px;
+	height: 145px;
+	left: 128px;
+	top: 732px;
+	overflow: visible;
+}
+#Guitare_classique {
+	left: 425px;
+	top: 306px;
+	position: absolute;
+	overflow: visible;
+	width: 216px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Tote_Bag {
+	left: 425px;
+	top: 732px;
+	position: absolute;
+	overflow: visible;
+	width: 112px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#linsoutenable_lgret_de_ltre {
+	left: 425px;
+	top: 504px;
+	position: absolute;
+	overflow: visible;
+	width: 404px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Marque__YAMAHA {
+	left: 425px;
+	top: 348px;
+	position: absolute;
+	overflow: visible;
+	width: 186px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Milan_Kundera {
+	left: 425px;
+	top: 546px;
+	position: absolute;
+	overflow: visible;
+	width: 147px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Icon_awesome-trash-alt {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-trash-alt {
+	overflow: visible;
+	position: absolute;
+	width: 31.5px;
+	height: 36px;
+	left: 1118.5px;
+	top: 345.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Icon_awesome-trash-alt_bv {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-trash-alt_bv {
+	overflow: visible;
+	position: absolute;
+	width: 31.5px;
+	height: 36px;
+	left: 1118.5px;
+	top: 786.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Icon_awesome-trash-alt_bw {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-trash-alt_bw {
+	overflow: visible;
+	position: absolute;
+	width: 31.5px;
+	height: 36px;
+	left: 1118.5px;
+	top: 551px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#ID75_DT {
+	left: 425px;
+	top: 405px;
+	position: absolute;
+	overflow: visible;
+	width: 63px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#ID25_DT {
+	left: 425px;
+	top: 614px;
+	position: absolute;
+	overflow: visible;
+	width: 63px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Offert {
+	left: 425px;
+	top: 820px;
+	position: absolute;
+	overflow: visible;
+	width: 67px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Ligne_2 {
+	fill: transparent;
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Ligne_2 {
+	overflow: visible;
+	position: absolute;
+	width: 1225px;
+	height: 1px;
+	left: 43.5px;
+	top: 710.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ligne_3 {
+	fill: transparent;
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Ligne_3 {
+	overflow: visible;
+	position: absolute;
+	width: 1225px;
+	height: 1px;
+	left: 43px;
+	top: 462px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#CopyRight_FreeDev_2021 {
+	left: 106px;
+	top: 1015px;
+	position: absolute;
+	overflow: visible;
+	width: 265px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
