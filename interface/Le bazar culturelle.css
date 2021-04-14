@@ -1,0 +1,843 @@
+.mediaViewInfo {
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1920__1;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Web_1920__1 {
+	position: absolute;
+	width: 1912px;
+	height: 3589px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920__1;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-deep-linking: true;
+}
+#Icon_material-person {
+	fill: rgba(0,0,0,1);
+}
+.Icon_material-person {
+	overflow: visible;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 1448px;
+	top: 52px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Icon_material-favorite-border {
+	fill: rgba(0,0,0,1);
+}
+.Icon_material-favorite-border {
+	overflow: visible;
+	position: absolute;
+	width: 30.132px;
+	height: 27.646px;
+	left: 1790.5px;
+	top: 50.177px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Icon_awesome-shopping-basket {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-shopping-basket {
+	overflow: visible;
+	position: absolute;
+	width: 35.544px;
+	height: 27.646px;
+	left: 1838.857px;
+	top: 50.177px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#logo22 {
+	position: absolute;
+	width: 408px;
+	height: 146px;
+	left: 805px;
+	top: -23px;
+	overflow: visible;
+}
+#Trac_1 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Trac_1 {
+	overflow: visible;
+	position: absolute;
+	width: 39360px;
+	height: 21.5px;
+	left: -18720px;
+	top: 102px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ligne_1 {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Ligne_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 122.5px;
+	left: 1747.5px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Sinscrire_ {
+	left: 1499px;
+	top: 50px;
+	position: absolute;
+	overflow: visible;
+	width: 75px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 19px;
+	color: rgba(0,0,0,1);
+}
+#Se_Connecter__ {
+	left: 1591px;
+	top: 50px;
+	position: absolute;
+	overflow: visible;
+	width: 124px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 21px;
+	color: rgba(0,0,0,1);
+}
+#Instrument {
+	left: 409px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 131px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Livre {
+	left: 566px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 57px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Accueil {
+	left: 304px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 86px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Service {
+	left: 1452px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 85px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Ticket {
+	left: 1355px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 71px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Consomi_Tousi {
+	left: 1134px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 178px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Photographie {
+	left: 936px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 163px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Peinture {
+	left: 805px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 99px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Sculpture {
+	left: 656px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 113px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Blog {
+	left: 1568px;
+	top: 151px;
+	position: absolute;
+	overflow: visible;
+	width: 55px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Icon_awesome-search {
+	fill: rgba(0,0,0,1);
+}
+.Icon_awesome-search {
+	overflow: visible;
+	position: absolute;
+	width: 28.313px;
+	height: 28.318px;
+	left: 1857px;
+	top: 158.841px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Rechercher_ {
+	opacity: 0.5;
+	left: 1673px;
+	top: 155px;
+	position: absolute;
+	overflow: visible;
+	width: 166px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	color: rgba(0,0,0,1);
+}
+#Rectangle_4 {
+	fill: rgba(203,203,203,1);
+	stroke: rgba(203,203,203,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 525px;
+	left: 0px;
+	top: 3064px;
+}
+#CopyRight_FreeDev_2021 {
+	left: 30px;
+	top: 3530px;
+	position: absolute;
+	overflow: visible;
+	width: 265px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 23px;
+	color: rgba(0,0,0,1);
+}
+#Composant_1__1 {
+	position: absolute;
+	width: 381px;
+	height: 111px;
+	left: 1px;
+	top: 0px;
+	overflow: visible;
+}
+#Rectangle_5 {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_5 {
+	position: absolute;
+	overflow: visible;
+	width: 381px;
+	height: 111px;
+	left: 0px;
+	top: 0px;
+}
+#Icon_feather-triangle {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Icon_feather-triangle {
+	overflow: visible;
+	position: absolute;
+	width: 26.699px;
+	height: 25px;
+	transform: matrix(1,0,0,1,110.6446,50) rotate(180deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Icon_feather-triangle_ {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(0,0,0,1);
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Icon_feather-triangle_ {
+	overflow: visible;
+	position: absolute;
+	width: 26.7px;
+	height: 25px;
+	transform: matrix(1,0,0,1,237.6445,50) rotate(180deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#FR {
+	left: 46px;
+	top: 32px;
+	position: absolute;
+	overflow: visible;
+	width: 49px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 44px;
+	color: rgba(112,112,112,1);
+}
+#DT {
+	left: 169px;
+	top: 36px;
+	position: absolute;
+	overflow: visible;
+	width: 49px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 41px;
+	color: rgba(112,112,112,1);
+}
+#Le_bazar__culturel {
+	left: 17px;
+	top: 143px;
+	position: absolute;
+	overflow: visible;
+	width: 247px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: PT Simple Ruled;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 31px;
+	color: rgba(255,182,193,1);
+}
+#ID1_3 {
+	position: absolute;
+	width: 538.711px;
+	height: 758.677px;
+	left: 25px;
+	top: 275px;
+	overflow: visible;
+}
+#ID1_11 {
+	position: absolute;
+	width: 483.221px;
+	height: 483.221px;
+	left: 550.563px;
+	top: 550.455px;
+	overflow: visible;
+}
+#ID1_4 {
+	position: absolute;
+	width: 472px;
+	height: 399px;
+	left: 560.161px;
+	top: 275px;
+	overflow: visible;
+}
+#ID1_2 {
+	position: absolute;
+	width: 465px;
+	height: 425.678px;
+	left: 1032.161px;
+	top: 275px;
+	overflow: visible;
+}
+#ID1_1 {
+	position: absolute;
+	width: 531.877px;
+	height: 337.538px;
+	left: 988.837px;
+	top: 691.138px;
+	overflow: visible;
+}
+#ID1_9 {
+	position: absolute;
+	width: 376.267px;
+	height: 752.535px;
+	left: 1510.488px;
+	top: 275.142px;
+	overflow: visible;
+}
+#Article_en_vogue {
+	left: 742px;
+	top: 1402px;
+	position: absolute;
+	overflow: visible;
+	width: 321px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: PT Separated Baloon;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(133,208,249,1);
+}
+#____A_propos_de_nous_ {
+	left: 672px;
+	top: 1090px;
+	position: absolute;
+	overflow: visible;
+	width: 405px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: PT Separated Baloon;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 45px;
+	color: rgba(133,208,249,1);
+}
+#Le_bazar_culturel_est_un_site_ {
+	left: 15px;
+	top: 1204px;
+	position: absolute;
+	overflow: visible;
+	width: 1867px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 43px;
+	color: rgba(0,0,0,1);
+}
+#__Essayez_gratuitement_luvre {
+	left: 615px;
+	top: 2604px;
+	position: absolute;
+	overflow: visible;
+	width: 591px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 43px;
+	color: rgba(133,208,249,1);
+}
+#ID1__13_-removebg-preview {
+	position: absolute;
+	width: 88px;
+	height: 88px;
+	left: 306px;
+	top: 2704px;
+	overflow: visible;
+}
+#ID1__14_-removebg-preview {
+	position: absolute;
+	width: 167px;
+	height: 167px;
+	left: 793px;
+	top: 2656px;
+	overflow: visible;
+}
+#ID1__15_-removebg-preview {
+	position: absolute;
+	width: 213px;
+	height: 121px;
+	left: 1344px;
+	top: 2691px;
+	overflow: visible;
+}
+#Prix_abordable__Le_bazar_cultu {
+	left: 234px;
+	top: 2837px;
+	position: absolute;
+	overflow: visible;
+	width: 382px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+}
+#Paiements_scuriss__Vous_pouvez {
+	left: 737px;
+	top: 2829px;
+	position: absolute;
+	overflow: visible;
+	width: 424px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+}
+#Livraison__Le_bazar_culturel__ {
+	left: 1278px;
+	top: 2836px;
+	position: absolute;
+	overflow: visible;
+	width: 471px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(0,0,0,1);
+}
+#Groupe_dfilant_1 {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 423px;
+	height: 73px;
+	left: -43px;
+	top: 3078px;
+	overflow: hidden;
+}
+#Le_bazar__culturel_bq {
+	left: 58px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 318px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: PT Simple Ruled;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	color: rgba(255,255,255,1);
+}
+#Suivre_Artspe {
+	left: 394px;
+	top: 3107px;
+	position: absolute;
+	overflow: visible;
+	width: 191px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 31px;
+	color: rgba(0,0,0,1);
+}
+#ID87390-removebg-preview {
+	position: absolute;
+	width: 107px;
+	height: 56px;
+	left: 687px;
+	top: 3097px;
+	overflow: visible;
+}
+#facebook-new-removebg-preview {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	left: 615px;
+	top: 3091px;
+	overflow: visible;
+}
+#Avis_vrifis {
+	left: 967px;
+	top: 3105px;
+	position: absolute;
+	overflow: visible;
+	width: 221px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	color: rgba(0,0,0,1);
+}
+#ID9610 {
+	left: 1216px;
+	top: 3105px;
+	position: absolute;
+	overflow: visible;
+	width: 301px;
+	height: 44px;
+	text-align: left;
+	font-family: Segoe UI;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	color: rgba(255,255,255,1);
+}
+#etoiles-note-removebg-preview {
+	position: absolute;
+	width: 163px;
+	height: 32px;
+	left: 1314px;
+	top: 3108px;
+	overflow: visible;
+}
+#ID1_1_bx {
+	position: absolute;
+	width: 136px;
+	height: 154px;
+	left: 56px;
+	top: 3199px;
+	overflow: visible;
+}
+#ID1_3_by {
+	position: absolute;
+	width: 128px;
+	height: 159px;
+	left: 927px;
+	top: 3212px;
+	overflow: visible;
+}
+#ID1_2_bz {
+	position: absolute;
+	width: 130px;
+	height: 98px;
+	left: 1765px;
+	top: 3093px;
+	overflow: visible;
+}
+#ID1_11_b {
+	position: absolute;
+	width: 189px;
+	height: 189px;
+	left: 1430px;
+	top: 3259px;
+	overflow: visible;
+}
+#ID1_12 {
+	position: absolute;
+	width: 132px;
+	height: 95px;
+	left: 1524px;
+	top: 3104px;
+	overflow: visible;
+}
+#contactez_nous_sur_TEL55989802 {
+	left: 278px;
+	top: 3204px;
+	position: absolute;
+	overflow: visible;
+	width: 564px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 31px;
+	color: rgba(0,0,0,1);
+}
+#png-clipart-email-address-comp {
+	position: absolute;
+	width: 146px;
+	height: 83px;
+	left: 742px;
+	top: 3086px;
+	overflow: visible;
+}
+#ID1_16 {
+	position: absolute;
+	width: 452px;
+	height: 372px;
+	left: 68px;
+	top: 1501px;
+	overflow: visible;
+}
+#Le_30_mars_1853_naissait_Vince {
+	left: 532px;
+	top: 1564px;
+	position: absolute;
+	overflow: visible;
+	width: 1367px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(0,0,0,1);
+}
+#ID1_17 {
+	position: absolute;
+	width: 481px;
+	height: 288px;
+	left: 51px;
+	top: 1914px;
+	overflow: visible;
+}
+#Spculateur_glac_ou_accumulateu {
+	left: 564px;
+	top: 1942px;
+	position: absolute;
+	overflow: visible;
+	width: 1235px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(0,0,0,1);
+}
+#ID1_8 {
+	position: absolute;
+	width: 1715px;
+	height: 359px;
+	left: 50px;
+	top: 2215px;
+	overflow: visible;
+}
+#Rectangle_6 {
+	fill: rgba(0,0,0,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_6 {
+	position: absolute;
+	overflow: visible;
+	width: 307px;
+	height: 74px;
+	left: 775px;
+	top: 2438px;
+}
+#voir_notre_service {
+	left: 793px;
+	top: 2458px;
+	position: absolute;
+	overflow: visible;
+	width: 277px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Bahnschrift;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(255,255,255,1);
+}
