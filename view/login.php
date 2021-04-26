@@ -38,7 +38,8 @@ if (
             $_POST['EMAIL'],
             $_POST['PASSE'],
             'female',
-            $_POST['TYPE']
+            $_POST['TYPE'] ,
+            " " 
            
 
         );
@@ -61,7 +62,8 @@ if (
             $_POST['EMAIL'],
             $_POST['PASSE'] , 
             'male' ,
-            $_POST['TYPE']
+            $_POST['TYPE'] , 
+            " " 
 );
         $userC->ajouterUser($user);
 

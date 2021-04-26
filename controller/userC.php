@@ -20,7 +20,10 @@
             {
                if ($row['TYPE']=='Buyer' )
                { 
-                   session_start()  ; 
+                   session_start() ; 
+                   $_SESSION['auth']=$row['ID'] ;
+                   
+                   $_SESSION['TYPE']=$row['TYPE'] ;   
                    header('location:loding.php') ;
 
                echo ("Buyer") ; 
@@ -62,7 +65,8 @@
                     'SEX' => $user->getSEX() ,
                     'TYPE' => $user->getTYPE()
                     
-                ]);         
+                ]); 
+                 
             }
             catch (Exception $e){
                 echo 'Erreur: '.$e->getMessage();
@@ -72,6 +76,18 @@
         function  afficherUser(){
             
             $sql="SELECT * FROM USER";
+            $db = config::getConnexion();
+            try{
+                $liste = $db->query($sql);
+                return $liste;
+            }
+            catch (Exception $e){
+                die('Erreur: '.$e->getMessage());
+            }   
+        }
+        function  afficherUser_specifique($ID){
+            
+            $sql="SELECT * FROM USER WHERE ID='$ID' ";
             $db = config::getConnexion();
             try{
                 $liste = $db->query($sql);
@@ -94,34 +110,48 @@
                 die('Erreur: '.$e->getMessage());
             }
         }
-        function modifierUSER($produits, $ID){
-            try {
-                $db = config::getConnexion();
-                $query = $db->prepare(
-                    'UPDATE produits SET 
-                        NOM = :NOM, 
-                        TEL = :TEL,
-                        ADRESSE = :ADRESSE,
-                        EMAIL = :EMAIL,
-                        PASSE = :PASSE,
-                        TYPE = :TYPE,
-                     
-                        
-
-                    WHERE ID = :ID'
-                );
+        function modifierUSER($user, $ID){
+         
+            $sql=" UPDATE USER SET 
+            
+            NOM =:NOM, 
+            TEL =:TEL,
+            ADRESSE =:ADRESSE,
+            EMAIL =:EMAIL,
+            PASSE =:PASSE,
+            SEX=:SEX,
+            TYPE =:TYPE,
+            DESCRIPTION=:DESCRIPTION 
+            WHERE ID = :ID" ;
+            
+            $db = config::getConnexion();
+            try{
+                $query = $db->prepare($sql) or die( $db->error); 
+                
+               
                 $query->execute([
-                    'NOM' => $produits->getNOM(),
-                    'TEL' => $produits->getTEL(),
-                    'ADRESSE' => $produits->getADRESSE(),
-                    'EMAIL' => $produits->getEMAIL(),
-                    'PASSE' => $produits->getPASSE(),
-                    'id' => $ID
-                ]);
-                echo $query->rowCount() . " records UPDATED successfully <br>";
-            } catch (PDOException $e) {
-                $e->getMessage();
+                    'NOM' => $user->getNOM(),
+                    'TEL' => $user->getTEL(),
+                    'ADRESSE' => $user->getADRESSE(),
+                    'EMAIL' => $user->getEMAIL(),
+                    'PASSE' => $user->getPASSE(),
+                    'SEX'=> $user->getSEX(),
+                    'TYPE'=> $user->getType(),
+                    'DESCRIPTION'=> $user->getDESCRIPTION() ,
+                    'ID'=>$ID
+ 
+                    
+                ]); 
+              
             }
+            catch (Exception $e){
+                echo 'Erreur: '.$e->getMessage();
+            }           
+         
+         
+         
+         
+         
         }
         public function chercherid($reference) {
             $sql="SELECT * FROM USER where ID=:ID";

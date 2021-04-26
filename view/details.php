@@ -17,8 +17,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
     />
     <title>CSS Units</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="resetd.css" />
+    <link rel="stylesheet" href="styled.css" />
   </head>
   <body>
     <div class="product">
