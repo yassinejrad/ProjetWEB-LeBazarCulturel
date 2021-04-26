@@ -2,6 +2,7 @@
 include_once 'C:\xampp\htdocs\login_page\controller\userC.php';
 include_once 'C:\xampp\htdocs\login_page\model\user.php';
 
+
 $error = "";
 
 
@@ -15,7 +16,7 @@ if (
     isset($_POST["TEL"]) &&
     isset($_POST["ADRESSE"]) && 
     isset($_POST["EMAIL"]) && 
-    isset($_POST["PASSE"])
+    isset($_POST["PASSE"]) 
 )
  {
     if (
@@ -23,28 +24,82 @@ if (
         !empty($_POST["TEL"]) && 
         !empty($_POST["ADRESSE"]) && 
         !empty($_POST["EMAIL"]) && 
-        !empty($_POST["PASSE"]) 
+        !empty($_POST["PASSE"]) && 
+        !empty($_POST["female"]) &&   
+         empty($_POST["male"])
      
         
     ) {
+
         $user = new user(
             $_POST['NOM'],
             $_POST['TEL'], 
             $_POST['ADRESSE'],
             $_POST['EMAIL'],
-            $_POST['PASSE']
+            $_POST['PASSE'],
+            'female',
+            $_POST['TYPE']
            
 
         );
         $userC->ajouterUser($user);
+        
       
+    }  
+    else if (  
+    !empty($_POST["NOM"]) && 
+    !empty($_POST["TEL"]) && 
+    !empty($_POST["ADRESSE"]) && 
+    !empty($_POST["EMAIL"]) && 
+    !empty($_POST["PASSE"]) && 
+    !empty($_POST["male"]) &&   
+    empty($_POST["female"])) {
+        $user = new user(
+            $_POST['NOM'],
+            $_POST['TEL'], 
+            $_POST['ADRESSE'],
+            $_POST['EMAIL'],
+            $_POST['PASSE'] , 
+            'male' ,
+            $_POST['TYPE']
+);
+        $userC->ajouterUser($user);
+
+
     }
     else {
         $error = "Missing information";
 echo($error) ;
-    }
+    } 
+
+   
     
 }
+if (
+    isset($_POST["EMAIL_AUTH"]) && 
+    isset($_POST["PASSE_AUTH"])  ) 
+    {
+        if (
+            !empty($_POST["EMAIL_AUTH"]) && 
+            !empty($_POST["PASSE_AUTH"]) 
+        ) 
+        {
+         $userC->AUTH($_POST["EMAIL_AUTH"],$_POST["PASSE_AUTH"]) ; 
+        
+       
+    
+        }
+         else {
+
+            $error = "Missing information";
+            echo($error) ; 
+           
+         }
+
+    }  
+
+
+
 ?>
     
 
@@ -60,6 +115,7 @@ echo($error) ;
     <link rel="stylesheet" href="login.css" />
     <title>Sign in & Sign up Form</title> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -67,15 +123,15 @@ echo($error) ;
         <div class="forms-container">
 
             <div class="signin-signup">
-                <form action="login.php" class="sign-in-form">
+                <form action="login.php" method="post" class="sign-in-form">
                     <h2 class="title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="email" name="EMAIL_AUTH">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" name="PASSE_AUTH">
                     </div>
                     <input type="submit" value="Login" class="btn solid">
                     <p class="social-text">Or Sign in with social platforms</p>
@@ -124,9 +180,9 @@ echo($error) ;
                         <input type="password" placeholder="PASSE" name="PASSE" id="PASSE" />
                     </div>
                     <div class="input-field">
-                        <div class="select-box">
+                        <div class="select-box" >
                           
-                            <select>
+                            <select  name="TYPE">
                                
                             <option>Buyer</option>
                             <option>Seller</option>
@@ -135,19 +191,26 @@ echo($error) ;
                     </div>
                         </div>
 
-                    <div class="wrapper" >
+                     <div class="wrapper" >
                        <div class= "label" >
-                        <input  type="checkbox"   id="checkM"/>  
+                        <input class="ch"  type="checkbox"   id="checkM" name= "male"/>  
                         <label for="check" > Male</label>      
                    
-                    </div>
-                    </div>
-                    <div class="wrapper_f" >
-                        <div class= "label_f" >
-                        <input  type="checkbox"   id="checkF"/>
+                     </div>
+                     </div>
+                      <div class="wrapper_f" >
+                        <div class= "label" >
+                        <input  class="ch" type="checkbox"   id="checkF" name="female"/>
                          <label for="check" > Female</label>      
                     
-                     </div>
+                       </div>
+                       <script type="text/javascript" > 
+                       $('.ch').on('change',function() {
+                         $  ('.ch').not (this).prop('checked',false) ;   
+                       }) ;
+                       </script>
+
+                     
                      </div>
 
 

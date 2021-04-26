@@ -7,16 +7,19 @@
         private ?string $ADRESSE = null;
         private ?string $EMAIL = null;
         private ?string $PASSE = null;
+        private ?string $SEX = null;
         
         
             
-        function __construct( string $NOM, int $TEL,string $ADRESSE ,string $EMAIL ,string $PASSE  )
+        function __construct( string $NOM, int $TEL,string $ADRESSE ,string $EMAIL ,string $PASSE ,string $SEX  ,string $TYPE )
         {
             $this->NOM=$NOM;
             $this->TEL=$TEL;
             $this->ADRESSE=$ADRESSE;
             $this->EMAIL=$EMAIL;
             $this->PASSE=$PASSE;
+            $this->SEX=$SEX;
+            $this->TYPE=$TYPE;
             
         }
         
@@ -38,7 +41,12 @@
         function getPASSE(): string{
             return $this->PASSE;
         }
-    
+        function getSEX(): string{
+            return $this->SEX;
+        }
+        function getTYPE(): string{
+            return $this->TYPE;
+        }
 
         function setNOM(string $NOM): void
         {
@@ -60,6 +68,15 @@
         {
              $this->QTE=$PASSE;
         }
+        function setSEX(string $SEX ): void
+        {
+             $this->QTE=$SEX;
+        }
+        function setTYPE(string $TYPE ): void
+        {
+             $this->QTE=$TYPE;
+        }
+       
        
         
     }

@@ -6,10 +6,47 @@
 
     class userC {
         
+
+        function  AUTH($EMAIL ,$PASSE) {
+         $host="localhost" ; 
+         $user="root" ; 
+         $pass=""  ; 
+         $db="databasephp" ; 
+         $conn=mysqli_connect($host,$user,$pass,$db) ; 
+         $query="SELECT * FROM USER WHERE EMAIL='$EMAIL ' AND PASSE='$PASSE' " ; 
+         $result=mysqli_query($conn,$query) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($conn), E_USER_ERROR); 
+        if(mysqli_num_rows($result)==1)     {
+            while ( $row= mysqli_fetch_assoc($result))
+            {
+               if ($row['TYPE']=='Buyer' )
+               { 
+                   session_start()  ; 
+                   header('location:loding.php') ;
+
+               echo ("Buyer") ; 
+              
+               }
+                else  
+               echo ("Seller") ; 
+   
+     
+            }
+       
+        
+        }
+        else  {
+          echo ( "not found ") ; 
+
+        }
+
+   
+        }
+          
+
         function  ajouterUser($user)
         {
-            $sql="INSERT INTO USER (NOM,TEL,ADRESSE,EMAIL,PASSE) 
-            VALUES (:NOM,:TEL,:ADRESSE,:EMAIL,:PASSE)" ;
+            $sql="INSERT INTO USER (NOM,TEL,ADRESSE,EMAIL,PASSE,SEX,TYPE) 
+            VALUES (:NOM,:TEL,:ADRESSE,:EMAIL,:PASSE,:SEX,:TYPE)" ;
             
             $db = config::getConnexion();
             try{
@@ -22,6 +59,8 @@
                     'ADRESSE' => $user->getADRESSE(),
                     'EMAIL' => $user->getEMAIL(),
                     'PASSE' => $user->getPASSE(),
+                    'SEX' => $user->getSEX() ,
+                    'TYPE' => $user->getTYPE()
                     
                 ]);         
             }
@@ -65,6 +104,7 @@
                         ADRESSE = :ADRESSE,
                         EMAIL = :EMAIL,
                         PASSE = :PASSE,
+                        TYPE = :TYPE,
                      
                         
 
