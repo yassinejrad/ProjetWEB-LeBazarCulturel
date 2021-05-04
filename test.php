@@ -1,6 +1,5 @@
 <?php
 
-$bazoula = 5 ;
 
 ?>
 

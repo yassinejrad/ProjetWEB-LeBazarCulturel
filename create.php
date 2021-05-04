@@ -1,6 +1,59 @@
 <?php
+    include 'connect.php';
+    include 'event.php';
 
+    if(isset($_POST["location"]) && isset($_POST["start_date"])&& 
+    isset($_POST["end_date"])&& isset($_POST["sponsor1"])&& isset($_POST["sponsor2"])&&
+    isset($_POST["sponsor3"])&& isset($_POST["artist1"])&& isset($_POST["artist1"])&& 
+    isset($_POST["artist2"])&& isset($_POST["artist3"])&&
+    isset($_POST["description"])&& isset($_POST["name"])&& isset($_POST["image"]) )
+    {
+        $location = $_POST["location"];
+    $start_date = $_POST["start_date"];
+    $end_date = $_POST["end_date"];
 
+    $sponsor1 = $_POST["sponsor1"];
+    $sponsor2 = $_POST["sponsor2"];
+    $sponsor3 = $_POST["sponsor3"];
+
+    $artist1 = $_POST["artist1"] ; 
+    $artist2 = $_POST["artist2"] ; 
+    $artist3 = $_POST["artist3"] ; 
+
+    $description = $_POST["description"] ; 
+
+    $name = $_POST["name"];   
+    $image = $_POST["image"];
+        
+        $ev = new Event( $name , $location ,
+        $start_date , $end_date , $sponsor1 
+      , $sponsor2 , $sponsor3 , $artist1 , $artist2 ,
+        $artist3 , $description , $image);
+
+        $test= $ev->control_date($start_date , $end_date);
+      $id = $ev->verif_link() ; 
+      $ev->add_link($id ,  $sponsor1 , $sponsor2 , $sponsor3 ) ;  
+      
+
+      if($test == False && $ev->sponsor1!=$ev->sponsor2 && $ev->sponsor1!=$ev->sponsor3 && $ev->sponsor2!=$ev->sponsor3
+      && $ev->artist1!=$ev->artist2 && $ev->artist1!=$ev->artist3 && $ev->artist3!=$ev->artist2  )
+      {
+        $sql = "insert into event2 (name,location,artist1,artist2,artist3,start_date,end_date,sponsor,description,image) values 
+        ('$name' ,'$location','$artist1','$artist2','$artist3','$start_date' , '$end_date' , '$id', '$description' ,'$image' )";
+        $conn->query($sql);
+        $conn->close();
+        header("location: test2.php");
+
+      }
+      
+      else 
+      {
+        $message = "la date de debut et fin ne sont pas correctes" ; 
+        header("location: create.php?error=".$message);
+      }
+
+    }
+    
 ?>
 
 
@@ -27,7 +80,8 @@
 </head>
 
 <body>
-    <form class="form-inline m-2" action="create2.php" method="POST">  
+
+    <form class="form-inline m-2" action="" method="POST">  
         <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
             <div class="wrapper wrapper--w790">
                 <div class="card card-5">
@@ -36,7 +90,7 @@
                     </div>
                     
                     <div class="card-body">
-                        <form method="POST">
+                        
                             <div class="form-row m-b-55">
                                 <div class="name">Date</div>
                                 <div class="value">
@@ -223,11 +277,11 @@
 
                             
                             <div>
-                                <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                                <button class="btn btn--radius-2 btn--red" href="test2.php" type="submit">Register</button>
                             </div>
                     
-                    
-                        </form>
+
+                        
                 
                     </div>
                 

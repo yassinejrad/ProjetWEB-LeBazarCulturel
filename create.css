@@ -383,7 +383,7 @@ h6 {
 /* ==========================================================================
    #BUTTON
    ========================================================================== */
-.btn {
+.btn { 
   display: inline-block;
   line-height: 50px;
   padding: 0 50px;
@@ -397,7 +397,18 @@ h6 {
   font-weight: 700;
   color: #fff;
   font-family: inherit;
+  
 }
+
+.btn-align-sort
+{
+  margin-top: 5%;
+  margin-left: 70%;
+
+
+}
+
+
 
 .btn--radius {
   -webkit-border-radius: 3px;
@@ -405,7 +416,7 @@ h6 {
   border-radius: 3px;
 }
 
-.btn--radius-2 {
+.btn--radius-2 { 
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -436,6 +447,7 @@ h6 {
 .btn--red {
   background: #ff4b5a;
 }
+
 
 .btn--red:hover {
   background: #eb3746;
@@ -768,3 +780,13 @@ input {
     padding-bottom: 50px;
   }
 }
+
+
+
+
+
+
+
+
+
+
