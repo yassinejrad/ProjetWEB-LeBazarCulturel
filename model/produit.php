@@ -8,9 +8,16 @@
         private  $DATE = null;
 		private ?int $QTE = null;
 		private ?string $DESC = null;
+<<<<<<< Updated upstream
 		
 			
 		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC )
+=======
+		private ?string $CATEGORIE = null;
+		
+			
+		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE )
+>>>>>>> Stashed changes
         {
 			$this->NOM=$NOM;
 			$this->PRIX=$PRIX;
@@ -18,6 +25,10 @@
 			$this->DATE=$DATE;
 			$this->QTE=$QTE;
 			$this->DESC=$DESC;
+<<<<<<< Updated upstream
+=======
+			$this->CATEGORIE=$CATEGORIE;
+>>>>>>> Stashed changes
 		}
 		
 		function getref(): int{
@@ -41,6 +52,12 @@
 		function getDESC(): string{
 			return $this->DESC;
 		}
+<<<<<<< Updated upstream
+=======
+		function getCAT(): string{
+			return $this->CATEGORIE;
+		}
+>>>>>>> Stashed changes
 
 
 		function setNOM(string $NOM): void
@@ -67,6 +84,13 @@
 		{
 			 $this->DESC=$DESC;
 		}
+<<<<<<< Updated upstream
+=======
+		function setCAT(string $CATEGORIE): void
+		{
+			 $this->CATEGORIE=$CATEGORIE;
+		}
+>>>>>>> Stashed changes
 		
     }
 ?>

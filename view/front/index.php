@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php
 
 ?>
@@ -5,6 +6,16 @@
 
 
 
+=======
+<?php 
+include_once '../../controller/categorieC.php';
+include_once '../../model/categorie.php';
+
+  $inf1= new categorieC();
+  $liste=$inf1->afficherCategories();
+?>
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +41,7 @@
 <body>
 
     <!-- Navigation -->
+<<<<<<< Updated upstream
     <nav class="navbar-expand-lg navbar-light badge-light fixed-top">
         <div class="login">
 
@@ -113,6 +125,15 @@
         </div>
     </nav>
 
+=======
+    <?php
+        foreach($liste as $a) {
+    ?>
+    <?php include_once 'header.php'; ?>
+    <?php
+    }
+    ?>
+>>>>>>> Stashed changes
     <header>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -327,6 +348,7 @@
                     <p>le bazar culturel livre les oeuvres dans toute la Tunisie entier via des transporteurs spécialisés. </p>
                     <p> </p>
                 </div>
+<<<<<<< Updated upstream
 
             </div>
             <div class="row mb-6">
@@ -391,6 +413,13 @@
             </script>
             <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
             </div>
+=======
+            </div>
+     </div>
+
+     <?php include_once 'footer.php'; ?>
+        
+>>>>>>> Stashed changes
 </body>
 
 </html>

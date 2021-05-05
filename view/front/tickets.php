@@ -1,7 +1,24 @@
+<<<<<<< Updated upstream
+=======
+<?php 
+include_once '../../controller/produitC.php';
+include_once '../../model/produit.php';
+include_once '../../controller/categorieC.php';
+include_once '../../model/categorie.php';
+
+  $inf1= new produitC();
+  $liste=$inf1->afficherProduits();
+  $inf2= new categorieC();
+  $liste2=$inf2->afficherCategories();
+?>
+
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
+<<<<<<< Updated upstream
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,11 +33,29 @@
   
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+=======
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>le bazar culturel</title>
+    <link rel="shortcut icon" href="images/logo.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
+>>>>>>> Stashed changes
   
   </head>
   
   <body>
   
+<<<<<<< Updated upstream
     <!-- Navigation -->
     <nav class="navbar-expand-lg navbar-light badge-light fixed-top">
       <div class="login">
@@ -106,6 +141,16 @@
     </nav>
   
 
+=======
+  <?php
+        foreach($liste2 as $a) {
+    ?>
+    <?php include_once 'header.php'; ?>
+    <?php
+    }
+    ?>
+  
+>>>>>>> Stashed changes
   <!-- Page Content -->
   <div class="container">
 
@@ -179,6 +224,7 @@
   <!-- /.container -->
 
 </div>
+<<<<<<< Updated upstream
 <!-- contacter nous! -->
   
     <!-- Footer -->
@@ -229,6 +275,9 @@
       </script>
     <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
         </div>
+=======
+<?php include_once 'footer.php'; ?>
+>>>>>>> Stashed changes
 
 </body>
 

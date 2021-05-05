@@ -172,4 +172,22 @@ body {
     border: none;
     text-indent: 100%;
     background: url("../images/to-top2.png") no-repeat 0px 0px;
+<<<<<<< Updated upstream
+=======
+}
+
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+user agent stylesheet div {
+    display: block;
+}
+
+.wrapper_buttons {
+    width: 100%;
+>>>>>>> Stashed changes
 }

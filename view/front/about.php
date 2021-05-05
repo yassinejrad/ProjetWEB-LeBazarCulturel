@@ -27,6 +27,7 @@
 <body>
 
     <!-- Navigation -->
+<<<<<<< Updated upstream
     <nav class="navbar-expand-lg navbar-light badge-light fixed-top">
         <div class="login">
 
@@ -109,6 +110,9 @@
         </div>
         </div>
     </nav>
+=======
+    <?php include_once 'header.php'; ?>
+>>>>>>> Stashed changes
 
 
 
@@ -313,6 +317,7 @@
         <!-- /.row -->
 
     </div>
+<<<<<<< Updated upstream
 
     <div class="row mb-6">
 
@@ -376,6 +381,9 @@
     </script>
     <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     </div>
+=======
+    <?php include_once 'footer.php'; ?>>
+>>>>>>> Stashed changes
 </body>
 
 </html>
