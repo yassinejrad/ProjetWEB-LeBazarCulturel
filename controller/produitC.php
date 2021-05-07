@@ -1,5 +1,5 @@
 <?PHP
-	include_once "../../config.php";
+	require_once "../../config.php";
 	include_once '../../model/produit.php';
 	
 
@@ -110,12 +110,12 @@
 			catch (Exception $e){
 				die('Erreur: '.$e->getMessage());
 			}
-		}
+		}*/
 
 		
 	
-		public function chercher($titre) {
-			$sql="SELECT * FROM album where titre='$titre'";
+		public function chercher($nom) {
+			$sql="SELECT * FROM produits where NOM='$nom'";
 			$db=Config::getConnexion();
 			try{
 			$liste = $db->query($sql);
@@ -124,7 +124,7 @@
 			catch (PDOException $e) {
 				$e->getMessage();
 			}
-		}*/
+		}
 
 
 		
