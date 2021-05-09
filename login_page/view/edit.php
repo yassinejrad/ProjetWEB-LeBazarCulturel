@@ -77,7 +77,6 @@ if (
 
 
 
-
 ?>
 
 
@@ -93,7 +92,7 @@ if (
       rel="stylesheet"
     />
     <title>Button hover effects</title>
-    <link rel="stylesheet" href="resetb.css" />
+
     <link rel="stylesheet" href="styleb.css" />
   </head>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -158,21 +157,19 @@ if (
       </label>
   </div>
   <div class="form__group">
-    <button type="submit"    class="form__submit"  " >
-      <span class="form__submit-text">Update</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
+    <button    class="form__submit"    >
+      <span class="17a2b8">Update</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
  
     </button>
  
   </div>
 
-<div class="delete">
-  <button  class="btn btn--left" onclick="location.href ='details.php';"   >
-      <span class="delete-text">Delete</span><i class="fas fa-trash-alt"></i>
-    </button>
-    </div>
+  
+   
+ 
   </form>
+  
 
-  </div>
 
 <?php
 
@@ -187,9 +184,17 @@ if (
 
 
 
+<div class="tired">
+
+<button   type="submit"  onclick="location.href = 'delete.php';"  class="btn btn--left">Delete  
 
 
+</button>
+   
 
+ </div>  
+
+ </div>
 
 </body>
 

@@ -14,7 +14,7 @@ body {
   justify-content: center;
 }
 :root {
-  --primary-color: rgb(98, 98, 98);
+  --primary-color: #4797ff; 
   --text-color: #202020;
 }
 .signup {
@@ -93,7 +93,7 @@ body {
 }
 .form__submit {
   border-radius: 10px;
-  color: white;
+  color: white ;
   padding: 1.5rem;
   outline: none;
   font-family: "Poppins", sans-serif;
@@ -159,7 +159,7 @@ body {
   width: 23.5rem;
   height: 4rem;
 ; 
-  background-color: red;
+  background-color: #17a2b8;
   border-radius: 5rem;
   padding: 5px;
   transition: background-color 0.2s linear;
@@ -203,7 +203,7 @@ body {
   content: "";
   position: absolute;
   z-index: -1;
-  background-color: pink;
+  background-color: #ff7870;
 }
 .btn--left:before {
   top: 0;
@@ -245,4 +245,14 @@ body {
 }
 .btn--bottom:hover:before {
   height: 100%;
+}
+.tired {
+position:  sticky;
+top: 0px ;
+left : 0px ; 
+right: 0px;
+bottom : 0px ; 
+width: max-content;
+
+
 }

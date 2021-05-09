@@ -66,7 +66,7 @@
                     'TYPE' => $user->getTYPE()
                     
                 ]); 
-                 
+                header('location:loding.php') ;
             }
             catch (Exception $e){
                 echo 'Erreur: '.$e->getMessage();
@@ -102,9 +102,10 @@
             $sql="DELETE FROM USER WHERE ID= :ID";
             $db = config::getConnexion();
             $req=$db->prepare($sql);
-            $req->bindValue(':REFERENCE',$reference);
+            $req->bindValue(':ID',$reference);
             try{
                 $req->execute();
+                header('location:goodbye.php') ;
             }
             catch (Exception $e){
                 die('Erreur: '.$e->getMessage());
@@ -142,7 +143,8 @@
  
                     
                 ]); 
-              
+            
+               
             }
             catch (Exception $e){
                 echo 'Erreur: '.$e->getMessage();

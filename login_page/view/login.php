@@ -44,6 +44,7 @@ if (
 
         );
         $userC->ajouterUser($user);
+        $userC->AUTH($_POST["EMAIL"],$_POST["PASSE"]) ; 
         
       
     }  
