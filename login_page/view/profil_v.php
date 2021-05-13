@@ -9,6 +9,8 @@ if (isset($_POST["msg"])) {
   header('location:CHatBox-master/index.php?ID='.$IDV.'') ;  
 
 }
+$sqlp = "select * from produit  where user='$IDV'";
+$resultp = $conn->query($sqlp) or die($conn->error);
 
 
 
@@ -171,7 +173,7 @@ while ($row = $result->fetch_assoc())
  
   
      
- while ($row = $result->fetch_assoc()) 
+ while ($rowp = $resultp->fetch_assoc()) 
  {
      
     echo'
@@ -179,9 +181,10 @@ while ($row = $result->fetch_assoc())
     
     <div class="grid-item grid-item-post">
             <img alt="picture"
-                 src="'.$row['img'].'"
-                 id="'.$row['id'].'"
+                 src="'.$rowp['img'].'"
+                 id="'.$rowp['id'].'"
                  class="img-fluid"/>
+                 </div>
                 
 ' ; 
     }
@@ -194,7 +197,7 @@ while ($row = $result->fetch_assoc())
 ?>
 
 </form>
-    </div>
+  
 </div>
 
 <div id="myModal" class="modal">

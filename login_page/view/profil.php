@@ -137,7 +137,7 @@ $result = $conn->query($sql) or die($conn->error);
     <?php
  
   
-     
+   
  while ($row = $result->fetch_assoc()) 
  {
      
@@ -149,6 +149,7 @@ $result = $conn->query($sql) or die($conn->error);
                  src="'.$row['img'].'"
                  id="'.$row['id'].'"
                  class="img-fluid"/>
+                 </div>
                 
 ' ; 
     }
@@ -161,7 +162,7 @@ $result = $conn->query($sql) or die($conn->error);
 ?>
 
 </form>
-    </div>
+    
 </div>
 
 <div id="myModal" class="modal">

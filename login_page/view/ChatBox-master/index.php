@@ -119,7 +119,7 @@ $result = $conn->query($sql) or die($conn->error);
   echo '
   <div class="msg right-msg">
 
-  <div class="msg-img" style="background-image: url('.$img_s.')"></div>
+  <div class="msg-img" style="background-image: url('.$img_r.')"></div>
       <div class="msg-bubble">
 
 
