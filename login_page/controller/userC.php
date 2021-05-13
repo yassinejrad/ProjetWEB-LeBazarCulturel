@@ -1,6 +1,8 @@
 <?PHP
-    include_once 'C:\xampp\htdocs\login_page\config.php';
-    include_once 'C:\xampp\htdocs\login_page\model\user.php';
+ 
+ include_once 'C:\xampp\htdocs\login_page\model\user.php';
+
+ include_once 'C:\xampp\htdocs\login_page\config.php';
     
     
 
@@ -18,19 +20,19 @@
         if(mysqli_num_rows($result)==1)     {
             while ( $row= mysqli_fetch_assoc($result))
             {
-               if ($row['TYPE']=='Buyer' )
-               { 
+               
                    session_start() ; 
                    $_SESSION['auth']=$row['ID'] ;
                    
                    $_SESSION['TYPE']=$row['TYPE'] ;   
+                   $_SESSION['IMG']=$row['IMG'] ;  
+                   $_SESSION['NOM']=$row['NOM'] ;    
+                   $_SESSION['DESCRIPTION']=$row['DESCRIPTION'] ; 
+                   $_SESSION['BLOQUER']=$row['BLOQUER'] ;
+
                    header('location:loding.php') ;
 
-               echo ("Buyer") ; 
-              
-               }
-                else  
-               echo ("Seller") ; 
+             
    
      
             }
@@ -48,8 +50,8 @@
 
         function  ajouterUser($user)
         {
-            $sql="INSERT INTO USER (NOM,TEL,ADRESSE,EMAIL,PASSE,SEX,TYPE) 
-            VALUES (:NOM,:TEL,:ADRESSE,:EMAIL,:PASSE,:SEX,:TYPE)" ;
+            $sql="INSERT INTO USER (NOM,TEL,ADRESSE,EMAIL,PASSE,SEX,TYPE,IMG,BLOQUER) 
+            VALUES (:NOM,:TEL,:ADRESSE,:EMAIL,:PASSE,:SEX,:TYPE,:IMG,:BLOQUER)" ;
             
             $db = config::getConnexion();
             try{
@@ -63,7 +65,9 @@
                     'EMAIL' => $user->getEMAIL(),
                     'PASSE' => $user->getPASSE(),
                     'SEX' => $user->getSEX() ,
-                    'TYPE' => $user->getTYPE()
+                    'TYPE' => $user->getTYPE() ,
+                    'BLOQUER' => $user->getBLOQUER() ,
+                    'IMG' => $user->getIMG()
                     
                 ]); 
                 header('location:loding.php') ;
@@ -122,7 +126,9 @@
             PASSE =:PASSE,
             SEX=:SEX,
             TYPE =:TYPE,
-            DESCRIPTION=:DESCRIPTION 
+            DESCRIPTION=:DESCRIPTION ,
+            IMG=:IMG,
+            BLOQUER=:BLOQUER
             WHERE ID = :ID" ;
             
             $db = config::getConnexion();
@@ -139,6 +145,8 @@
                     'SEX'=> $user->getSEX(),
                     'TYPE'=> $user->getType(),
                     'DESCRIPTION'=> $user->getDESCRIPTION() ,
+                    'IMG'=> $user->getIMG() ,
+                    'BLOQUER'=> $user->getBLOQUER() ,
                     'ID'=>$ID
  
                     
@@ -168,7 +176,7 @@
                 $e->getMessage();
             }
         }
-        /*function recupererAlbum($idAlbum)
+        function recupererAlbum($idAlbum)
         {
             $sql="SELECT * from album where idAlbum=$idAlbum";
             $db = config::getConnexion();
@@ -187,7 +195,7 @@
         
     
         public function chercher($titre) {
-            $sql="SELECT * FROM album where titre='$titre'";
+            $sql="SELECT * FROM user where nom='$titre'";
             $db=Config::getConnexion();
             try{
             $liste = $db->query($sql);
@@ -196,7 +204,19 @@
             catch (PDOException $e) {
                 $e->getMessage();
             }
-        }*/
+        }
+        
+        public function bloquer($titre) {
+            $sql="SELECT * FROM user where id='$titre'";
+            $db=Config::getConnexion();
+            try{
+            $liste = $db->query($sql);
+            return $liste;
+            } 
+            catch (PDOException $e) {
+                $e->getMessage();
+            }
+        }
 
 
         

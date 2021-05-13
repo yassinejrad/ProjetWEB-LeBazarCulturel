@@ -2,8 +2,15 @@
 session_start();
 $conn = new mysqli("localhost", "root", "", "databasephp") ;
 $ID=$_SESSION['auth'] ; 
-$sql = "select * from produit  where user='$ID'";
+$IDV=$_GET["ID"] ; 
+$sql = "select * from user  where id='$IDV'";
 $result = $conn->query($sql) or die($conn->error);
+if (isset($_POST["msg"])) {
+  header('location:CHatBox-master/index.php?ID='.$IDV.'') ;  
+
+}
+
+
 
 ?>
 
@@ -74,7 +81,11 @@ $result = $conn->query($sql) or die($conn->error);
                               class="home-icon"></a>
                              
                              
-          
+                             <?php
+                        
+                        
+                    if ($ID==$IDV) 
+                    {   echo'
                               <div class="dropdown">
     
     
@@ -110,7 +121,16 @@ $result = $conn->query($sql) or die($conn->error);
         </li>
       </ul>
     </div>
-     
+    ' ;
+                    } 
+                    else {
+
+                    echo' <form class="" method="post">' ;
+                    echo'<br> <button name="msg"type="sumbit" class="btn btn--left" >Contacter</button>  ' ;   
+
+                    echo' </form>';
+                    }
+      ?>   
         </div>
         
         
@@ -119,10 +139,23 @@ $result = $conn->query($sql) or die($conn->error);
 </nav>
 <div class="container">
     <div class="info">
-        <img src="<?php echo $_SESSION['IMG']?>" alt="img" class="profile-img">
-        <p class="center"><?php echo $_SESSION['NOM']?></p>
-        <p class="numposts"><?php echo $_SESSION['DESCRIPTION']?></p>
-   
+<?php
+
+while ($row = $result->fetch_assoc()) 
+        {
+        echo'
+        <img src="' .$row['IMG'].'" alt="img" class="profile-img">
+        <p class="center">' .$row['NOM'].'</p>
+        <p class="numposts">' .$row['DESCRIPTION'].'</p>
+       
+    '  ;
+} 
+
+    ?>
+
+
+       
+
 
         
     </div>

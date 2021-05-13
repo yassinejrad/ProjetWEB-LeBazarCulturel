@@ -1,6 +1,6 @@
 
 <?php 
-
+session_start() ; 
 
 ?> 
 <html lang="en">
@@ -29,7 +29,7 @@
     
       
     
-        <h1 class="title"># Goodbye Rostom </h1>
+        <h1 class="title"># Goodbye  <?php   echo $_SESSION['NOM'] ?> </h1>
          
    
      

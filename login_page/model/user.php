@@ -8,10 +8,12 @@
         private ?string $EMAIL = null;
         private ?string $PASSE = null;
         private ?string $SEX = null;
+        private ?string $IMG = null;
+        private ?int $BLOQUER = null;
         
         
             
-        function __construct( string $NOM, int $TEL,string $ADRESSE ,string $EMAIL ,string $PASSE ,string $SEX  ,string $TYPE,string $DESCRIPTION )
+        function __construct( string $NOM, int $TEL,string $ADRESSE ,string $EMAIL ,string $PASSE ,string $SEX  ,string $TYPE,string $DESCRIPTION ,string $IMG ,int $BLOQUER )
         {
             $this->NOM=$NOM;
             $this->TEL=$TEL;
@@ -21,6 +23,8 @@
             $this->SEX=$SEX;
             $this->TYPE=$TYPE;
             $this->DESCRIPTION=$DESCRIPTION; 
+            $this->IMG=$IMG; 
+            $this->BLOQUER=$BLOQUER; 
             
         }
         
@@ -49,7 +53,13 @@
             return $this->TYPE;
         }
         function getDESCRIPTION(): string{
-            return $this->TYPE;
+            return $this->DESCRIPTION;
+        }
+        function getIMG(): string{
+            return $this->IMG;
+        }
+        function getBLOQUER(): int{
+            return $this->BLOQUER;
         }
 
         function setNOM(string $NOM): void
@@ -58,31 +68,39 @@
         }
         function setTEL(int $TEL): void
         {
-            $this->PRIX=$TEL;
+            $this->TEL=$TEL;
         }
         function setADRESSE(string $ADRESSE): void
         {
-            $this->IMAGE=$ADRESSE;
+            $this->ADRESSE=$ADRESSE;
         }
         function setEMAIL( string $EMAIL): void
         {
-            $this->DATE=$EMAIL;
+            $this->EMAIL=$EMAIL;
         }
         function setPASSE(string $PASSE ): void
         {
-             $this->QTE=$PASSE;
+             $this->PASSE=$PASSE;
         }
         function setSEX(string $SEX ): void
         {
-             $this->QTE=$SEX;
+             $this->SEX=$SEX;
         }
         function setTYPE(string $TYPE ): void
         {
-             $this->QTE=$TYPE;
+             $this->TYPE=$TYPE;
         }
         function setDESCRIPTION(string $DESCRIPTION ): void
         {
-             $this->QTE=$DESCRIPTION;
+             $this->DESCRIPTION=$DESCRIPTION;
+        }
+        function setIMG(string $IMG ): void
+        {
+             $this->IMG=$IMG;
+        }
+        function setBLOQUER(string $BLOQUER ): void
+        {
+             $this->BLOQUER=$BLOQUER;
         }
        
        

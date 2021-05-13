@@ -3,23 +3,24 @@
 
 
 $conn = new mysqli("localhost", "root", "", "databasephp") ;
-$sql = "select * from user  ";
+$Buyer="Buyer" ; 
+$sql = "select * from user where TYPE='$Buyer' ";
 
     if(!empty($_POST["q"]) ) {
 
         $name =$_POST["q"];  
         if(!empty($_POST["n"]) ){
-            $sql = "select * from user where NOM ='$name' ORDER BY  NOM ";
+            $sql = "select * from user where TYPE='$Buyer' and NOM ='$name' ORDER BY  NOM ";
             $result = $conn->query($sql);
 
         }
         else if(!empty($_POST["sex"]) ){
-            $sql = "select * from user where NOM ='$name' ORDER BY  SEX ";
+            $sql = "select * from user where  TYPE='$Buyer' and  NOM ='$name' ORDER BY  SEX ";
             $result = $conn->query($sql);
 
         }
         else if(!empty($_POST["tel"]) ){
-            $sql = "select * from user where NOM ='$name' ORDER BY  TEL ";
+            $sql = "select * from user where TYPE='$Buyer' and  NOM ='$name' ORDER BY  TEL ";
             $result = $conn->query($sql);
 
         } 
@@ -124,7 +125,8 @@ $sql = "select * from user  ";
                     <h1>' . $row['NOM'] . '</h1>
                     <p class="job-title">' . $row['TEL'] . '</p>
                     <p class="about"> ' . $row['DESCRIPTION'] . '</p>
-                    <a href="profil.php" class="btn">Profil</a>
+                    <a href="profil_v.php?ID='. $row['ID'].'" class="btn">Profil
+                    </a>
                  
                 </div>
              

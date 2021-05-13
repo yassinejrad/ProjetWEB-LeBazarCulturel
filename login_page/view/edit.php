@@ -1,35 +1,16 @@
 <?php
-include_once 'C:\xampp\htdocs\login_page\controller\userC.php';
+
 include_once 'C:\xampp\htdocs\login_page\model\user.php';
+include_once 'C:\xampp\htdocs\login_page\controller\userC.php';
+
 session_start();
 $ID = $_SESSION['auth'];
 $t= $_SESSION['TYPE'];
+$img=$_SESSION['IMG'];
 $userC = new userC();
 
 
 
-$user = null;
-if (
-  isset($_POST["NOM"]) &&
-  isset($_POST["TEL"]) &&
-  isset($_POST["ADRESSE"]) &&
-  isset($_POST["EMAIL"]) &&
-  isset($_POST["PASSE"]) &&
-  isset($_POST["DESCRIPTION"])
- 
-) {
-  if (
-    !empty($_POST["NOM"]) &&
-    !empty($_POST["TEL"]) &&
-    !empty($_POST["ADRESSE"]) &&
-    !empty($_POST["EMAIL"]) &&
-    !empty($_POST["PASSE"]) &&
-    !empty($_POST["DESCRIPTION"]) &&
-    !empty($_POST["sex"])
-
-
-
-  ) {
 
     $user = new user(
       $_POST['NOM'],
@@ -39,43 +20,13 @@ if (
       $_POST['PASSE'],
       'female',
       $t , 
-      $_POST['DESCRIPTION']
+      $_POST['DESCRIPTION'] ,
+      $img    , 
+      0   
+     ) ;
 
 
-    );
-    $userC->modifierUSER($user, $ID);
- 
-  } else if (
-    !empty($_POST["NOM"]) &&
-    !empty($_POST["TEL"]) &&
-    !empty($_POST["ADRESSE"]) &&
-    !empty($_POST["EMAIL"]) &&
-    !empty($_POST["PASSE"]) &&
-    !empty($_POST["DESCRIPTION"]) &&
-    empty($_POST["sex"])
-  ) {
-    $user = new user(
-      $_POST['NOM'],
-      $_POST['TEL'],
-      $_POST['ADRESSE'],
-      $_POST['EMAIL'],
-      $_POST['PASSE'],
-      'male',
-      $t,
-      $_POST['DESCRIPTION']
-              
-
-    );
-    $userC->modifierUSER($user, $ID);
     
-  } else {
-    $error = "Missing information";
-    echo ($error);
-  }
-}
-
-
-
 
 ?>
 
@@ -115,7 +66,7 @@ if (
     ?>
       <form action="edit.php" class="signup__form" autocomplete="off" method="post">
         <div class="form__group">
-          <input type="text" name="NOM" class="form__input" placeholder="NAME" value="<?php echo $a['NOM'] ?>" />
+          <input type="text" id="NOM" name="NOM" class="form__input" placeholder="NAME" value="<?php echo $a['NOM'] ?>" />
         </div>
         <div class="form__group">
           <input type="text" class="form__input" name="TEL" placeholder="Tel" value="<?php echo $a['TEL'] ?>" />
@@ -156,13 +107,10 @@ if (
     
       </label>
   </div>
-  <div class="form__group">
-    <button    class="form__submit"    >
-      <span class="17a2b8">Update</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
- 
-    </button>
- 
-  </div>
+
+
+
+
 
   
    
@@ -181,7 +129,13 @@ if (
 ?>
 
 
-
+<div class="form__group">
+    <button    class="form__submit"     onclick="location.href = 'profil.php';" >
+      <span  class="17a2b8">Update</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
+ 
+    </button>
+ 
+  </div>
 
 
 <div class="tired">

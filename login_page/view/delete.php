@@ -27,23 +27,21 @@ if (isset($_POST['sub'])) {
   <!-- https://images.unsplash.com/photo-1519098901909-b1553a1190af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80 -->
   <div class="card">
     <div class="card-avatar">
-      <img src="rostom.png" alt="" class="card-image" />
+      <img src="<?php echo $_SESSION['IMG'] ?>" alt="" class="card-image" />
       <span class="card-status"></span>
     </div>
-    <h3 class="card-name">Rostom</h3>
+    <h3 class="card-name"><?php echo $_SESSION['NOM'] ?></h3>
     <p class="card-desc">
       ARE YOU SUR ???
     </p>
 
     <div class="card-meta">
       <div class="card-meta-item">
-        <h4 class="card-meta-number">207</h4>
-        <span class="card-meta-txt">Followers</span>
+    
       </div>
 
       <div class="card-meta-item">
-        <h4 class="card-meta-number">16</h4>
-        <span class="card-meta-txt">Posts</span>
+      
         </div>
  
       </div>

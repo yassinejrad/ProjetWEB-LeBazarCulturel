@@ -1,3 +1,15 @@
+<?php 
+$conn = new mysqli("localhost", "root", "", "databasephp") ;
+ 
+$IDV=$_GET["id"] ;
+$sql = "select * from produit  where id='$IDV'";
+$result = $conn->query($sql) or die($conn->error);
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,9 +35,16 @@
   <body>
     <div class="product">
       <div class="product__left">
-        <img src="./logo.png" alt="" class="product__logo" />
+
         <span class="product__size">1</span>
-        <img src="./nike.png" alt="" class="product__image" />
+        <?php 
+      while ($row = $result->fetch_assoc()) 
+ {
+  echo '<img src="'.$row["img"].'" alt="" class="product__image" />' ;
+    
+ } ; 
+      ?> 
+        
         <ul class="dots">
           <li class="dots__item active"></li>
           <li class="dots__item"></li>

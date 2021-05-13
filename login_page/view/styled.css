@@ -6,8 +6,8 @@ html {
   box-sizing: border-box;
 }
 :root {
-  --primary: #f773af;
-  --secondary: #5416ee;
+  --primary: white ;
+  --secondary: white;
 }
 img {
   display: block;

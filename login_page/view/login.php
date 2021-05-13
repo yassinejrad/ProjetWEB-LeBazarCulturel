@@ -39,8 +39,9 @@ if (
             $_POST['PASSE'],
             'female',
             $_POST['TYPE'] ,
-            " " 
-           
+            " "  ,
+            $_POST['IMG']  ,
+            0
 
         );
         $userC->ajouterUser($user);
@@ -64,7 +65,10 @@ if (
             $_POST['PASSE'] , 
             'male' ,
             $_POST['TYPE'] , 
-            " " 
+            " "  ,
+            $_POST['IMG'],
+            0 
+
 );
         $userC->ajouterUser($user);
 
@@ -212,10 +216,12 @@ if (
                          $  ('.ch').not (this).prop('checked',false) ;   
                        }) ;
                        </script>
-
+                       
+                  
                      
                      </div>
-
+                     <label class="label" style="font-weight: bold"> Photo</label></br>
+                       <input    type="file" name="IMG" accept="image/png, image/jpeg" >
 
                     <input type="submit" class="btn" value="Sign up" />
                     <p class="social-text">Or Sign up with social platforms</p>

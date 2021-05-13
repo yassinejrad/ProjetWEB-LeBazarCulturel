@@ -1,7 +1,7 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "databasephp") ;
-
-$id=22 ; 
+session_start();
+$id=$_SESSION['auth'] ; 
 $sql = "select * from produit p, user u ,favoris f where p.id=f.id_produit and f.id_user='$id' and f.id_user=u.id ";
 $result = $conn->query($sql) or die($conn->error);
 $sqlt = "select * from produit p, user u ,favoris f where p.id=f.id_produit and f.id_user='$id' and f.id_user=u.id ";
@@ -13,11 +13,20 @@ while ($rowz= $resultz->fetch_assoc())
          $d= $rowz["id"];
         $sqld = "delete from favoris where id='$d'  ";
         $resultd = $conn->query($sqld) or die($conn->error); 
-        }
+      header('location:favoris.php') ;   
+    }
+$f=$rowz['id_produit'] ;
+    
+ if (isset($_POST[$rowz['id']])) {
+    header('location:details.php?id='.$f.'') ;  
+
+ }
+
    
 $e++; 
    
  }
+
  
   
  
@@ -49,13 +58,7 @@ $e++;
 </head>
 <body>
 </html>
-    <div class="search">
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Typing something..."
-        />
-    </div>
+
     
     <div class="compare-basket">
         <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">Compare</span></button>
@@ -79,7 +82,7 @@ $e++;
      $n=0 ; 
             while ($row = $result->fetch_assoc()) 
             {
-         
+      
                 echo '
                 
                 <li class="item-a">  <!--SLIDER BOX-->
@@ -104,7 +107,7 @@ $e++;
             </div>
             <div class="content">
                
-                <button class="btn btn--left">buy it</button>    <button name="'.$n.'" class="btn btn--right">delete</button>
+                <button name="'.$row['id'].'" type="sumbit" class="btn btn--left"href="edit.html" >buy it</button>    <button name="'.$n.'" class="btn btn--right" onclick="location.href="edit.html"">delete</button>
                 
                 
                 
@@ -118,6 +121,7 @@ $e++;
             ';
          
        $n++ ; 
+     
         }
      
 
@@ -140,7 +144,7 @@ $e++;
  </form>
 
 
-
+<buttono onclick= ></button>
 
 
     <script src="classie.js"></script>
