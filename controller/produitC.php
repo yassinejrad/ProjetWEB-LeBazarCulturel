@@ -13,11 +13,16 @@ include_once '../../model/categorie.php';
 		function  ajouterProduits($produits)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP) 
 			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC)" ;
 =======
 			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE) 
 			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE)" ;
+>>>>>>> Stashed changes
+=======
+			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER) 
+			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER)" ;
 >>>>>>> Stashed changes
 			
 			$db = config::getConnexion();
@@ -33,8 +38,13 @@ include_once '../../model/categorie.php';
 					'IMAGE' => $produits->getIMAGE(),
 					'DESC' => $produits->getDESC(),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 					'CATEGORIE' => $produits->getCAT()
+>>>>>>> Stashed changes
+=======
+					'CATEGORIE' => $produits->getCAT(),
+					'USER' => $produits->getUSER()
 >>>>>>> Stashed changes
 				]);			
 			}
@@ -86,7 +96,12 @@ include_once '../../model/categorie.php';
 						DESCP = :DESC
 =======
 						DESCP = :DESC,
+<<<<<<< Updated upstream
 						CATEGORIE = :CATEGORIE
+>>>>>>> Stashed changes
+=======
+						CATEGORIE = :CATEGORIE,
+						USER = :USER
 >>>>>>> Stashed changes
 						
 
@@ -102,6 +117,10 @@ include_once '../../model/categorie.php';
 <<<<<<< Updated upstream
 =======
 					'CATEGORIE' => $produits->getCAT(),
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+					'USER' => $produits->getUSER(),
 >>>>>>> Stashed changes
 					'REFERENCE' => $REFERENCE
 				]);
@@ -134,9 +153,15 @@ include_once '../../model/categorie.php';
 			}
 		}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		/*function recupererAlbum($idAlbum)
         {
 			$sql="SELECT * from album where idAlbum=$idAlbum";
+=======
+		function recupererproduits($reference)
+        {
+			$sql="SELECT * from produits where REFERENCE=$reference";
+>>>>>>> Stashed changes
 =======
 		function recupererproduits($reference)
         {
@@ -162,7 +187,11 @@ include_once '../../model/categorie.php';
 			$sql="SELECT * FROM album where titre='$titre'";
 =======
 		public function chercher($str) {
+<<<<<<< Updated upstream
 			$sql="SELECT * FROM produits where NOM ='$str'" ;
+>>>>>>> Stashed changes
+=======
+			$sql="SELECT * FROM produits where NOM ='$str'"  ;
 >>>>>>> Stashed changes
 			$db=Config::getConnexion();
 			try{

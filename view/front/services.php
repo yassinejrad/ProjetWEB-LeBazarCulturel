@@ -23,7 +23,7 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link href="dark.css" rel="stylesheet">
     <title>le bazar culturel</title>
     <link rel="shortcut icon" href="images/logo.png">
 
@@ -33,8 +33,12 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
   
+=======
+   
+>>>>>>> Stashed changes
   </head>
   
   <body>
@@ -247,6 +251,7 @@
           </div>
 =======
   <!-- Footer -->
+  <script src="black.js"></script>
     <?php include_once 'footer.php'; ?>
 >>>>>>> Stashed changes
 

@@ -9,7 +9,10 @@ include_once '../../model/categorie.php';
 <!DOCTYPE html>
 <html lang="en">
 <header>
+
+        
 <nav class="navbar-expand-lg navbar-light badge-light fixed-top">
+
         <div class="login">
 
             <a style="color:black;" href="#"> <i class="fa fa-sign-in" aria-hidden="true"></i> s'inscrire</a>
@@ -20,10 +23,21 @@ include_once '../../model/categorie.php';
             <a href="#"><img class="logo" src="images/logo.png">
                 <a class="nav-link" href="index.php">Le bazar culturel</a>
         </div>
+
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
         <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="col-md-1">     
+<input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <div class="ball"></div>
+                </label>
+    
+        </div>
             <ul class="navbar-nav ml-auto">
          
                 <li class="nav-item">
@@ -89,6 +103,8 @@ include_once '../../model/categorie.php';
             </ul>
         </div>
         </div>
+       
     </nav>
+    
     </header>
     </html>

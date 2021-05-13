@@ -20,18 +20,21 @@ $liste2=$inf2->afficherCategories();
 
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>le bazar culturel</title>
     <link rel="shortcut icon" href="images/logo.png">
-
+    <link href="dark.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
     <style>
     .card-text a :hover {
@@ -119,6 +122,12 @@ font: size 21px;
                 <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item active">Products</li>
+<<<<<<< Updated upstream
+=======
+            <li class="breadcrumb-item">
+                <a href="AjoutP2.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+            </li>
+>>>>>>> Stashed changes
         </ol>
        
         <div class="row">
@@ -130,6 +139,7 @@ font: size 21px;
      while($art2=mysqli_fetch_assoc($result))
       {
     ?>
+<<<<<<< Updated upstream
             <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div class="card h-100">
                     <a href="#">
@@ -150,9 +160,48 @@ font: size 21px;
                         <a href="readmore.php?REFERENCE=<?PHP echo $art2['REFERENCE']; ?>" id="REFERENCE" name="REFERENCE" class="btn btn-primary">Suite &rarr;</a> 
              </p>
                     
+=======
+           
+      <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img  class="card-img rounded-0 img-fluid"  src="<?php  echo $art2['IMAGE']?>" style="width: 400px; height: 400px;" >
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-outline-success text-white" href=""><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-outline-success text-white mt-2"href="readmore.php?REFERENCE=<?PHP echo $art2['REFERENCE']; ?>"id="REFERENCE" name="REFERENCE"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-outline-success text-white mt-2" href=""><i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a style="color:red;" href="" class="h3 text-decoration-none"><?php echo $art2['NOM'] ?></a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li><?PHP echo substr($art2['DESCP'], 0, 36).'...'; ?></li>
+                                    
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0"><?php echo $art2['PRIX'] ?>dt</p>
+                            </div>
+                        </div>
+>>>>>>> Stashed changes
                     </div>
-                </div>
-      </div>
+
+
+
+
+
+
+
+
             <?php
     }
     ?>
@@ -187,6 +236,10 @@ font: size 21px;
     
         </div>
         </div>
+<<<<<<< Updated upstream
+=======
+        <script src="black.js"></script>
+>>>>>>> Stashed changes
     <?php include_once 'footer.php'; ?>
 
 </body>

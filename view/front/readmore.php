@@ -25,6 +25,20 @@ $liste2=$inf2->afficherCategories();
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<<<<<<< Updated upstream
+=======
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+>>>>>>> Stashed changes
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -127,6 +141,7 @@ color:rgb(0,0, 0);
       <li class="breadcrumb-item">
     <a href="categorie2.php">Categorie</a>
       </li>
+<<<<<<< Updated upstream
     <li class="breadcrumb-item active">Blog n°<?PHP echo $produit['REFERENCE']; ?></li>
     </ol>
     <div class="row">
@@ -142,6 +157,76 @@ color:rgb(0,0, 0);
 <p class="lead"><?PHP echo $produit['DESCP']; ?></p>
 <p class="Buy-button"> <button type="button"  class="btn btn-outline-dark btn-lg">BUY</button></p>
       </div>
+=======
+    <li class="breadcrumb-item active">Product n°<?PHP echo $produit['REFERENCE']; ?></li>
+    </ol>
+    <div class="row">
+    <tr></tr>
+    <div class="col-lg-5 mt-5">
+                    <div class="card mb-3">
+                        <img class="card-img img-fluid" src="<?php  echo $produit['IMAGE']?>" alt="Card image cap" id="product-detail">
+                    </div>
+                </div>
+  
+      <div class="col-lg-7 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="h2"><strong><?PHP echo $produit['NOM']; ?></strong></h1>
+                            <p class="h3 py-2"><?PHP echo $produit['PRIX']; ?>DT</p>
+                            <p class="py-2">
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-secondary"></i>
+                                <i class="fa fa-star text-secondary"></i>
+                                
+                            </p>
+                           
+
+                            <h6>Description:</h6>
+                            <p><?PHP echo $produit['DESCP']; ?></p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <h6>Avaliable Quantity :</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted"><strong><?PHP echo $produit['QTE']?></strong></p>
+                                </li>
+                            </ul>
+                            <form action="" method="GET">
+                                <input type="hidden" name="product-title" value="<?PHP echo $produit['NOM']; ?>">
+                            <div class="col-auto">
+                                        <ul class="list-inline pb-3">
+                                            <li class="list-inline-item text-right">
+                                                Quantity
+                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                            </li>
+                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                        </ul>
+                            <div class="row pb-3">
+                                    <div class="col d-grid">
+                                        <button type="submit" class="btn btn-outline-success btn-lg" name="submit" value="buy">Buy</button>
+                                    </div>
+                                    <div class="col d-grid">
+                                        <button type="submit" class="btn btn-outline-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                    </div>
+                                </div>
+                                </div>
+                             </form>
+                           
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+>>>>>>> Stashed changes
       
             <?php
     }
@@ -178,7 +263,50 @@ color:rgb(0,0, 0);
         </ul>
         </div>
     <?php include_once 'footer.php'; ?>
+<<<<<<< Updated upstream
 
+=======
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <!-- Start Slider Script -->
+    <script src="assets/js/slick.min.js"></script>
+    <script>
+        $('#carousel-related-product').slick({
+            infinite: true,
+            arrows: false,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            dots: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
+        });
+    </script>
+>>>>>>> Stashed changes
 </body>
 
 </html>

@@ -14,9 +14,13 @@
 		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC )
 =======
 		private ?string $CATEGORIE = null;
-		
+		private ?string $user = null;
 			
+<<<<<<< Updated upstream
 		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE )
+>>>>>>> Stashed changes
+=======
+		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE ,string $USER)
 >>>>>>> Stashed changes
         {
 			$this->NOM=$NOM;
@@ -28,6 +32,10 @@
 <<<<<<< Updated upstream
 =======
 			$this->CATEGORIE=$CATEGORIE;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+			$this->USER=$USER;
 >>>>>>> Stashed changes
 		}
 		
@@ -56,6 +64,12 @@
 =======
 		function getCAT(): string{
 			return $this->CATEGORIE;
+		}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+		function getUSER(): string{
+			return $this->USER;
 		}
 >>>>>>> Stashed changes
 
@@ -90,7 +104,14 @@
 		{
 			 $this->CATEGORIE=$CATEGORIE;
 		}
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 		
+=======
+		function setUSER(string $USER): void
+		{
+			 $this->CATEGORIE=$USER;
+		}
+>>>>>>> Stashed changes
     }
 ?>

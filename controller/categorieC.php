@@ -2,7 +2,11 @@
 	include_once "../../config.php";
 	include_once '../../model/categorie.php';
 	include_once '../../model/produit.php';
+<<<<<<< Updated upstream
 
+=======
+	include_once  '../../controller/produitC.php';
+>>>>>>> Stashed changes
 	class categorieC {
 		
 		function  ajouterCategories($categorie)
@@ -96,21 +100,36 @@
 				$e->getMessage();
 			}
 		}
-		/*function recupererAlbum($idAlbum)
+		function recupererCategorie()
         {
-			$sql="SELECT * from album where idAlbum=$idAlbum";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
-
-				$album=$query->fetch();
-				return $album;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}*/
+			include_once '../../model/produit.php';
+	include_once  '../../controller/produitC.php';
+			$sql='SELECT * FROM categories';
+			
+			$db=Config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+		}
+		function recupereruser()
+        {
+			include_once '../../model/produit.php';
+	include_once  '../../controller/produitC.php';
+			$sql='SELECT * FROM user';
+			
+			$db=Config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+		}
 
 		
 	

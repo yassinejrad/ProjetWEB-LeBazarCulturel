@@ -35,7 +35,22 @@ include_once '../../model/categorie.php';
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="dark.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+
+
+    <style>
+   
+
+
+
+
+    
+    
+    </style>
 </head>
 
 <body>
@@ -176,6 +191,9 @@ include_once '../../model/categorie.php';
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
+     
+        <script src="black.js"></script>
     </header>
 
     <!-- Page Content -->
@@ -416,9 +434,13 @@ include_once '../../model/categorie.php';
 =======
             </div>
      </div>
-
+    
      <?php include_once 'footer.php'; ?>
+<<<<<<< Updated upstream
         
+>>>>>>> Stashed changes
+=======
+     <script src="black.js"></script>
 >>>>>>> Stashed changes
 </body>
 
