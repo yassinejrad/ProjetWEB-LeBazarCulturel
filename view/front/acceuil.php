@@ -2,7 +2,11 @@
 include_once '../../controller/categorieC.php';
 include_once '../../model/categorie.php';
 $n=0;
+<<<<<<< HEAD
 $conn=mysqli_connect("localhost","root","","bazarculturelle");
+=======
+$conn=mysqli_connect("localhost","dhia72","191JMT1252","bazarculturelle");
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 $sql="SELECT * FROM produits  ORDER BY QTE DESC ";
 $result = $conn->query($sql) or die($conn->error);
   $inf1= new categorieC();
@@ -167,7 +171,12 @@ $result = $conn->query($sql) or die($conn->error);
                 <div class="carousel-item" style="background-image: url('images/banner3.jpg')">
                     <div class="banner-wrap">
                         <div class="banner_center">
+<<<<<<< HEAD
                         <h1>BIENVENUE DANS NOTRE MONDE CHOISISSEZ VOTRE PRODUIT.</h1>
+=======
+                            <h1>Second Slide</h1>
+                            <h2>This is a description for the second slide.</h2>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                         </div>
                     </div>
                 </div>
@@ -175,7 +184,12 @@ $result = $conn->query($sql) or die($conn->error);
                 <div class="carousel-item" style="background-image: url('images/banner2.jpg')">
                     <div class="banner-wrap">
                         <div class="banner_center">
+<<<<<<< HEAD
                         <h1>QUALITÉ EST NOTRE PREMIER PRIORITÉ</h1>
+=======
+                            <h1>Third Slide</h1>
+                            <h2>This is a description for the third slide.</h2>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                         </div>
                     </div>
                 </div>

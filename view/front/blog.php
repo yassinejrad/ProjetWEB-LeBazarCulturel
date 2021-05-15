@@ -4,7 +4,10 @@
 
 	$articleC = new articleC();
 	$listearticle = $articleC->afficherarticles();
+<<<<<<< HEAD
   $listearticle = $articleC->triarticleD();
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +29,11 @@
     <script src="js/alertArticle.js"></script>
 </head>
 
+<<<<<<< HEAD
 <body  >
+=======
+<body>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 <!-- Navigation -->
     <?php include_once 'header.php'; ?>
 <!-- Page Content -->
@@ -52,6 +59,7 @@
           <img class="card-img-top" src="../<?php echo $article["image"]; ?>"  alt="image">
           <div class="card-body">
             <h2 class="card-title"><?PHP echo $article['titre']; ?></h2>
+<<<<<<< HEAD
             <p class="card-text"><?PHP echo substr($article['description'], 0, 36).'...'; ?></p> 
            <a href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Suite &rarr;</a>          
           </div>
@@ -74,19 +82,38 @@
            </div>
            </div>
            </div> 
+=======
+            <p class="card-text"><?PHP echo $article['description']; ?></p> 
+            <a href="#" class="btn btn-primary">Suite &rarr;</a>
+<!--modifier et supprimer -->
+              <a href="modifierarticle.php?id=<?PHP echo $article['idA']; ?>" class="btn btn-primary">Modifier un article </a> 
+              <a href="supprimerarticle.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Supprimer un article </a>
+          </div>
+          <div class="card-footer text-muted">
+          Publier le <?PHP echo $article['dateA']; ?>
+          par <?PHP echo $article['nomAuteur']; ?>
+          </div>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         </div> 
 			<?PHP
 				}
 			?>
 <!-- ajouter-->
         <a href="addarticle.php" class="btn btn-primary">Ajouter un article </a>
+<<<<<<< HEAD
         
         
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
       </div>
 <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
 <!-- recherche-->
+<<<<<<< HEAD
 <div class="card mb-4">
+=======
+        <div class="card mb-4">
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
           <h5 class="card-header">Recherche</h5>
           <div class="card-body">
               <form  action="chercherarticle.php" method="POST" >
@@ -109,6 +136,7 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
   <style>
 .btnPopup{
@@ -158,6 +186,8 @@ function closeModal() {
 overlay.style.display='none';
 }
 </script>
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         <?php include_once 'footer.php'; ?>
 </body>
 </html>

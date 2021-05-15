@@ -4,17 +4,28 @@ include_once '../../model/article.php';
 $error = "";
 
     // create article
+<<<<<<< HEAD
  // $article = null;
+=======
+    $article = null;
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 
     // create an instance of the controller
     $articleC = new articleC();
     
         if(isset($_POST['titre']) ) { //S'il y a eu une recherche en crée le tableau avec le résultat
+<<<<<<< HEAD
         
             $listearticle=$articleC->chercher($_POST['titre']);
 
     ?>
     
+=======
+            $titre=$_POST['titre'];
+            $listearticle=$articleC->chercher($titre);
+
+    ?>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +45,11 @@ $error = "";
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
 </head>
+<<<<<<< HEAD
     <body >
+=======
+    <body>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         <!-- Navigation -->
     <?php include_once 'header.php'; ?>
   <!-- Page Content -->
@@ -72,7 +87,10 @@ $error = "";
           <div class="card-footer text-muted">
           Publier le <?PHP echo $article['dateA']; ?>
           par <?PHP echo $article['nomAuteur']; ?>
+<<<<<<< HEAD
           
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
           </div>
          
         </div>
@@ -85,6 +103,10 @@ $error = "";
         
     ?>
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     <?php include_once 'footer.php'; ?>
     </body>
 </html>

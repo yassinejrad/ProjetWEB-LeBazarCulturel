@@ -3,14 +3,20 @@ include_once '../../controller/produitC.php';
 include_once '../../model/produit.php';
 include_once '../../controller/categorieC.php';
 include_once '../../model/categorie.php';
+<<<<<<< HEAD
 include '../../controller/promoC.php';
 $cat=$_GET['CODE'];
 $conn=mysqli_connect("localhost","root","","bazarculturelle");
+=======
+$cat=$_GET['CODE'];
+$conn=mysqli_connect("localhost","dhia72","191JMT1252","bazarculturelle");
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 $sql="SELECT * FROM produits where CATEGORIE=".$cat." ";
 $result=mysqli_query($conn,$sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error($conn), E_USER_ERROR); 
 $artnum=mysqli_num_rows($result);
 $inf2= new categorieC();
 $liste2=$inf2->afficherCategories();
+<<<<<<< HEAD
 
 $promotionC = new promotionC();
 
@@ -18,6 +24,11 @@ $promotionC = new promotionC();
 
 
 
+=======
+?>
+
+
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 <!DOCTYPE html>
 <html lang="en">
 
@@ -169,6 +180,7 @@ font: size 21px;
                                         <i class="text-muted fa fa-star"></i>
                                     </li>
                                 </ul>
+<<<<<<< HEAD
                                 
                                 <p class="text-center mb-0" style="color:#FF0000";>
                         <strong>
@@ -184,6 +196,8 @@ font: size 21px;
      
      </strong>
      </p> 
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                                 <p class="text-center mb-0"><?php echo $art2['PRIX'] ?>dt</p>
                             </div>
                         </div>

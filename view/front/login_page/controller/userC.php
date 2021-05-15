@@ -12,8 +12,13 @@ include_once '../../../../config.php';
 
         function  AUTH($EMAIL ,$PASSE) {
          $host="localhost" ; 
+<<<<<<< HEAD
          $user="root" ; 
          $pass=""  ; 
+=======
+         $user="dhia72" ; 
+         $pass="191JMT1252"  ; 
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
          $db="bazarculturelle" ; 
          $conn=mysqli_connect($host,$user,$pass,$db) ; 
          $query="SELECT * FROM USER WHERE EMAIL='$EMAIL ' AND PASSE='$PASSE' " ; 

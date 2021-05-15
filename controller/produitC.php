@@ -7,8 +7,13 @@ include_once '../../model/categorie.php';
 		
 		function  ajouterProduits($produits)
         {
+<<<<<<< HEAD
 			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER,STATUE) 
 			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER,:STATUE)" ;
+=======
+			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER) 
+			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER)" ;
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 			
 			$db = config::getConnexion();
 			try{
@@ -23,8 +28,12 @@ include_once '../../model/categorie.php';
 					'IMAGE' => $produits->getIMAGE(),
 					'DESC' => $produits->getDESC(),
 					'CATEGORIE' => $produits->getCAT(),
+<<<<<<< HEAD
 					'USER' => $produits->getUSER(),
 					'STATUE' => $produits->getSTATUE()
+=======
+					'USER' => $produits->getUSER()
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 				]);			
 			}
 			catch (Exception $e){
@@ -69,8 +78,12 @@ include_once '../../model/categorie.php';
 						IMAGE = :IMAGE,
 						DESCP = :DESC,
 						CATEGORIE = :CATEGORIE,
+<<<<<<< HEAD
 						USER = :USER,
 						STATUE=:STATUE
+=======
+						USER = :USER
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 						
 
 					WHERE REFERENCE = :REFERENCE'
@@ -84,7 +97,10 @@ include_once '../../model/categorie.php';
 					'DESC' => $produits->getDESC(),
 					'CATEGORIE' => $produits->getCAT(),
 					'USER' => $produits->getUSER(),
+<<<<<<< HEAD
 					'STATUE' => $produits->getSTATUE(),
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 					'REFERENCE' => $REFERENCE
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";

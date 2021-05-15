@@ -10,9 +10,14 @@
 		private ?string $DESC = null;
 		private ?string $CATEGORIE = null;
 		private ?string $user = null;
+<<<<<<< HEAD
 		private ?int $STATUE = null;	
 
 		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE ,string $USER,int $STATUE)
+=======
+			
+		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE ,string $USER)
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         {
 			$this->NOM=$NOM;
 			$this->PRIX=$PRIX;
@@ -22,7 +27,10 @@
 			$this->DESC=$DESC;
 			$this->CATEGORIE=$CATEGORIE;
 			$this->USER=$USER;
+<<<<<<< HEAD
 			$this->STATUE=$STATUE;
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 		}
 		
 		function getref(): int{
@@ -52,9 +60,13 @@
 		function getUSER(): string{
 			return $this->USER;
 		}
+<<<<<<< HEAD
 		function getSTATUE(): int{
 			return $this->STATUE;
 		}
+=======
+
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 
 		function setNOM(string $NOM): void
         {
@@ -88,9 +100,12 @@
 		{
 			 $this->CATEGORIE=$USER;
 		}
+<<<<<<< HEAD
 		function setSTATUE(int $STATUE): void
 		{
 			 $this->STATUE=$STATUE;
 		}
+=======
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     }
 ?>

@@ -3,8 +3,15 @@
     include_once '../../Controller/articleC.php';
 
     $error = "";
+<<<<<<< HEAD
     // create article
     $article = null;
+=======
+
+    // create article
+    $article = null;
+
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     // create an instance of the controller
     $articleC = new articleC();
     if (
@@ -33,7 +40,14 @@
         }
         else
             $error = "Missing information";
+<<<<<<< HEAD
     }   
+=======
+    }
+    
+
+    
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +64,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<<<<<<< HEAD
          
     <!-- Custom styles for this template -->
     
@@ -71,6 +86,16 @@
 
 
     
+=======
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
+    <script src="js/alertArticle.js"></script>
+
+    
+</head>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     <body>
     <?php include_once 'header.php'; ?>
     <div class="container">
@@ -100,7 +125,11 @@
             <?php echo $error; ?>
         </div>
         
+<<<<<<< HEAD
         <form action="" method="POST"  >
+=======
+        <form action="" method="POST">
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
             <table align="center">
             <tr>  
                <td>
@@ -116,14 +145,22 @@
                         <label for="titre">titre:
                         </label>
                     </td>
+<<<<<<< HEAD
                     <td><input type="text" name="titre" id="titre" maxlength="50" required /></td>
+=======
+                    <td><input type="text" name="titre" id="titre" maxlength="50"></td>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                 </tr>
                 <tr>
                     <td>
                         <label for="nomAuteur">Nom Auteur:
                         </label>
                     </td>
+<<<<<<< HEAD
                     <td><input type="text" name="nomAuteur" id="nomAuteur" maxlength="50" required /></td>
+=======
+                    <td><input type="text" name="nomAuteur" id="nomAuteur" maxlength="120"></td>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                 </tr>
                 
                 <tr>
@@ -132,7 +169,11 @@
                         </label>
                     </td>
                     <td>
+<<<<<<< HEAD
                         <input type="text" name="description" id="description" maxlength="500" required /></>
+=======
+                        <input type="text" name="description" id="description" maxlength="500"></>
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     </td>
                 </tr>
                 <tr>
@@ -142,10 +183,14 @@
                         </label>
                     </td>
                     <td>
+<<<<<<< HEAD
                         <input type="date_local" name="dateA" id="dateA" required />
                         <script>
                             $('#dateA').val(new Date().toJSON().slice(0,10));
                                     </script>
+=======
+                        <input type="date" name="dateA" id="dateA" >
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     </td>
                 </tr>
                 <tr>
@@ -159,8 +204,13 @@
                         <input type="file" name="image" id="image" required />
                         </p>
                        <p class="submitter two-thirds columns"> 
+<<<<<<< HEAD
                        <input type="submit" value="Ajouter" onclick="testAlertDialog()" required > 
                       
+=======
+                       <input type="submit" value="Ajouter" > 
+                       
+>>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                         </form>
                     </td>
                      
