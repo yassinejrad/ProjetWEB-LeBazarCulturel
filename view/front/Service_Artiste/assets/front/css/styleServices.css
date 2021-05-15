@@ -1,0 +1,120 @@
+.zone
+{
+    padding: 1.6em;
+}
+label
+{
+    display: block;
+    width: 100px;
+    float: left;
+}
+.formulaire
+{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding-top: 1em;
+
+}
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px 6em;
+}
+
+.box :first-child {
+    align-self: center;
+}
+.box1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 100px 2em;
+}
+
+.box1 :first-child {
+    align-self: left;
+}
+.boxrow{
+	display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 14px 0.5em;
+
+}
+.mastosection
+{
+	padding: 4em;
+}
+.box2
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px 2em;
+}
+.list{
+ border-width:1px;
+ border-style:solid;
+ border-color:black;
+
+}
+.mod
+{
+  padding: 0.25em;
+}
+.grpbtn
+{
+  vertical-align: middle;
+}
+.box3
+{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.5em 2em;
+}
+.corps 
+{
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  align-items: center;
+}
+
+.enfant 
+{
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5em;
+}
+.bouton
+{
+  display: grid;
+  grid-template-columns: 25% 75%;
+
+}
+.checkbox
+{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+}
+.checkbox-1{
+  padding: 1em;
+  vertical-align: middle;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: left;
+}
+.centrer
+{
+  padding-top: 1em;
+}
+.recherche{
+  display: grid;
+  grid-template-columns: auto auto;
+} 
+.tronc
+{
+  background-color: rgba(44, 182, 159, 0.5);
+}
+.Modifform
+{
+  padding: 1em;
+}

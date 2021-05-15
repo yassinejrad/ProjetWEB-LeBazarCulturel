@@ -4,7 +4,7 @@ include_once '../../model/categorie.php';
 include_once '../../controller/produitC.php';
 include_once '../../model/produit.php';
  $n=0;
-$conn=mysqli_connect("localhost","dhia72","191JMT1252","bazarculturelle");
+$conn=mysqli_connect("localhost","root","","bazarculturelle");
 $sql="SELECT * FROM produits  ORDER BY QTE DESC ";
 $result = $conn->query($sql) or die($conn->error);
 
