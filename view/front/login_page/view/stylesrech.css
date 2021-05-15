@@ -1,0 +1,60 @@
+
+.search {
+
+  max-width: 0rem;
+  margin: 0rem auto;
+  position: relative;
+  background-color: blue ; 
+}
+.search-input {
+  width: 100%;
+  display: block;
+  padding: 1.5rem;
+  font-family: "Poppins";
+  color: pink;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  outline: none;
+ 
+  transition: 0.2s ease;
+  background-color: blue ; 
+}
+.search-input:focus {
+  border-color: #ff695b;
+  box-shadow: 0 0 0 2px #ffe0dd;
+  background-color: blue ; 
+}
+.search-input:focus + .search-list {
+  opacity: 1;
+  visibility: visible;
+  background-color: blue ; 
+}
+.search-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 0 10px -2px pink;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease;
+  background-color: blue ; 
+}
+.search-item {
+  padding: 2rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: inherit;
+  transition: 0.2s ease;
+  background-color: blue ; 
+}
+.search-item:hover {
+  color: #ff695b;
+  background-color: #ffe0dd;
+  background-color: blue ; 
+}
+
+
