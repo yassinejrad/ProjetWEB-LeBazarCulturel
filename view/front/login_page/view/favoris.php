@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 $conn = new mysqli("localhost","root","","bazarculturelle") ;
-=======
-$conn = new mysqli("localhost", "dhia72", "191JMT1252", "bazarculturelle") ;
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 session_start();
 $id=$_SESSION['auth'] ; 
 $sql = "select * from produits p, user u ,favoris f where p.REFERENCE=f.id_produit and f.id_user='$id' and f.id_user=u.id ";

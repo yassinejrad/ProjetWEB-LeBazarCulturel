@@ -1,22 +1,21 @@
+
 <?php 
 include_once '../../controller/categorieC.php';
 include_once '../../model/categorie.php';
 include_once '../../controller/produitC.php';
 include_once '../../model/produit.php';
+include "../../controller/articleC.php";
  $n=0;
-<<<<<<< HEAD
 $conn=mysqli_connect("localhost","root","","bazarculturelle");
-=======
-$conn=mysqli_connect("localhost","dhia72","191JMT1252","bazarculturelle");
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 $sql="SELECT * FROM produits  ORDER BY QTE DESC ";
 $result = $conn->query($sql) or die($conn->error);
 
-
-  
   $inf1= new categorieC();
   $liste=$inf1->afficherCategories();
- 
+  //articles 
+  $articleC = new articleC();
+  $listearticle = $articleC->afficherarticles();
+ $listearticle = $articleC->triarticleD();
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,7 @@ $result = $conn->query($sql) or die($conn->error);
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/LineIcons.css">
+    
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -55,114 +54,35 @@ $result = $conn->query($sql) or die($conn->error);
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
 
-    <style>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+ <link rel="stylesheet" href="assets/css/templatemo.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link href="css/style.css" rel="stylesheet">
+<link href="dark.css" rel="stylesheet">
+<link href="card.css" rel="stylesheet">
+
+
+
+    
    
-   .BC {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    color: #2196f3;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-size: 24px;
-    overflow: hidden;
-    transition: 0.2s;
-}
-
-
-
-.BC:hover {
-    color: #255784;
-    background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: 1s;
-}
-
-
-.BC span {
-    position: absolute;
-    display: block;
-}
-
-
-
-
-.BC span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #2196f3);
-}
-
-
-.BC:hover span:nth-child(1) {
-    left: 100%;
-    transition: 1s;
-}
-
-
-.BC span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #2196f3);
-}
-
-.BC:hover span:nth-child(3) {
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-}
-
-
-
-.BC  span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #2196f3);
-}
-
-.BC :hover span:nth-child(2) {
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-}
-
-
-
-.BC span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #2196f3);
-}
-
-.BC:hover span:nth-child(4) {
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-}
-
-
-
-
+  
+    
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:300,400,800'>
     
 
 
 
-    
-    
+<link rel='stylesheet' href='https://cdn.linearicons.com/free/1.0.0/icon-font.min.css'>
+
+
+    <style>
     </style>
 </head>
 
 <body>
-
+<section class="sticky">
     <!-- Navigation -->
     <?php
         foreach($liste as $a) {
@@ -189,12 +109,8 @@ $result = $conn->query($sql) or die($conn->error);
                 <div class="carousel-item" style="background-image: url('images/banner3.jpg')">
                     <div class="banner-wrap">
                         <div class="banner_center">
-<<<<<<< HEAD
-                        <h1>BIENVENUE DANS NOTRE MONDE CHOISISSEZ VOTRE PRODUIT.</h1>
-=======
                             <h1>Second Slide</h1>
                             <h2>This is a description for the second slide.</h2>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                         </div>
                     </div>
                 </div>
@@ -202,12 +118,8 @@ $result = $conn->query($sql) or die($conn->error);
                 <div class="carousel-item" style="background-image: url('images/banner2.jpg')">
                     <div class="banner-wrap">
                         <div class="banner_center">
-<<<<<<< HEAD
-                        <h1>QUALITÉ EST NOTRE PREMIER PRIORITÉ</h1>
-=======
                             <h1>Third Slide</h1>
                             <h2>This is a description for the third slide.</h2>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                         </div>
                     </div>
                 </div>
@@ -229,104 +141,279 @@ $result = $conn->query($sql) or die($conn->error);
     <!-- Page Content -->
     <div class="container">
 
-        <h1 class="my-4">Artistes</h1>
-
-        <!-- artistes -->
-        <div class="row">
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">artistes 1</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary" href="Tous les artistes.php">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">artiste 2</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint
-                            fuga.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary" href="Tous les artistes.php">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">artiste 3</h4>
-                    <div class="card-body">
-                        <p class="card-text">..</p>
-                    </div>
-                    <div class="card-footer">
-                        <a class="btn btn-primary" href="Tous les artistes.php">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
 
         <!-- vente -->
+        
         <h2>Nos sélections</h2>
        
         <div class="row">
         <?php
         $n=0;
        while($row = $result->fetch_assoc() ) {
-           if($n<6) {
-       echo' <div class="col-md-4">
-       <div class="card mb-3 product-wap rounded-0">
-           <div class="card rounded-0">
-               <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-               <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                   <ul class="list-unstyled">
-                   <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                   
+        if($n<=6 && $n==0) {
+            echo '
+            
+            <div class="col-md-4">
+            <div class="container-fluid contenedor text-center">
+            
+            <div class=" container text-center"data-aos="fade-left" >
+               <div class="col-lg-10 col-md-8 col-sm-7 col-xs-13 container_foto ">
+               <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center"data-aos="fade-right">
+              
+           
+               <a style="display: block;
+               text-align: center;"class="ver_mas text-center text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+               <i class="far fa-eye"></i></a>
+               <a style="display: block;
+               text-align: center;" class="ver_mas text-center text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <i class="far fa-heart"></i></a>
+              
+           </div>
+                 
+                  
+     
+                  <article class="text-left">
+                     <h2>'.$row['NOM'].'</h2>
+                     <h4>'.$row['DESCP'].'</h4>
+                  </article>
+                  <img src="'.$row['IMAGE'].'" style="width: 300px; height: 400px;" alt="">
+               </div>
+             
+               </div>
+            </div>
+         </div>';
+         }
+         
+             if($n<=6 && $n==1) {
+                echo '
+                <div class="col-md-4">
+                <div class="container-fluid contenedor text-center">
+                
+                <div class=" container text-center">
+                   <div class="col-lg-10 col-md-8 col-sm-7 col-xs-13 container_foto ">
+                   <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                  
+               
                    <a style="display: block;
-                   text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                   <span></span>
-                   <span></span>
-                   <span></span>
-                   <span></span>
+                   text-align: center;"class="ver_mas text-center text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
                    <i class="far fa-eye"></i></a>
                    <a style="display: block;
-                   text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                   text-align: center;" class="ver_mas text-center text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
                    <span></span>
                    <span></span>
                    <span></span>
                    <span></span>
-                   
                    <i class="far fa-heart"></i></a>
-                   </ul>
+                  
                </div>
-           </div>
-           <div class="card-body">
-               <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+                     
+                      
+         
+                      <article class="text-left">
+                         <h2>'.$row['NOM'].'</h2>
+                         <h4>'.$row['DESCP'].'</h4>
+                      </article>
+                      <img src="'.$row['IMAGE'].'" style="width: 300px; height: 400px;" alt="">
+                   </div>
+                 
+                   </div>
+                </div>
+             </div>';
+              }
+     
+     
+         
+         
+             if($n<=6 && $n==2) {
+                echo '
+                <div class="col-md-4">
+                <div class="container-fluid contenedor text-center">
+                
+                <div class=" container text-center">
+                   <div class="col-lg-10 col-md-8 col-sm-7 col-xs-13 container_foto ">
+                   <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                  
                
+                   <a style="display: block;
+                   text-align: center;"class="ver_mas text-center text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                   <i class="far fa-eye"></i></a>
+                   <a style="display: block;
+                   text-align: center;" class="ver_mas text-center text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <i class="far fa-heart"></i></a>
+                  
+               </div>
+                     
+                      
+         
+                      <article class="text-left">
+                         <h2>'.$row['NOM'].'</h2>
+                         <h4>'.$row['DESCP'].'</h4>
+                      </article>
+                      <img src="'.$row['IMAGE'].'" style="width: 300px; height: 400px;" alt="">
+                   </div>
+                 
+                   </div>
+                </div>
+             </div>';
+              }
+              if($n<=6 && $n==3) {
+                echo '
+            <div class="col-md-4">
+            <div class="container-fluid contenedor text-center">
+            
+            <div class=" container text-center">
+               <div class="col-lg-10 col-md-8 col-sm-7 col-xs-13 container_foto ">
+               <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
               
+           
+               <a style="display: block;
+               text-align: center;"class="ver_mas text-center text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+               <i class="far fa-eye"></i></a>
+               <a style="display: block;
+               text-align: center;" class="ver_mas text-center text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <i class="far fa-heart"></i></a>
               
            </div>
-       </div>
-       </div>
-
-
-       ';
-
-    
-    }
+                 
+                  
+     
+                  <article class="text-left">
+                     <h2>'.$row['NOM'].'</h2>
+                     <h4>'.$row['DESCP'].'</h4>
+                  </article>
+                  <img src="'.$row['IMAGE'].'" style="width: 300px; height: 400px;" alt="">
+               </div>
+             
+               </div>
+            </div>
+         </div>';
+              }
+              
+              if($n<=6 && $n==4) {
+                echo '
+                <div class="col-md-4">
+                <div class="container-fluid contenedor text-center">
+                
+                <div class=" container text-center">
+                   <div class="col-lg-10 col-md-8 col-sm-7 col-xs-13 container_foto ">
+                   <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                  
+               
+                   <a style="display: block;
+                   text-align: center;"class="ver_mas text-center text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                   <i class="far fa-eye"></i></a>
+                   <a style="display: block;
+                   text-align: center;" class="ver_mas text-center text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <i class="far fa-heart"></i></a>
+                  
+               </div>
+                     
+                      
+         
+                      <article class="text-left">
+                         <h2>'.$row['NOM'].'</h2>
+                         <h4>'.$row['DESCP'].'</h4>
+                      </article>
+                      <img src="'.$row['IMAGE'].'" style="width: 300px; height: 400px;" alt="">
+                   </div>
+                 
+                   </div>
+                </div>
+             </div>';
+              }
+              if($n<=6 && $n==5) {
+                echo '
+            <div class="col-md-4">
+            <div class="container-fluid contenedor text-center">
+            
+            <div class=" container text-center">
+               <div class="col-lg-10 col-md-8 col-sm-7 col-xs-13 container_foto ">
+               <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+              
+           
+               <a style="display: block;
+               text-align: center;"class="ver_mas text-center text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+               <i class="far fa-eye"></i></a>
+               <a style="display: block;
+               text-align: center;" class="ver_mas text-center text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <i class="far fa-heart"></i></a>
+              
+           </div>
+                 
+                  
+     
+                  <article class="text-left">
+                     <h2>'.$row['NOM'].'</h2>
+                     <h4>'.$row['DESCP'].'</h4>
+                  </article>
+                  <img src="'.$row['IMAGE'].'" style="width: 300px; height: 400px;" alt="">
+               </div>
+             
+               </div>
+            </div>
+         </div>';
+              }
      $n++; 
     }
     ?>
 
-            
+      <!-- articles -->
+<h1 class="my-4">Articles</h1>
+ 
+ <div class="row">
+
+ <?PHP
+                 foreach($listearticle as $article){
+             ?>
+     <div class="col-md-4">
+     <div class="card mb-3 product-wap rounded-0"> 
+     <div class="card rounded-0">  
+     
+        <img  class="card-img rounded-0 img-fluid"  src="../<?php echo $article["image"]; ?>" style="width: 400px; height: 400px;" >
+     
+        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+            <ul class="list-unstyled">
+            <a style="color:white;" href="" class="h3 text-decoration-none"><?PHP echo substr($article['description'], 0, 36).'...'; ?></a>
+            <a style="display: block;
+            text-align: center;"class="BC text-white mt-2"href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA"><span></span>
+            <span></span>
+            <span></span>
+            <span></span><i class="far fa-eye"></i></a>           
+            </ul>
+        </div>
+    </div>
+    <div class="card-body">
+        <a style="color:red;" href="" class="h3 text-decoration-none"><?PHP echo $article['titre']; ?></a>
+    </div>
+ </div>
+ </div>     
+         <?PHP
+                 }
+             ?>
+        
          
         </div>
-  
+        
         <!-- /.row -->
 
         <!-- evenement -->
@@ -353,36 +440,38 @@ $result = $conn->query($sql) or die($conn->error);
 
         <hr>
 
-        <!-- comment ça marche -->
-
+<!-- comment ça marche -->
+<div class="row">
         <div class="services-section" id="services">
             <div class="container">
                 <div class="services-header">
-                    <h3 class="card-title">
-                        <a>Essayez gratuitement l’oeuvre chez vous pendant 14 jours:</a>
-                    </h3>
+                  
+                        <h1 class="partie1"> Essayez gratuitement l’oeuvre chez vous pendant 14 jours:</h1>
+                   
                 </div>
 
-                <div class="col-md-4 services-grid">
-                    <img src="images/img8.png" alt="" />
-                    <h5>Prix négociés</h5>
-                    <p>Le bazar culturel développe des relations durables,de confiance avec ses galeries partenaires. </p>
+                <div class="col-md-4 services-grid">              
+                <h5 style="color:#97daf5d5;" class="fa fa-eur">       Prix négociés:</h5>
+                    <p >Le bazar culturel développe des relations durables,de confiance avec ses galeries partenaires. </p>
 
                 </div>
                 <div class="col-md-4 services-grid">
-                    <img src="images/img9.png" alt="" />
-                    <h5>Paiements sécurisés</h5>
+
+                    <h5 style="color:#97daf5d5;" class="fa fa-unlock-alt" >      Paiements sécurisés:</h5>
                     <p>Vous pouvez régler votre commande entoute sécurité par carte bancaire, Paypal ou virement bancaire.</p>
 
                 </div>
                 <div class="col-md-4 services-grid">
-                    <img src="images/img10.png" alt="" />
-                    <h5>Livraison</h5>
+             
+                    <h5 style="color:#97daf5d5;" class="fa fa-truck" >     Livraison:</h5>
                     <p>le bazar culturel livre les oeuvres dans toute la Tunisie entier via des transporteurs spécialisés. </p>
                     <p> </p>
                 </div>
             </div>
-            </div>
+     </div>
+    </div>
+    </div>
+           </div>
            
      <?php include_once 'footer.php'; ?>
      
@@ -399,6 +488,17 @@ $result = $conn->query($sql) or die($conn->error);
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>   
     <script src="js/main.js"></script>
+    <script src="black.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+
+        offset: 400, // offset (in px) from the original trigger point
+  duration:1000
+    });
+  </script>
+  
+    
 </body>
 
 </html>

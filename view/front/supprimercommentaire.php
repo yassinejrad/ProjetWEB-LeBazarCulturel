@@ -7,7 +7,7 @@
 	{
 		$commentaireC->supprimercommentaire($_GET['id']);
 		
-		header('Location:readmore.php?id='.$_GET['idA'] );
+		header('Location:readmoreA.php?id='.$_GET['idA'] );
 		
 	}
 ?>

@@ -347,6 +347,7 @@
     </form>
 </div>
     </div>
+    <script src="black.js"></script>
         <?php include_once 'footer.php'; ?>
     </body>
 </html>

@@ -1,10 +1,6 @@
 <?php
 session_start();
-<<<<<<< HEAD
 $conn = new mysqli("localhost","root","","bazarculturelle") ;
-=======
-$conn = new mysqli("localhost", "dhia72", "191JMT1252", "bazarculturelle") ;
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 $ID=$_SESSION['auth'] ; 
 $sql = "select * from produits  where user='$ID'";
 $result = $conn->query($sql) or die($conn->error);
@@ -22,12 +18,8 @@ $result = $conn->query($sql) or die($conn->error);
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-<<<<<<< HEAD
     <title>Le bazar culturel</title>
     <link rel="shortcut icon" href="../../images/logo.png">
-=======
-    <title>Button hover effects</title>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     <link rel="stylesheet" href="resetb.css" />
     <link rel="stylesheet" href="styleb.css" />
   </head>
@@ -89,18 +81,13 @@ $result = $conn->query($sql) or die($conn->error);
     
    
                           <div class="dropdown__select">
-<<<<<<< HEAD
         <span class="dropdown__selected">Encore plus</span>
-=======
-        <span class="dropdown__selected">Call to action</span>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         <i class="fa fa-caret-down dropdown__caret"></i>
       </div>
       <ul class="dropdown__list">
 
       <li class="dropdown__item">
         <i class="fa fa-product-hunt" ></i>
-<<<<<<< HEAD
         <a class="dropdown"  href="http://localhost/2A4/blog6/view/front/AjoutP2.php">Ajouter un produit</a>
         </li> 
 
@@ -112,23 +99,11 @@ $result = $conn->query($sql) or die($conn->error);
         <li class="dropdown__item">
         <i class="fa fa-plus-circle dropdown__icon" ></i>
          <a class="dropdown"  href="edit.php">Modifier votre profil</a>
-=======
-         <a class="dropdown"  href="http://localhost/2A4/blog6/view/front/AjoutP2.php">ADD NEW PRODUCT</a>
-         
-        
-        </li> 
-        <li class="dropdown__item">
-        <i class="fa fa-plus-circle dropdown__icon" ></i>
-         <a class="dropdown"  href="edit.php">Edit Profil</a>
-         
-        
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         </li>
 
      
         <li class="dropdown__item">
         <i class="fa fa-user dropdown__icon"></i>
-<<<<<<< HEAD
         <a class="dropdown"  href="favoris.php">Favoris</a>
         </li>
 
@@ -139,19 +114,6 @@ $result = $conn->query($sql) or die($conn->error);
         <li class="dropdown__item">
         <i class="fa fa-circle dropdown__icon"></i>
         <a class="dropdown"  href="goodbye.php">Déconnecter</a>
-=======
-        <a class="dropdown"  href="favoris.php">favoris</a>
-       
-        </li>
-        <li class="dropdown__item">
-        <i class="fa fa-cog dropdown__icon"></i>
-        <a class="dropdown"  href="resh.php">all</a>
-     
-        </li>
-        <li class="dropdown__item">
-        <i class="fa fa-circle dropdown__icon"></i>
-        <a class="dropdown"  href="goodbye.php">log out  </a>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
        
       
         </li>

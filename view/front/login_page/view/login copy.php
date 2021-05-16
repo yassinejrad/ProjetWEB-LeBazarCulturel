@@ -167,11 +167,7 @@ if (
                
                     <div class="input-field">
                         <i class="fas fa-phone"></i>
-<<<<<<< HEAD
                         <input type="number" placeholder="TELEPHONE" name="TEL" id="TEL" />
-=======
-                        <input type="number" placeholder="TEL" name="TEL" id="TEL" />
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     </div>
                    
 
@@ -189,11 +185,7 @@ if (
                    
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-<<<<<<< HEAD
                         <input type="password" placeholder="MOT DE PASSE" name="PASSE" id="PASSE" />
-=======
-                        <input type="password" placeholder="PASSE" name="PASSE" id="PASSE" />
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     </div>
                     <div class="input-field">
                         <div class="select-box" >
@@ -210,22 +202,14 @@ if (
                      <div class="wrapper" >
                        <div class= "label" >
                         <input class="ch"  type="checkbox"   id="checkM" name= "male"/>  
-<<<<<<< HEAD
                         <label for="check" > HOMME</label>      
-=======
-                        <label for="check" > Male</label>      
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                    
                      </div>
                      </div>
                       <div class="wrapper_f" >
                         <div class= "label" >
                         <input  class="ch" type="checkbox"   id="checkF" name="female"/>
-<<<<<<< HEAD
                          <label for="check" > FEMME</label>      
-=======
-                         <label for="check" > Female</label>      
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     
                        </div>
                        <script type="text/javascript" > 

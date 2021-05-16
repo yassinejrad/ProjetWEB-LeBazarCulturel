@@ -1,9 +1,5 @@
 <?php 
-<<<<<<< HEAD
 $conn = new mysqli("localhost","root","","bazarculturelle") ;
-=======
-$conn = new mysqli("localhost", "dhia72", "191JMT1252", "bazarculturelle") ;
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
  
 $IDV=$_GET["id"] ;
 $sql = "select * from produits  where REFERENCE='$IDV'";

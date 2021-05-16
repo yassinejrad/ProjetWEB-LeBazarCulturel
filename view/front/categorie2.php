@@ -3,32 +3,23 @@ include_once '../../controller/produitC.php';
 include_once '../../model/produit.php';
 include_once '../../controller/categorieC.php';
 include_once '../../model/categorie.php';
-<<<<<<< HEAD
 include '../../controller/promoC.php';
 $cat=$_GET['CODE'];
 $conn=mysqli_connect("localhost","root","","bazarculturelle");
-=======
-$cat=$_GET['CODE'];
-$conn=mysqli_connect("localhost","dhia72","191JMT1252","bazarculturelle");
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 $sql="SELECT * FROM produits where CATEGORIE=".$cat." ";
 $result=mysqli_query($conn,$sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error($conn), E_USER_ERROR); 
 $artnum=mysqli_num_rows($result);
 $inf2= new categorieC();
 $liste2=$inf2->afficherCategories();
-<<<<<<< HEAD
 
 $promotionC = new promotionC();
 
+                
+            
 ?>
 
 
 
-=======
-?>
-
-
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,6 +101,40 @@ color:rgb(0,255, 0);
 text-align: center;
 font: size 21px;
 }
+
+.sale {
+
+	display: inline-block;
+	background: red;
+	color: white;
+	height: 2.5rem;
+	width: 2.5rem;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 2.5rem;
+	
+	transform: rotate(-20deg);
+	animation: beat 1s ease infinite alternate;
+	&:before,
+	&:after {
+		content:"";
+		
+		background: inherit;
+		height: inherit;
+		width: inherit;
+        
+		z-index: -1;
+		transform: rotate(30deg);
+	}
+	&:after {
+		transform: rotate(60deg);
+	}
+}
+
+@keyframes beat {
+	from {	transform: rotate(-20deg) scale(1); }
+	to {	transform: rotate(-20deg) scale(1.1); }
+}
 </style>
 
 </head>
@@ -156,11 +181,28 @@ font: size 21px;
       <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img  class="card-img rounded-0 img-fluid"  src="<?php  echo $art2['IMAGE']?>" style="width: 400px; height: 400px;" >
+                            <?PHP 
+         if ($art2['STATUE']==2){
+   $elementC= $promotionC->afficherElementPromo($art2['REFERENCE'] );
+  $promo= $elementC->pourcentage  ;
+
+  echo' <span class ="sale"> - '. $promo. '  </span>   '; 
+  echo ' <img  class="card-img rounded-0 img-fluid"  src="'.$art2['IMAGE'].'" style="width: 400px; height: 400px;" >';
+   
+         }    
+         
+         elseif ($art2['STATUE']==1){  
+              echo'  <img  class="card-img rounded-0 img-fluid"  src="'.$art2['IMAGE'].'" style="width: 400px; height: 400px;" >';
+            }    
+         
+            ?>
+                
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
+                              
+                                <ul class="list-unstyled">
+                                    <li>
                                         <li><a class="btn btn-outline-success text-white" href="favo.php?REFERENCE=<?PHP echo $art2['REFERENCE']; ?>"><i class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-outline-success text-white mt-2"href="readmore.php?REFERENCE=<?PHP echo $art2['REFERENCE']; ?>"id="REFERENCE" name="REFERENCE"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-outline-success text-white mt-2"href="readmore2.php?REFERENCE=<?PHP echo $art2['REFERENCE']; ?>"id="REFERENCE" name="REFERENCE"><i class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-outline-success text-white mt-2" href=""><i class="fas fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
@@ -180,25 +222,26 @@ font: size 21px;
                                         <i class="text-muted fa fa-star"></i>
                                     </li>
                                 </ul>
-<<<<<<< HEAD
                                 
-                                <p class="text-center mb-0" style="color:#FF0000";>
+                                <p class="text-center mb-0" style="color:#FF0000;">
                         <strong>
         <?PHP 
          if ($art2['STATUE']==2){
    $elementC= $promotionC->afficherElementPromo($art2['REFERENCE'] );
      $prix= $art2['PRIX'] -(($art2['PRIX'] * $elementC->pourcentage)/100);   
    echo $prix; 
-   
+   echo '<del class="product-old-price" style="color:black;" > '.$art2['PRIX'].' DT</del>';
          }    
          
      ?>
      
      </strong>
      </p> 
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
-                                <p class="text-center mb-0"><?php echo $art2['PRIX'] ?>dt</p>
+     <?php
+     if ($art2['STATUE']==1){
+         echo '<p class="text-center mb-0">'.$art2['PRIX'].' DT</p>';
+     }
+          ?>                      
                             </div>
                         </div>
                     </div>
@@ -217,12 +260,13 @@ font: size 21px;
     }
     ?>
         </div>
-        
+        </div>
+        </div>
         <!-- /.row -->
-      <div class="row">
+      
         <div class="col-md-4">
 <!-- recherche-->
-        <div class="card my-11">
+        <div class="card mb-4">
           <h5 class="card-header">Recherche</h5>
           <div class="card-body">
               <form  action="rechercheproduits.php" method="POST" >
@@ -231,19 +275,13 @@ font: size 21px;
          <input type="text" id ="titre" name="titre" class="form-control" placeholder="Rechercher un produit..." maxlength="50">
         <input type="submit" value="recherche" name="rechercher">  
          </form>
-              </span>
-              
+              </span>            
             </div>
-          </div>
-       
-       
     </div>
     </div>
-    
-     <!-- Pagination -->
-    
         </div>
         </div>
+        
         <script src="black.js"></script>
     <?php include_once 'footer.php'; ?>
 

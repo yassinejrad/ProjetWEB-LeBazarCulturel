@@ -156,7 +156,8 @@ color:rgb(0,0, 0);
     <?php
         }
         
-    ?>	
+    ?>
+    <script src="black.js"></script>	
     <?php include_once 'footer.php'; ?>
     </body>
 </html>

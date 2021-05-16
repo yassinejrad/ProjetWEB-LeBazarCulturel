@@ -1,19 +1,12 @@
 <?php
-    include_once '../../Model/article.php';
-    include_once '../../Controller/articleC.php';
-
+ 
+    include '../../Controller/articleC.php';
+    include_once  '../../controller/attenteaC.php';
     $error = "";
-<<<<<<< HEAD
     // create article
     $article = null;
-=======
-
-    // create article
-    $article = null;
-
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     // create an instance of the controller
-    $articleC = new articleC();
+    $articleC = new attenteaC();
     if (
         isset($_POST["titre"]) && 
         isset($_POST["nomAuteur"]) &&
@@ -35,19 +28,12 @@
                 $_POST['dateA'],
                 $_POST['image']
             );
-            $articleC->ajouterarticle($article);
-            header('Location:blog.php');
+            $articleC->ajouterattentea($article);
+            header('Location:../../view/back/afficherA2.php');
         }
         else
             $error = "Missing information";
-<<<<<<< HEAD
     }   
-=======
-    }
-    
-
-    
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 ?>
 
 <!DOCTYPE html>
@@ -58,19 +44,11 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>le bazar culturel</title>
     <link rel="shortcut icon" href="images/logo.png">
-
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
-         
-    <!-- Custom styles for this template -->
-    
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
-    <script src="js/alert.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
    <script type="text/javascript">
@@ -86,16 +64,6 @@
 
 
     
-=======
-
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
-    <script src="js/alertArticle.js"></script>
-
-    
-</head>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     <body>
     <?php include_once 'header.php'; ?>
     <div class="container">
@@ -125,11 +93,7 @@
             <?php echo $error; ?>
         </div>
         
-<<<<<<< HEAD
         <form action="" method="POST"  >
-=======
-        <form action="" method="POST">
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
             <table align="center">
             <tr>  
                <td>
@@ -137,86 +101,103 @@
                 New article
             </h1>
         </td> 
-    </tr>
-    
-                <tr>
-                    
+    </tr>    
+                <tr>  
                     <td>
-                        <label for="titre">titre:
+                        <label class="label"  for="titre">titre:
                         </label>
                     </td>
-<<<<<<< HEAD
-                    <td><input type="text" name="titre" id="titre" maxlength="50" required /></td>
-=======
-                    <td><input type="text" name="titre" id="titre" maxlength="50"></td>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
+                    <td><input class="controle" type="text" name="titre" id="titre" maxlength="50" required /></td>
+                    <span class="resultat"></span>
                 </tr>
                 <tr>
                     <td>
-                        <label for="nomAuteur">Nom Auteur:
+                        <label class="label"  for="nomAuteur">Nom Auteur:
                         </label>
                     </td>
-<<<<<<< HEAD
-                    <td><input type="text" name="nomAuteur" id="nomAuteur" maxlength="50" required /></td>
-=======
-                    <td><input type="text" name="nomAuteur" id="nomAuteur" maxlength="120"></td>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
+                    <td><input class="controle" type="text" name="nomAuteur" id="nomAuteur" maxlength="50" required /></td>
+                    <span class="resultat"></span>
                 </tr>
                 
                 <tr>
                     <td>
-                        <label for="description">description:
+                        <label class="label"  for="description">description:
                         </label>
                     </td>
                     <td>
-<<<<<<< HEAD
-                        <input type="text" name="description" id="description" maxlength="500" required /></>
-=======
-                        <input type="text" name="description" id="description" maxlength="500"></>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
+                        <input class="controle" type="text" name="description" id="description" maxlength="500" required /></>
                     </td>
+                    <span class="resultat"></span>
                 </tr>
                 <tr>
                     
                     <td>
-                        <label for="dateA">dateA:
+                        <label class="label"  for="dateA">dateA:
                         </label>
                     </td>
                     <td>
-<<<<<<< HEAD
-                        <input type="date_local" name="dateA" id="dateA" required />
+                        <input class="controle" type="date_local" name="dateA" id="dateA" required />
                         <script>
                             $('#dateA').val(new Date().toJSON().slice(0,10));
-                                    </script>
-=======
-                        <input type="date" name="dateA" id="dateA" >
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
+                        </script>
                     </td>
+                    <span class="resultat"></span>
                 </tr>
                 <tr>
                     <td>
-                        <label for="image">Image:
+                        <label class="label"  for="image">Image:
                         </label>
                     </td>
                     <td>
-                    <form enctype="multipart/form-data" method="post" autocomplete="on" action="upload/">
+                    <form class="controle" enctype="multipart/form-data" method="post" autocomplete="on" action="upload/">
                         <p>
                         <input type="file" name="image" id="image" required />
                         </p>
+                        <span class="resultat"></span>
                        <p class="submitter two-thirds columns"> 
-<<<<<<< HEAD
                        <input type="submit" value="Ajouter" onclick="testAlertDialog()" required > 
                       
-=======
-                       <input type="submit" value="Ajouter" > 
-                       
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                         </form>
                     </td>
                      
             </table>
         </form>
         
-        <?php include_once 'footer.php'; ?>
+<style>
+input.controle {
+  outline:0;
+  font-size:14px;
+  width:250px;
+}	
+label.label {
+  display:inline-block;
+  width:200px;
+  text-align: right;
+  font-style: italic;
+  margin-right:5px;
+}
+input.controle:valid {
+  border:3px solid #0a0;
+}
+input.controle:invalid {
+  border:3px solid #a00;
+}
+input.controle:valid + span:before  {
+  content: "\f00c";
+  font-family: "fas fa-check";
+  color:#0a0;
+  font-size: 1.5em;
+}	
+input.controle:invalid + span:before  {
+  content: "\f00d";
+  font-family: "fas fa-times";
+  color:#a00;
+  font-size: 1.5em;
+}
+</style>
+
+
+<?php include_once 'footer.php'; ?>
+
     </body>
 </html>

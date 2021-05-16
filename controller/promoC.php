@@ -125,7 +125,29 @@
 			}	
 		}
 
-
+		public function chercher($str) {
+			$sql="SELECT * FROM promotion where idPromo ='$str' OR  titre='$str' "  ;
+			$db=Config::getConnexion();
+			try{
+			$liste = $db->query($sql);
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
+		function get_produit_name(int $id)
+		{
+		  
+			$conn = new mysqli("localhost", "root", "", "bazarculturelle"); 
+			$sql = "select * from produits where REFERENCE='$id'  ";
+			$result = $conn->query($sql);
+			$row = $result->fetch_assoc();
+			
+				$nom = $row['NOM'] ; 
+			  
+			return $nom ; 
+		}
 		
 	}
 

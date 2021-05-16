@@ -1,13 +1,7 @@
 <?PHP
-<<<<<<< HEAD
 	require_once "../../config.php";
 	include_once '../../Model/article.php';
 	
-=======
-	include "../../config.php";
-	include_once '../../Model/article.php';
-
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 	class articleC {
 		
 		function  ajouterarticle($article)
@@ -32,10 +26,7 @@
 			}			
 		}
 		
-<<<<<<< HEAD
 
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 		function  afficherarticles()
 		{
 			
@@ -105,14 +96,8 @@
 			}
 
 		}
-<<<<<<< HEAD
 	/*	function chercher($titre,$nomAuteur) {
 			$sql="select * from article where nom like '%:search%' or auteur like '%:search%';";
-=======
-		
-		function chercher($titre) {
-			$sql="SELECT * FROM article where titre='$titre'";
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 			$db=Config::getConnexion();
 			try{
 			$listearticle = $db->query($sql);
@@ -121,15 +106,9 @@
 			catch (PDOException $e) {
 				$e->getMessage();
 			}
-<<<<<<< HEAD
 		}*/
 		function chercher($titre) {
 			$sql="SELECT * FROM article where titre='$titre' ";
-=======
-		}
-		function chercherA($nomAuteur) {
-			$sql="SELECT * FROM article where nomAuteur='$nomAuteur'";
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 			$db=Config::getConnexion();
 			try{
 			$listearticle = $db->query($sql);
@@ -139,7 +118,6 @@
 				$e->getMessage();
 			}
 		}
-<<<<<<< HEAD
 
 
 		function triarticle()
@@ -168,10 +146,17 @@
 			}	
 		}
 		
-=======
-	
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
-		
+		public function chercher2($str) {
+			$sql="SELECT * FROM article where titre ='$str' OR  nomAuteur='$str'   "  ;
+			$db=Config::getConnexion();
+			try{
+			$liste = $db->query($sql);
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
 
 
 		

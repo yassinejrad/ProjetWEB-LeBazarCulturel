@@ -4,16 +4,14 @@
 
 	$articleC = new articleC();
 	$listearticle = $articleC->afficherarticles();
-<<<<<<< HEAD
   $listearticle = $articleC->triarticleD();
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link href="dark.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
@@ -27,13 +25,16 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
     <script src="js/alertArticle.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles2.css" rel="stylesheet" />
 </head>
 
-<<<<<<< HEAD
 <body  >
-=======
-<body>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 <!-- Navigation -->
     <?php include_once 'header.php'; ?>
 <!-- Page Content -->
@@ -44,7 +45,7 @@
     </p>
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <a href="index.php">Acceuil</a>
+        <a href="acceuil.php">Acceuil</a>
       </li>
       <li class="breadcrumb-item active">Blog</li>
     </ol>
@@ -55,20 +56,27 @@
 			<?PHP
 				foreach($listearticle as $article){
 			?>
+        
           <div class="card mb-4">
-          <img class="card-img-top" src="../<?php echo $article["image"]; ?>"  alt="image">
-          <div class="card-body">
-            <h2 class="card-title"><?PHP echo $article['titre']; ?></h2>
-<<<<<<< HEAD
-            <p class="card-text"><?PHP echo substr($article['description'], 0, 36).'...'; ?></p> 
-           <a href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Suite &rarr;</a>          
-          </div>
+          <div class="container">
+          <a class="portfolio-item" href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA">
+                            <div class="caption">
+                                <div class="caption-content">
+                                
+                                    <div class="h2"><?PHP echo $article['titre']; ?></div>
+                                    <p class="mb-0"><?PHP echo substr($article['description'], 0, 36).'...'; ?></p>
+                                </div>
+                            </div>
+                            
+                            <img class="card-img-top"  src="../<?php echo $article["image"]; ?>"  alt="image"  />
+                            </div>
+                            </a>
           <div class="card-footer text-muted"  >
           Publier le <?PHP echo $article['dateA']; ?>
           par <?PHP echo $article['nomAuteur']; ?>
 <!--modifier / supprimer -->
           <div style="text-align: right;">
-            <button id="btnPopup" class="btnPopup" >⋮</button>
+        <a>    <button id="btnPopup" class="btnPopup" >⋮</button> </a>
             </div>
            <div id="overlay" class="overlay">
            <div id="popup" class="popup">
@@ -82,38 +90,19 @@
            </div>
            </div>
            </div> 
-=======
-            <p class="card-text"><?PHP echo $article['description']; ?></p> 
-            <a href="#" class="btn btn-primary">Suite &rarr;</a>
-<!--modifier et supprimer -->
-              <a href="modifierarticle.php?id=<?PHP echo $article['idA']; ?>" class="btn btn-primary">Modifier un article </a> 
-              <a href="supprimerarticle.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Supprimer un article </a>
-          </div>
-          <div class="card-footer text-muted">
-          Publier le <?PHP echo $article['dateA']; ?>
-          par <?PHP echo $article['nomAuteur']; ?>
-          </div>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         </div> 
+
 			<?PHP
 				}
 			?>
-<!-- ajouter-->
-        <a href="addarticle.php" class="btn btn-primary">Ajouter un article </a>
-<<<<<<< HEAD
+
         
         
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
       </div>
 <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
 <!-- recherche-->
-<<<<<<< HEAD
 <div class="card mb-4">
-=======
-        <div class="card mb-4">
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
           <h5 class="card-header">Recherche</h5>
           <div class="card-body">
               <form  action="chercherarticle.php" method="POST" >
@@ -126,17 +115,17 @@
             </div>
           </div>
         </div>
-<!-- Side Widget -->
+       <!-- ajouter-->
         <div class="card my-4">
-          <h5 class="card-header">Article</h5>
+          <h5 class="card-header">Vous pouvez ajouter un article </h5>
           <div class="card-body">
-            Ne ratter pas nos articles chaque samedi.
+          <a href="addarticle.php" ><button type="button" class="btn btn-outline-dark  w-100 p-2" class="btn badge-info " style="color:pink;"><i class="fa fa-plus" aria-hidden="true"></i>Ajouter un article</button>  </a>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-<<<<<<< HEAD
 
   <style>
 .btnPopup{
@@ -169,6 +158,8 @@ font-size:16pt;
 cursor: pointer;
 color: rgb(26, 26, 26);
 }
+
+
 </style>
 <script>
 var btnPopup = document.getElementById('btnPopup');
@@ -186,8 +177,13 @@ function closeModal() {
 overlay.style.display='none';
 }
 </script>
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
+<script src="black.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <!-- Custom scripts for this template-->
+        <script src="js/scripts2.js"></script>
         <?php include_once 'footer.php'; ?>
 </body>
 </html>

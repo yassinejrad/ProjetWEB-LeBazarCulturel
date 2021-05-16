@@ -1,7 +1,7 @@
 <?PHP
 	include "../../controller/articleC.php";
   include "../../controller/commentaireC.php";
-
+  session_start();
 	$articleC = new articleC();
 	$listearticle = $articleC->afficherarticles();
   $listearticle = $articleC->triarticleD();
@@ -10,26 +10,24 @@
   // create commentaire
   $commentaire = null;
   // create an instance of the controller
+  $id=$_SESSION['auth'];
   $commentaireC = new commentaireC();
   if (
-      isset($_POST["nom"]) && 
-      isset($_POST["prenom"]) &&
+
       isset($_POST["message"]) 
     
       
   ) {
       if (
-          !empty($_POST["nom"]) && 
-          !empty($_POST["prenom"]) && 
+ 
           !empty($_POST["message"]) 
          
       ) {
           $commentaire = new commentaire(
-              $_POST['nom'],
-              $_POST['prenom'], 
+ 
               $_POST['message'],
-              $_GET['id']
-         
+              $_GET['id'],
+         $id
               
           );
           $commentaireC->ajoutercommentaire($commentaire);
@@ -48,6 +46,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="dark.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
     <meta name="author" content="">
@@ -85,20 +84,31 @@
 
     <div class="row">
       <div class="col-lg-8">
+      
       <p class="partie1"><strong><?PHP echo $article['titre']; ?></strong></p>
 <!-- Preview Image -->
-        <img class="img-fluid rounded" src="../<?php echo $article["image"]; ?>" alt="">
         <hr>
 <!-- Date/Time -->
         <p>Publier le <?PHP echo $article['dateA']; ?>
           par <?PHP echo $article['nomAuteur']; ?></p>
         <hr>
-        <p class="lead"><?PHP echo $article['description']; ?></p>   
-      </div>
+<div class="zoom">
+        <p class="desc"><?PHP echo $article['description']; ?></p>
+</div>
+ <div class="hey">
+ <div class="zoom">
+        <img   class="img-fluid rounded" src="../<?php echo $article["image"]; ?>" alt="">
+        </div>
+        </div>
+        </div>
+    
       <?PHP
 				}
 			?>        
       </div>
+     
+     
+       
 <!--impression-->
      <a href="imprarticle.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Imprimer</a>
 
@@ -107,17 +117,10 @@
           <h5 class="card-header">Laissez un commentaire:</h5>
           <div class="card-body">
           <form action="" method="POST" >
-            <div class="form-group">
-            <label for="nom">nom:
-                        </label>
-                        <input type="text" name="nom" id="nom" maxlength="50" required />
-              </div>
+            
+         
               <div class="form-group">
-              <label for="prenom">prenom:
-                        </label>
-                        <input type="text" name="prenom" id="prenom" maxlength="50" required />
-              </div>
-              <div class="form-group">
+              <img class="d-flex mr-3 rounded-circle" src="<?php echo $_SESSION['IMG']?>" width="50px" height="50px" alt="">   
               <label for="message">message:
                         </label>
                 <textarea class="form-control" name="message" id="message" rows="3"></textarea>
@@ -136,11 +139,7 @@
 				foreach($listecommentaire as $commentaire){
           if ($commentaire['idA']==$_GET['id']){
 			?>
-      <!--<img class="d-flex mr-3 rounded-circle" src="images/perso2.jpg" width="50px" height="50px" alt="">-->
-      
-            <h5 class="mt-0"><?PHP echo $commentaire['nom']; ?> <?PHP echo $commentaire['prenom']; ?></h5>
-            <?PHP echo $commentaire['message']; ?>
-
+          <?PHP echo $commentaire['message']; ?>
             <div style="text-align: right;">
             <button id="btnPopup" class="btnPopup" >⋮</button>
             </div>
@@ -174,13 +173,12 @@
            </div> 
         </div>
        </div>
-
+       
  
      
 
 <style>
 .btnPopup{
-
 padding: 0em 0.5em;
 }
 .btnPopup:hover{
@@ -209,6 +207,45 @@ font-size:16pt;
 cursor: pointer;
 color: rgb(26, 26, 26);
 }
+/* zoom*/
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+.desc 
+{
+  margin-bottom: 10px;
+  margin-right: 210px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+  fontName: "Lucida Console";
+}
+
+.hey {
+  position: relative;
+left: 550px;
+top:-100px;
+vertical-align:middle;
+  width: 500px;
+  height: 500px;
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.hey:hover {
+  
+  width: 500px;
+  height: 500px;
+  transform: rotate(360deg);
+}
+
 </style>
 <script>
 var btnPopup = document.getElementById('btnPopup');
@@ -229,5 +266,6 @@ overlay.style.display='none';
 
 
         <?php include_once 'footer.php'; ?>
+        <script src="black.js"></script>
 </body>
 </html>

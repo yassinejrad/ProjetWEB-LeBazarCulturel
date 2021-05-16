@@ -105,6 +105,20 @@ color:rgb(0,0, 0);
     color: #97daf5d5;
     ;
 }
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
 </style>
 
 </head>
@@ -143,8 +157,10 @@ color:rgb(0,0, 0);
     <div class="row">
     <tr></tr>
     <div class="col-lg-5 mt-5">
+    <div class="zoom">
                     <div class="card mb-3">
                         <img class="card-img img-fluid" src="<?php  echo $produit['IMAGE']?>" alt="Card image cap" id="product-detail">
+                   </div>
                     </div>
                 </div>
   
@@ -217,29 +233,7 @@ color:rgb(0,0, 0);
       
     
      <!-- Pagination -->
-     <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
+     
         </div>
     <?php include_once 'footer.php'; ?>
     <script src="assets/js/jquery-1.11.0.min.js"></script>
@@ -282,6 +276,7 @@ color:rgb(0,0, 0);
             ]
         });
     </script>
+    <script src="black.js"></script>
 </body>
 
 </html>

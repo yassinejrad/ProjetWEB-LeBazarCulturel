@@ -31,10 +31,7 @@
         else
             $error = "Missing information";
 	}
-<<<<<<< HEAD
    
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 ?>
 
 <html>
@@ -51,16 +48,11 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
    
    
 </head>
-=======
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
- </head>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 
  <body>
     <?php include_once 'header.php'; ?>
@@ -78,12 +70,8 @@
 <div class="row">
 <tr></tr>
   <!-- Blog Entries Column -->
-<<<<<<< HEAD
   <div class="col-md-8">
   
-=======
-  <div class="col-md-8">        
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
         <div id="error">     
             <?php echo $error; ?>
         </div>
@@ -134,10 +122,7 @@
                     </td>
                     <td>
                         <input type="date" name="dateA" id="dateA" value="<?php echo $article['dateA'];?>">
-<<<<<<< HEAD
                         
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     </td>
                 </tr>
                 <tr>
@@ -157,17 +142,10 @@
                 <tr>
                     <td></td>
                     <td>
-<<<<<<< HEAD
                         <input type="submit" value="Modifier" name = "modifer" > 
                     </td>
                     <td>
                         <input type="reset" value="Annuler"  >
-=======
-                        <input type="submit" value="Modifier" name = "modifer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
                     </td>                   
                 </tr>
             </table>
@@ -176,6 +154,7 @@
         <?php
         }
     ?>
+    <script src="black.js"></script>
 	<?php include_once 'footer.php'; ?>
 	</body>
 </html>

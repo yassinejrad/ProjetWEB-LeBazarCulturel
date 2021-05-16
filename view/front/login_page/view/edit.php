@@ -15,13 +15,7 @@ if (
   isset($_POST["TEL"]) &&
   isset($_POST["ADRESSE"]) &&
   isset($_POST["EMAIL"]) &&
-<<<<<<< HEAD
   isset($_POST["PASSE"])
-=======
-  isset($_POST["PASSE"]) &&
-  isset($_POST["DESCRIPTION"])
- 
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 ) {
   if (
     !empty($_POST["NOM"]) &&
@@ -29,16 +23,11 @@ if (
     !empty($_POST["ADRESSE"]) &&
     !empty($_POST["EMAIL"]) &&
     !empty($_POST["PASSE"]) &&
-<<<<<<< HEAD
-=======
-    !empty($_POST["DESCRIPTION"]) &&
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     !empty($_POST["sex"])
 
 
 
   ) {
-<<<<<<< HEAD
     if ($_SESSION['TYPE']=='Seller'){
       $dec= $_POST['DESCRIPTION'];
     }
@@ -46,8 +35,6 @@ if (
     {
      $dec='';
     }
-=======
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 
     $user = new user(
       $_POST['NOM'],
@@ -57,11 +44,7 @@ if (
       $_POST['PASSE'],
       'female',
       $t , 
-<<<<<<< HEAD
 $dec ,
-=======
-      $_POST['DESCRIPTION'] ,
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
       $img,
       0
 
@@ -70,7 +53,6 @@ $dec ,
     $userC->modifierUSER($user, $ID);
     $_SESSION['NOM']= $_POST['NOM'];  
     $_SESSION['DESCRIPTION']=   $_POST['DESCRIPTION']  ;
-<<<<<<< HEAD
     if ($_SESSION['TYPE']=='Seller'){
       header('location:profil.php') ;
     }
@@ -78,16 +60,12 @@ $dec ,
     {
       header('location:http://localhost/2A4/blog6/view/front/acceuil.php') ;
     }
-=======
-    header('location:profil.php') ;
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
   } else if (
     !empty($_POST["NOM"]) &&
     !empty($_POST["TEL"]) &&
     !empty($_POST["ADRESSE"]) &&
     !empty($_POST["EMAIL"]) &&
     !empty($_POST["PASSE"]) &&
-<<<<<<< HEAD
     empty($_POST["sex"])
   ) {
     if ($_SESSION['TYPE']=='Seller'){
@@ -97,11 +75,6 @@ $dec ,
     {
      $dec='';
     }
-=======
-    !empty($_POST["DESCRIPTION"]) &&
-    empty($_POST["sex"])
-  ) {
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     $user = new user(
       $_POST['NOM'],
       $_POST['TEL'],
@@ -110,11 +83,7 @@ $dec ,
       $_POST['PASSE'],
       'male',
       $t,
-<<<<<<< HEAD
       $dec,
-=======
-      $_POST['DESCRIPTION'],
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
       $img,
       0       
 
@@ -122,7 +91,6 @@ $dec ,
     $userC->modifierUSER($user, $ID);
     $_SESSION['NOM']= $_POST['NOM'];  
     $_SESSION['DESCRIPTION']=   $_POST['DESCRIPTION'] ;
-<<<<<<< HEAD
     if ($_SESSION['TYPE']=='Seller'){
       header('location:profil.php') ;
     }
@@ -130,9 +98,6 @@ $dec ,
     {
       header('location:http://localhost/2A4/blog6/view/front/acceuil.php') ;
     }
-=======
-    header('location:profil.php') ;
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
     
   } else {
     $error = "Missing information";
@@ -200,7 +165,6 @@ $dec ,
           <input type="text" class="form__input" name="PASSE" placeholder="Passeword" value="<?php echo $a['PASSE'] ?> " />
         </div>
 
-<<<<<<< HEAD
         <?php
  if ($_SESSION['TYPE']=='Seller'){
 echo ' 
@@ -210,11 +174,6 @@ echo '
  }
 ?>
 i
-=======
-        <div class="form__group">
-          <textarea class="form__input" name="DESCRIPTION" placeholder="Discription"><?php echo $a['DESCRIPTION'] ?> </textarea>
-        </div>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
 
         <div class="form__group">
           <label for="toggle-input" class="toggle">
@@ -236,11 +195,7 @@ i
   </div>
   <div class="form__group">
     <button    class="form__submit"    >
-<<<<<<< HEAD
       <span class="17a2b8">Modifier</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
-=======
-      <span class="17a2b8">Update</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
->>>>>>> aead4f1e992e4ba39a91b8c87258e07118925adf
  
     </button>
  
