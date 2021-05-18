@@ -97,7 +97,7 @@
 
 		}
 	/*	function chercher($titre,$nomAuteur) {
-			$sql="SELECT * FROM article where titre='$titre' or nomAuteur='$nomAuteur'";
+			$sql="select * from article where nom like '%:search%' or auteur like '%:search%';";
 			$db=Config::getConnexion();
 			try{
 			$listearticle = $db->query($sql);
@@ -146,7 +146,17 @@
 			}	
 		}
 		
-		
+		public function chercher2($str) {
+			$sql="SELECT * FROM article where titre ='$str' OR  nomAuteur='$str'   "  ;
+			$db=Config::getConnexion();
+			try{
+			$liste = $db->query($sql);
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
 
 
 		

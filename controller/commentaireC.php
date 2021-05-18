@@ -6,18 +6,17 @@
 		
 		function  ajoutercommentaire($commentaire)
         {
-			$sql="INSERT INTO commentaire (nom, prenom, message) 
-			VALUES (:nom,:prenom,:message)";
+			$sql="INSERT INTO commentaire ( message,idA,ID) 
+			VALUES (:message,:idA,:ID)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
 			
 				$query->execute
                 ([
-					'nom' => $commentaire->getnom(),
-					'prenom' => $commentaire->getprenom(),
 					'message' => $commentaire->getmessage(),
-					
+					'idA' => $commentaire->getidA(),
+					'ID' => $commentaire->getID(),
 				]);			
 			}
 			catch (Exception $e){
@@ -58,15 +57,13 @@
                 $db = config::getConnexion();
                 $query = $db->prepare(
                     'UPDATE commentaire SET 
-					nom = :nom, 
-					prenom = :prenom,
-					message = :message,
+
+					message = :message
 					
 					WHERE idCom=:id'
                 );
                 $query->execute([
-                    'nom' => $commentaire->getnom(),
-					'prenom' => $commentaire->getprenom(),
+
 					'message' => $commentaire->getmessage(),
 				
 					'id' => $id
@@ -93,18 +90,30 @@
 
 		}
 
-		/*function chercher($nom) {
-			$sql="SELECT * FROM commentaire where nom='$nom' ";
+		function tricommentaire()
+		{
+			$sql="SELECT * from commentaire ORDER by idCom ASC";
+			$db = config::getConnexion();
+			try{
+			$listecommentaire=$db->query($sql);
+			return $listecommentaire;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+
+		public function chercher($str) {
+			$sql="SELECT * FROM commentaire where idCom ='$str' OR  idA='$str' "  ;
 			$db=Config::getConnexion();
 			try{
-			$listecommentaire = $db->query($sql);
-			return $listecommentaire;
+			$liste = $db->query($sql);
+			return $liste;
 			} 
 			catch (PDOException $e) {
 				$e->getMessage();
 			}
-		}*/
-
+		}
 
 
 

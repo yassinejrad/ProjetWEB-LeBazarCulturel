@@ -1,14 +1,14 @@
 <?PHP
-	require_once "../../config.php";
+	include_once "../../config.php";
 	include_once '../../model/produit.php';
-	
-
+	include_once  '../../controller/categorieC.php';
+include_once '../../model/categorie.php';
 	class produitC {
 		
 		function  ajouterProduits($produits)
         {
-			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP) 
-			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC)" ;
+			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER,STATUE) 
+			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER,:STATUE)" ;
 			
 			$db = config::getConnexion();
 			try{
@@ -22,6 +22,9 @@
                     'QTE' => $produits->getQTE(),
 					'IMAGE' => $produits->getIMAGE(),
 					'DESC' => $produits->getDESC(),
+					'CATEGORIE' => $produits->getCAT(),
+					'USER' => $produits->getUSER(),
+					'STATUE' => $produits->getSTATUE()
 				]);			
 			}
 			catch (Exception $e){
@@ -31,7 +34,7 @@
 		
 		function  afficherProduits(){
 			
-			$sql="SELECT * FROM produits";
+			$sql="SELECT * FROM produits ORDER BY PRIX DESC ";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);
@@ -64,7 +67,10 @@
 						DATE = :DATE,
 						QTE = :QTE,
 						IMAGE = :IMAGE,
-						DESCP = :DESC
+						DESCP = :DESC,
+						CATEGORIE = :CATEGORIE,
+						USER = :USER,
+						STATUE=:STATUE
 						
 
 					WHERE REFERENCE = :REFERENCE'
@@ -76,6 +82,9 @@
                     'QTE' => $produits->getQTE(),
 					'IMAGE' => $produits->getIMAGE(),
 					'DESC' => $produits->getDESC(),
+					'CATEGORIE' => $produits->getCAT(),
+					'USER' => $produits->getUSER(),
+					'STATUE' => $produits->getSTATUE(),
 					'REFERENCE' => $REFERENCE
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";
@@ -83,6 +92,50 @@
 				$e->getMessage();
 			}
 		}
+		
+		public function chercherid2($CATEGORIE) {
+			$sql="SELECT * FROM produits where CATEGORIE=:CATEGORIE";
+			$db=Config::getConnexion();
+			try{
+				$query=$db->prepare($sql);
+			$query->execute(['CATEGORIE' =>$CATEGORIE]);
+			$liste=$query->fetch();
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
+		function recupererproduits($reference)
+        {
+			$sql="SELECT * from produits where REFERENCE=$reference";
+			$db = config::getConnexion();
+			try{
+				$query=$db->prepare($sql);
+				$query->execute();
+
+				$album=$query->fetch();
+				return $album;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}
+		}
+
+		
+	
+		public function chercher($str) {
+			$sql="SELECT * FROM produits where NOM ='$str' OR  REFERENCE='$str' "  ;
+			$db=Config::getConnexion();
+			try{
+			$liste = $db->query($sql);
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
+
 		public function chercherid($reference) {
 			$sql="SELECT * FROM produits where REFERENCE=:REFERENCE";
 			$db=Config::getConnexion();
@@ -96,28 +149,14 @@
 				$e->getMessage();
 			}
 		}
-		/*function recupererAlbum($idAlbum)
-        {
-			$sql="SELECT * from album where idAlbum=$idAlbum";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
-
-				$album=$query->fetch();
-				return $album;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}*/
-
-		
-	
-		public function chercher($nom) {
-			$sql="SELECT * FROM produits where NOM='$nom'";
+		public function chercher2($str,$id) {
+			$sql="SELECT * FROM produits where NOM like '".$str."%' and CATEGORIE=:id " ;
 			$db=Config::getConnexion();
+			$req=$db->prepare($sql);
+			$req->bindValue(':id',$id);
 			try{
+				
+				$req->execute();
 			$liste = $db->query($sql);
 			return $liste;
 			} 
@@ -125,8 +164,18 @@
 				$e->getMessage();
 			}
 		}
-
-
+		function get_categorie_name(int $id)
+        {
+          
+            $conn = new mysqli("localhost", "root", "", "bazarculturelle"); 
+            $sql = "select * from categories where CODE='$id'  ";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            
+                $nom = $row['NOM'] ; 
+              
+            return $nom ; 
+        }
 		
 	}
 

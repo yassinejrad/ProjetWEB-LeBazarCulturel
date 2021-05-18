@@ -1,0 +1,41 @@
+.raiting-block {
+    text-align: center;
+    height: 2.5em;
+    box-sizing: border-box;
+    transform: rotate(180deg);
+}
+
+.raiting-block__item {
+    display: none;
+}
+
+.raiting-block__item + label {
+    display: inline-block;
+    position: relative;
+    margin-right: 2em;
+    top: -1em;
+}
+
+.raiting-block__item + label::before {
+    content: "★";
+    position: absolute;
+    color: #a5a8aa;
+    font-size: 2.5em;
+    line-height: 1em;
+    transform: rotate(180deg);
+    transition-duration: 0.2s;
+}
+
+.raiting-block__item:checked ~ label::before {
+    color: #00b3e3;
+}
+
+.raiting-block__item ~ label:hover ~ label::before {
+    color: #dec440;
+}
+
+.raiting-block__item ~ label:hover::before {
+    color: #dec440;
+}
+
+

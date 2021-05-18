@@ -1,6 +1,4 @@
-<div class="card my-4"> 
-        
-        </div>
+<br>
 <div class="row mb-6">
 
             </div>
@@ -32,7 +30,7 @@
                     </div>
                     <!-- /.container -->
                     <div class="col-md-4">
-                        <a class="btn btn-lg btn-secondary btn-block" href="mail/contact_me.php">Contact</a>
+                        <a class="btn btn-lg btn-secondary btn-block" href="contact/index.php">Contact US</a>
                     </div>
                     <div class="container">
                         <p class="m-0 text-center text-white">CopyRight FreeDev 2021</p>

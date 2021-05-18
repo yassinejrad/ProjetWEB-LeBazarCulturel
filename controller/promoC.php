@@ -26,21 +26,7 @@
 			}
 	
 	}
-/*	function afficherElementPromo()
-    {
-		$sql="SELECT * from promotion ";
-		$db = config::getConnexion();
-		try{
-			$query=$db->prepare($sql);
-			$query->execute();
 
-			$promo=$query->fetch(PDO::FETCH_OBJ);
-			return $promo;
-		}
-		catch (Exception $e){
-			die('Erreur: '.$e->getMessage());
-		}
-    }*/
 
 	function afficherElementPromo($idP)
     {
@@ -69,21 +55,7 @@
             die('Erreur: '.$e->getMessage());
         }	
 	}
-	function afficherproduitp($idProduit)
-	{
-		$sql="SELECT PRIX from produits WHERE REFERENCE =$idProduit";
-		$db = config::getConnexion();
-		try{
-
-			$query=$db->prepare($sql);
-			$query->execute();
-			$produit=$query->fetch(PDO::fetch_OBJ);
-			return $produit;
-		}
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }	
-	}
+	 
 	function modifierpromotion($promotion, $id)
 		{
 			try {
@@ -94,7 +66,7 @@
 					dateD = :dateD,
 					dateF = :dateF, 
 					pourcentage = :pourcentage,
-					idProduit = :idProduit,
+					idProduit = :idProduit
 					WHERE idPromo=:id'
                 );
                 $query->execute([
@@ -140,10 +112,42 @@
 			}
 		}
 		
+		function tripromotion()
+		{
+			$sql="SELECT * from promotion ORDER by idPromo ASC";
+			$db = config::getConnexion();
+			try{
+			$listepromotion=$db->query($sql);
+			return $listepromotion;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 
-		
-
-
+		public function chercher($str) {
+			$sql="SELECT * FROM promotion where idPromo ='$str' OR  titre='$str' "  ;
+			$db=Config::getConnexion();
+			try{
+			$liste = $db->query($sql);
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
+		function get_produit_name(int $id)
+		{
+		  
+			$conn = new mysqli("localhost", "root", "", "bazarculturelle"); 
+			$sql = "select * from produits where REFERENCE='$id'  ";
+			$result = $conn->query($sql);
+			$row = $result->fetch_assoc();
+			
+				$nom = $row['NOM'] ; 
+			  
+			return $nom ; 
+		}
 		
 	}
 
