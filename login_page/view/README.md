@@ -1,2 +1,0 @@
-# Marvel
-Responsive product slider
