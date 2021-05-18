@@ -7,8 +7,8 @@ include_once '../../model/categorie.php';
 		
 		function  ajouterProduits($produits)
         {
-			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER) 
-			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER)" ;
+			$sql="INSERT INTO produits (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER,STATUE) 
+			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER,:STATUE)" ;
 			
 			$db = config::getConnexion();
 			try{
@@ -23,7 +23,8 @@ include_once '../../model/categorie.php';
 					'IMAGE' => $produits->getIMAGE(),
 					'DESC' => $produits->getDESC(),
 					'CATEGORIE' => $produits->getCAT(),
-					'USER' => $produits->getUSER()
+					'USER' => $produits->getUSER(),
+					'STATUE' => $produits->getSTATUE()
 				]);			
 			}
 			catch (Exception $e){
@@ -68,7 +69,8 @@ include_once '../../model/categorie.php';
 						IMAGE = :IMAGE,
 						DESCP = :DESC,
 						CATEGORIE = :CATEGORIE,
-						USER = :USER
+						USER = :USER,
+						STATUE=:STATUE
 						
 
 					WHERE REFERENCE = :REFERENCE'
@@ -82,6 +84,7 @@ include_once '../../model/categorie.php';
 					'DESC' => $produits->getDESC(),
 					'CATEGORIE' => $produits->getCAT(),
 					'USER' => $produits->getUSER(),
+					'STATUE' => $produits->getSTATUE(),
 					'REFERENCE' => $REFERENCE
 				]);
 				echo $query->rowCount() . " records UPDATED successfully <br>";
@@ -161,7 +164,18 @@ include_once '../../model/categorie.php';
 				$e->getMessage();
 			}
 		}
-
+		function get_categorie_name(int $id)
+        {
+          
+            $conn = new mysqli("localhost", "root", "", "bazarculturelle"); 
+            $sql = "select * from categories where CODE='$id'  ";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            
+                $nom = $row['NOM'] ; 
+              
+            return $nom ; 
+        }
 		
 	}
 

@@ -1,13 +1,13 @@
 <?php 
-include_once '../../controller/produitC.php';
-include_once '../../model/produit.php';
-include_once '../../controller/categorieC.php';
-include_once '../../model/categorie.php';
+include '../../controller/produitC.php';
+include '../../controller/promoC.php';
+
 
   $inf1= new produitC();
   $liste=$inf1->afficherProduits();
-  $inf2= new categorieC();
-  $liste2=$inf2->afficherCategories();
+
+  $promotionC = new promotionC();
+
 ?>
 
 
@@ -74,6 +74,15 @@ div {
 color:rgb(0,0, 0);
 
 }
+/*.star :hover{
+color:rgb(255,0, 0);
+
+}*/
+
+/*.star :active{
+    background-color:green; 
+
+}*/
 
 .fa-star-o:active{
     color:rgb(0,255, 0);
@@ -81,18 +90,32 @@ color:rgb(0,0, 0);
 
 
 </style>
+<script>
+		var count = 0;
+function myfunction(x) {
+	var x;
+	
+    	if(x == 1){
+    		count = count+1;
+    		console.log(count)
+    	}
 
+    	if(count == 1){
+    		document.getElementById("change").style.border = 'red';
+    	}
+    	else if(count == 2){
+    		document.getElementById("change").style.border = 'white';
+    		count = 0;
+    	}
+  
+}
+
+</script>
 </head>
 
 
 <body>
-<?php
-        foreach($liste2 as $a) {
-    ?>
-    <?php include_once 'header.php'; ?>
-    <?php
-    }
-    ?>
+<?php include_once 'header.php'; ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -113,24 +136,31 @@ color:rgb(0,0, 0);
         <?php
         foreach($liste as $a) {
     ?>
-            <div class="col-lg-6 portfolio-item">
-                <div class="card h-100">
+            <div class="col-md-8">
+<div class="card mb-4">
                     <a href="#">
                     <p class="star">
                    <i  id="change" onclick="myfunction(1)" class="fa fa-star-o" aria-hidden="true"></i>
                     </p>
-                    <img class="card-img-top" src="<?php  echo $a['IMAGE']?>" ></a>
+                    <img class="card-img-top" src="<?php  echo $a['IMAGE']?>" alt="" ></a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="#"><?php echo $a['NOM'] ?></a>
                         </h4>
                         <p class="card-text"> <?php echo $a['DESCP'] ?></br>
                         </p>
-                        
+                        <h5 class="card-text">
+        <?PHP 
+   $elementC= $promotionC->afficherElementPromo($a['REFERENCE'] );
+     $prix= $a['PRIX'] -(($a['PRIX'] * $elementC->pourcentage)/100);
+   echo $prix; 
+     ?>
+     <del class="product-old-price"> <?php echo $a['PRIX'] ?></del></br>
+        </h5>
+
+</td>
                         <p class="Buy-button"> <button type="button"  class="btn btn-outline-dark btn-lg">BUY</button></p>
-                    <p class="Buy-button"> <a class="btn btn-primary" href="#">View More
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a> </p>
+                    
                     </div>
                 </div>
             </div>
@@ -143,32 +173,11 @@ color:rgb(0,0, 0);
         <!-- /.row -->
 
         <!-- Pagination -->
-        <ul class="pagination justify-content-center">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-
+        
     </div>
+  
 
+      
     <?php include_once 'footer.php'; ?>
 
 </body>

@@ -1,6 +1,7 @@
 <?PHP
-      include_once '../../../../config.php';
-      include_once 'C:/xampp/htdocs/2A4/blog6/view/front/login_page\model\msg.php';
+
+      include_once 'C:/xampp/htdocs/2A4/blog6/config.php';
+      include_once 'C:/xampp/htdocs/2A4/blog6/view/front/login_page/model/msg.php';
     
     
 

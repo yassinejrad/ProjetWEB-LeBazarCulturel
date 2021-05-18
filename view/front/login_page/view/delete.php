@@ -19,7 +19,8 @@ if (isset($_POST['sub'])) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <title></title>
-
+  <title>Le bazar culturel</title>
+    <link rel="shortcut icon" href="../../images/logo.png">
   <link rel="stylesheet" href="a.css" />
 </head>
 
@@ -64,7 +65,7 @@ if (isset($_POST['sub'])) {
    
      
 
-        <button type="submit" onclick="location.href = 'profil.php';" name="a" class="card-button card-button--secondary">Keep it</button>
+        <button type="submit" onclick="location.href = 'http://localhost/2A4/blog6/view/front/acceuil.php'" name="a" class="card-button card-button--secondary">Keep it</button>
 
 
 

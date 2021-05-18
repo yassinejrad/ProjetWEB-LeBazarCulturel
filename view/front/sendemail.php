@@ -7,7 +7,7 @@ require_once 'phpmailer/SMTP.php';
 
 session_start();
 $cat=$_SESSION['auth'];
-$conn=mysqli_connect("localhost","dhia72","191JMT1252","bazarculturelle");
+$conn=mysqli_connect("localhost","root","","bazarculturelle");
 $sql="SELECT * FROM user where id=".$cat." ";
 $result=mysqli_query($conn,$sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error($conn), E_USER_ERROR); 
 while($row = $result->fetch_assoc()){

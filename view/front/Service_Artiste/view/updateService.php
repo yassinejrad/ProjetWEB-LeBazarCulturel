@@ -1,7 +1,6 @@
 <?php
-    require_once '../../../..//Controller/serviceC.php';
-   //require_once '../Model/service.php';
-
+    require_once '../../../../controller/serviceC.php';
+    require_once '../../../../Model/service.php';
     $serviceC =  new serviceC();
      if 
     (
@@ -17,11 +16,17 @@
                 !empty($_POST['Description'])
             ) 
             {
+                $reference = $_GET['Reference'];
+                echo "$reference";
+                $Id_A = $_GET['IdA'];
+                echo "$Id_A";
+                
                 $service = new Service
                 (
                     $Type = $_POST['Type'], 
                     $Prix = (float)$_POST['Prix'], 
-                    $Description = $_POST['Description']
+                    $Description = $_POST['Description'],
+                    $Id_A                    
                 );
                 if 
                     (
@@ -35,7 +40,7 @@
                                 if ((float)$Prix>= 0) 
                                     {
                                         $result = $serviceC->getServiceByReference($_GET['Reference']);
-                                        $serviceC->updateService($service, $result['Reference']);
+                                        $serviceC->updateService($service, $result['Reference'], );
                                         header('Location:services.php');
                                     }
                                 else {$erreur = "Entrez une valeur supérieur à 0 pour le prix!!";}

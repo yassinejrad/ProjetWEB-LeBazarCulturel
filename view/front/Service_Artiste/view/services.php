@@ -1,6 +1,7 @@
 <?php
 session_start();
   require_once '../../../../Controller/serviceC.php';
+  $bdd = getConnexion();
   if (isset($_GET['Prix']) && isset($_GET['Type'])) 
     {
       $Prix = $_GET['Prix'];
@@ -109,10 +110,7 @@ session_start();
           Le prix de ce service est de: <?= $a['Prix'] ?>dt.<br>
           <?= $a['Description'] ?>
         </div>
-        <!--<div>
-          <a type="button" class="btn btn-primary" href ="updateService.php?Reference=<?= $a['Reference'] ?>">Modifier</a>
-          <a type="button" class="btn btn-primary" href ="services.php?Reference=<?= $a['Reference'] ?>">Supprimer</a>
-        </div>-->
+        
       </div>
       <?php } ?>
     </div>

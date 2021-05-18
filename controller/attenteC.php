@@ -7,8 +7,8 @@ include_once '../../model/categorie.php';
 		
 		function  ajouterattente($attente)
         {
-			$sql="INSERT INTO attente (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER) 
-			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER)" ;
+			$sql="INSERT INTO attente (NOM,PRIX,DATE,QTE,IMAGE,DESCP,CATEGORIE,USER,STATUE) 
+			VALUES (:NOM,:PRIX,:DATE,:QTE,:IMAGE,:DESC,:CATEGORIE,:USER,:STATUE)" ;
 			
 			$db = config::getConnexion();
 			try{
@@ -23,7 +23,8 @@ include_once '../../model/categorie.php';
 					'IMAGE' => $attente->getIMAGE(),
 					'DESC' => $attente->getDESC(),
 					'CATEGORIE' => $attente->getCAT(),
-					'USER' => $attente->getUSER()
+					'USER' => $attente->getUSER(),
+					'STATUE' => $attente->getSTATUE()
 				]);			
 			}
 			catch (Exception $e){

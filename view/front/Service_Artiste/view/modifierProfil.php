@@ -1,7 +1,9 @@
 <?php
 session_start(); 
+	require_once '../config.php';
     require_once '../../../../Controller/artisteC.php';
     require_once 'CS.php';
+$db = getConnexion();
 if (isset($_SESSION['id'])) 
 {
 	$artisteC =  new artisteC();

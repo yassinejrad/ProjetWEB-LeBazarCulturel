@@ -1,7 +1,7 @@
 <?PHP
-	include "../../config.php";
+	require_once "../../config.php";
 	include_once '../../Model/article.php';
-
+	
 	class articleC {
 		
 		function  ajouterarticle($article)
@@ -26,6 +26,7 @@
 			}			
 		}
 		
+
 		function  afficherarticles()
 		{
 			
@@ -95,9 +96,19 @@
 			}
 
 		}
-		
+	/*	function chercher($titre,$nomAuteur) {
+			$sql="select * from article where nom like '%:search%' or auteur like '%:search%';";
+			$db=Config::getConnexion();
+			try{
+			$listearticle = $db->query($sql);
+			return $listearticle;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}*/
 		function chercher($titre) {
-			$sql="SELECT * FROM article where titre='$titre'";
+			$sql="SELECT * FROM article where titre='$titre' ";
 			$db=Config::getConnexion();
 			try{
 			$listearticle = $db->query($sql);
@@ -107,19 +118,45 @@
 				$e->getMessage();
 			}
 		}
-		function chercherA($nomAuteur) {
-			$sql="SELECT * FROM article where nomAuteur='$nomAuteur'";
-			$db=Config::getConnexion();
+
+
+		function triarticle()
+		{
+			$sql="SELECT * from article ORDER by idA ASC";
+			$db = config::getConnexion();
 			try{
-			$listearticle = $db->query($sql);
+			$listearticle=$db->query($sql);
 			return $listearticle;
-			} 
-			catch (PDOException $e) {
-				$e->getMessage();
 			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
 		}
-	
 		
+		function triarticleD()
+		{
+			$sql="SELECT * from article ORDER by dateA DESC";
+			$db = config::getConnexion();
+			try{
+			$listearticle=$db->query($sql);
+			return $listearticle;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		
+		public function chercher2($str) {
+			$sql="SELECT * FROM article where titre ='$str' OR  nomAuteur='$str'   "  ;
+			$db=Config::getConnexion();
+			try{
+			$liste = $db->query($sql);
+			return $liste;
+			} 
+			catch (PDOException $e) {
+				$e->getMessage();
+			}
+		}
 
 
 		

@@ -3,7 +3,6 @@ require_once '../../../../Controller/artisteC.php';
 require_once '../../../../Model/artiste.php';
 function Cs($Nom, $Prenom, $Email, $Numero, $Type, $Adresse, $Postal, $Code, $CodeConfirmation, $Mode)
 {
-	
 	if 
         (
             !empty($_POST['Nom']) && 

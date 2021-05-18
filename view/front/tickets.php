@@ -1,16 +1,3 @@
-<?php 
-include_once '../../controller/produitC.php';
-include_once '../../model/produit.php';
-include_once '../../controller/categorieC.php';
-include_once '../../model/categorie.php';
-
-  $inf1= new produitC();
-  $liste=$inf1->afficherProduits();
-  $inf2= new categorieC();
-  $liste2=$inf2->afficherCategories();
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,14 +22,9 @@ include_once '../../model/categorie.php';
   
   <body>
   
-  <?php
-        foreach($liste2 as $a) {
-    ?>
-    <?php include_once 'header.php'; ?>
-    <?php
-    }
-    ?>
+  <?php include_once 'header.php'; ?>
   
+
   <!-- Page Content -->
   <div class="container">
 

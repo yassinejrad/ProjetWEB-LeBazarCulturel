@@ -15,9 +15,7 @@ if (
   isset($_POST["TEL"]) &&
   isset($_POST["ADRESSE"]) &&
   isset($_POST["EMAIL"]) &&
-  isset($_POST["PASSE"]) &&
-  isset($_POST["DESCRIPTION"])
- 
+  isset($_POST["PASSE"])
 ) {
   if (
     !empty($_POST["NOM"]) &&
@@ -25,12 +23,18 @@ if (
     !empty($_POST["ADRESSE"]) &&
     !empty($_POST["EMAIL"]) &&
     !empty($_POST["PASSE"]) &&
-    !empty($_POST["DESCRIPTION"]) &&
     !empty($_POST["sex"])
 
 
 
   ) {
+    if ($_SESSION['TYPE']=='Seller'){
+      $dec= $_POST['DESCRIPTION'];
+    }
+    else 
+    {
+     $dec='';
+    }
 
     $user = new user(
       $_POST['NOM'],
@@ -40,7 +44,7 @@ if (
       $_POST['PASSE'],
       'female',
       $t , 
-      $_POST['DESCRIPTION'] ,
+$dec ,
       $img,
       0
 
@@ -49,16 +53,28 @@ if (
     $userC->modifierUSER($user, $ID);
     $_SESSION['NOM']= $_POST['NOM'];  
     $_SESSION['DESCRIPTION']=   $_POST['DESCRIPTION']  ;
-    header('location:profil.php') ;
+    if ($_SESSION['TYPE']=='Seller'){
+      header('location:profil.php') ;
+    }
+    else 
+    {
+      header('location:http://localhost/2A4/blog6/view/front/acceuil.php') ;
+    }
   } else if (
     !empty($_POST["NOM"]) &&
     !empty($_POST["TEL"]) &&
     !empty($_POST["ADRESSE"]) &&
     !empty($_POST["EMAIL"]) &&
     !empty($_POST["PASSE"]) &&
-    !empty($_POST["DESCRIPTION"]) &&
     empty($_POST["sex"])
   ) {
+    if ($_SESSION['TYPE']=='Seller'){
+      $dec= $_POST['DESCRIPTION'];
+    }
+    else 
+    {
+     $dec='';
+    }
     $user = new user(
       $_POST['NOM'],
       $_POST['TEL'],
@@ -67,7 +83,7 @@ if (
       $_POST['PASSE'],
       'male',
       $t,
-      $_POST['DESCRIPTION'],
+      $dec,
       $img,
       0       
 
@@ -75,7 +91,13 @@ if (
     $userC->modifierUSER($user, $ID);
     $_SESSION['NOM']= $_POST['NOM'];  
     $_SESSION['DESCRIPTION']=   $_POST['DESCRIPTION'] ;
-    header('location:profil.php') ;
+    if ($_SESSION['TYPE']=='Seller'){
+      header('location:profil.php') ;
+    }
+    else 
+    {
+      header('location:http://localhost/2A4/blog6/view/front/acceuil.php') ;
+    }
     
   } else {
     $error = "Missing information";
@@ -143,9 +165,15 @@ if (
           <input type="text" class="form__input" name="PASSE" placeholder="Passeword" value="<?php echo $a['PASSE'] ?> " />
         </div>
 
-        <div class="form__group">
-          <textarea class="form__input" name="DESCRIPTION" placeholder="Discription"><?php echo $a['DESCRIPTION'] ?> </textarea>
-        </div>
+        <?php
+ if ($_SESSION['TYPE']=='Seller'){
+echo ' 
+<div class="form__group">
+<textarea class="form__input" name="DESCRIPTION" placeholder="Discription">'. $a['DESCRIPTION']. ' </textarea>
+</div>' ;
+ }
+?>
+i
 
         <div class="form__group">
           <label for="toggle-input" class="toggle">
@@ -167,7 +195,7 @@ if (
   </div>
   <div class="form__group">
     <button    class="form__submit"    >
-      <span class="17a2b8">Update</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
+      <span class="17a2b8">Modifier</span><i class="fa fa-long-arrow-right form__submit-icon"></i>
  
     </button>
  

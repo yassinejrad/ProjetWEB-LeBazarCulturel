@@ -10,8 +10,9 @@
 		private ?string $DESC = null;
 		private ?string $CATEGORIE = null;
 		private ?string $user = null;
-			
-		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE ,string $USER)
+		private ?int $STATUE = null;	
+
+		function __construct( string $NOM, float $PRIX, $DATE ,int $QTE ,string $IMAGE ,string $DESC, string $CATEGORIE ,string $USER,int $STATUE)
         {
 			$this->NOM=$NOM;
 			$this->PRIX=$PRIX;
@@ -21,6 +22,7 @@
 			$this->DESC=$DESC;
 			$this->CATEGORIE=$CATEGORIE;
 			$this->USER=$USER;
+			$this->STATUE=$STATUE;
 		}
 		
 		function getref(): int{
@@ -50,7 +52,9 @@
 		function getUSER(): string{
 			return $this->USER;
 		}
-
+		function getSTATUE(): int{
+			return $this->STATUE;
+		}
 
 		function setNOM(string $NOM): void
         {
@@ -83,6 +87,10 @@
 		function setUSER(string $USER): void
 		{
 			 $this->CATEGORIE=$USER;
+		}
+		function setSTATUE(int $STATUE): void
+		{
+			 $this->STATUE=$STATUE;
 		}
     }
 ?>

@@ -6,6 +6,7 @@ include_once '../../model/categorie.php';
   $liste2=$inf1->afficherCategories();
 
   session_start();
+  $img=  $_SESSION['IMG']; 
 
 ?>
 
@@ -15,13 +16,57 @@ include_once '../../model/categorie.php';
 
         
 <nav class="navbar-expand-lg navbar-light badge-light fixed-top">
+ 
+
+<div class="user-area dropdown float-right">
+                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <?php
+                       echo'  <img class="user-avatar rounded-circle" src="'.$img.'"  width=" 40px" >' ;
+                     
+                     ?>
+                         </a>
+
+                     <div class="user-menu dropdown-menu">
+                         <a class="nav-link" href="#"> 
+                             <?php
+                    if($_SESSION['TYPE']=='Seller'){
+                   echo'<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/profil.php"> Profile </a>';
+}
+else  if($_SESSION['TYPE']=='Buyer') {
+    echo'<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/edit.php"> Profile </a>';
+} 
+if($_SESSION['TYPE']!='administrateur') {
+    echo'  <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/favoris.php">Favoris</a>'
+  ; } 
+   echo' <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/resh.php">Tous les profiles</a>' ; 
+
+    if($_SESSION['TYPE']=='administrateur') {
+    echo'  <a class="dropdown-item" href="http://localhost/2A4/blog6/view/back/index_back.php?img='.$img.'">Back</a>'
+  ; }
+
+  echo'  <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/goodbye.php">Deconnexion</a>'
+
+    ?>  </a>
+
+
+
+
+                    
+                     </div>
+                 </div>
+            
+               
+
 
     
         <div class="titre">
-            <a href="#"><img class="logo" src="images/logo.png">
-                <a class="nav-link" href="index.php">Le bazar culturel</a>
+            <a href="index.php"><img class="logo" src="images/logo.png">
+                <a class="nav-link" href="acceuil.php">Le bazar culturel</a>
         </div>
+        
 
+                  
+                 <!--  -->
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,29 +81,13 @@ include_once '../../model/categorie.php';
                 </label>
     
         </div>
+         <!--  -->
             <ul class="navbar-nav ml-auto">
            
                 <li class="nav-item">
                     <a class="nav-link" href="about.php"> <i class="fas fa-address-card"></i> A propos de nous</a>
                 </li>
-                <li class="nav-item dropdown">
-                
 
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-user"></i> Profile </a>        
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-                    <?php
-                    if($_SESSION['TYPE']=='Seller'){
-                   echo'<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/profil.php"> Profile </a>';
-}
-    
-    ?>
-                        
-                        <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/favoris.php">Favoris</a>
-                        <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/resh.php">Tous les profiles</a>
-                    </div>
-                    
-                </li>
-                
                 <li class="nav-justified dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-list-alt" aria-hidden="true"></i>
               Catégories
@@ -78,13 +107,22 @@ include_once '../../model/categorie.php';
                    
           
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Service_Artiste/view/services.php"> <i class="fa fa-clone"></i> Services</a>
+          <li class="nav-item">
+                    <a class="nav-link" href="services.php"> <i class="fa fa-clone"></i> Services</a>
                 </li>
+                
+                <li class="nav-justified dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-calendar "></i>  Evenements
+            </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                    <a class="dropdown-item" href="event.php">  Evenements</a>
+                        <a class="dropdown-item" href="sponsor.php">Sponseur</a>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="Evenements.php"> <i class="fa fa-calendar "></i> Evenements</a>
+
+                    </div>
                 </li>
+                
 
                 <li class="nav-item">
                     <a class="nav-link" href="blog.php"> <i class="far fa-newspaper"></i> Articles </a>
@@ -95,9 +133,10 @@ include_once '../../model/categorie.php';
                          Artiste
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-                        <a class="dropdown-item" href="Service_Artiste/view/Touslesartistes.php">Tous les artistes</a>
-                        <a class="dropdown-item" href="Service_Artiste/view/addArtiste.php">Inscription Artiste</a>
-                        <a class="dropdown-item" href="Service_Artiste/view/ConnexionArtiste.php">Connexion Artiste</a>
+                        <a class="dropdown-item" href="Tous les artistes.php">Tous les artistes</a>
+                        <a class="dropdown-item" href="Tous les artistes.php">Connexion Artiste</a>
+                        <a class="dropdown-item" href="Tous les artistes.php">Inscription Artiste</a>
+                      
                     </div>
                 </li>
                 <!-- Sidebar Widgets Column -->

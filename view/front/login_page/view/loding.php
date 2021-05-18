@@ -6,7 +6,7 @@ if( $_SESSION['BLOQUER']=="0") {
 
 
 if( $_SESSION['TYPE']=="administrateur") {
-  echo '      <meta http-equiv="refresh" content="7  http://localhost/2A4/blog6/view/back/index_back.php" >   '   ;
+  echo '      <meta http-equiv="refresh" content="7  http://localhost/2A4/blog6/view/back/index_back.php?img='.$_SESSION['IMG'].' " >   '   ;
 
 }
 else {

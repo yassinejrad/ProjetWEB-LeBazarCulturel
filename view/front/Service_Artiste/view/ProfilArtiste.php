@@ -1,6 +1,8 @@
 <?php
 session_start();
+  require_once '../config.php';
   require_once '../../../../controller/artisteC.php';
+  $db = getConnexion();
 if(isset($_GET['id']))
 {
   $getid = intval($_GET['id']);
@@ -12,6 +14,10 @@ if(isset($_GET['id']))
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="../assets/front/css/style.css" rel="stylesheet" >
+  <link href="../assets/front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/front/css/styleServices.css" rel="stylesheet" >
   <title>Le Bazar Culturel: profil</title>
 </head>
 <body>  
@@ -53,6 +59,14 @@ if(isset($_GET['id']))
                 Code postal: <b><?= $artiste['Postal'] ?></b><br/>
               </div>
 
+              <div align="middle">
+                <span class="mod grpbtn">
+                  <a type="button" class="btn btn-primary" href ="ModifAdmin.php?id=<?= $artiste['id'] ?>">Modifier</a>
+                </span>
+                <span class="mod">
+                  <a type="button" class="btn btn-primary" href ="SupprimerAdmin.php?id=<?= $artiste['id'] ?>">Supprimer</a>
+                </span>
+              </div>
             </div>
           </section>
       </section>
@@ -110,12 +124,12 @@ else
           <div>
             <a class="btn btn-primary" href="services.php">Aller à la page <b>Service</b></a> <br/>
           </div>
-          <div>
-            <a class="btn btn-primary" href="addService.php ">Créer un <b>Service</b></a>  <br/> 
+           <div>
+            <a class="btn btn-primary" href="addService.php?id=<?= $userinfo['id'] ?>">Aller à la page <b>Ajout Service</b></a> <br/>
           </div>
           <div>
-            <a class="btn btn-primary" href="deconnexion.php ">aller à la page <b>Article</b></a>  <br/> 
-          </div>  
+            <a class="btn btn-primary" href="servicePerso.php?id=<?= $userinfo['id'] ?>">Afficher mes <b>demande service</b></a> <br/>
+          </div>
         </div>
       </div>
   </section>

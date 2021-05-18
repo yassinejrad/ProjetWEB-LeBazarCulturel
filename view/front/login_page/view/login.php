@@ -135,13 +135,16 @@ if (
                     <h2 class="title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="email" name="EMAIL_AUTH">
+                        <input type="text" placeholder="email" name="EMAIL_AUTH" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="PASSE_AUTH">
+                        <input type="password" placeholder="Password" name="PASSE_AUTH" required />
                     </div>
-                    <input type="submit" value="Login" class="btn solid">
+
+                    <input type="submit" value="Login" class="btn solid"  required>
+
+
                     <p class="social-text">Or Sign in with social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -272,6 +275,7 @@ if (
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
 
 </body>
 

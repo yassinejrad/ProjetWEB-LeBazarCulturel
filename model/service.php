@@ -4,11 +4,13 @@
         private string $Type;
         private string $Description;
         private float $Prix;
+        private int $Id_A;
 
-        public function __construct($Type, $Prix, $Description){
+        public function __construct($Type, $Prix, $Description, $Id_A){
             $this->Type = $Type;
             $this->Prix = $Prix;
             $this->Description = $Description;
+            $this->Id_A = $Id_A;
         }
 
         public function getReferenceService () {
@@ -37,5 +39,11 @@
 
         public function setPrix ($Prix){
             $this->Prix = $Prix;
+        }
+        public function getId_A(){
+            return $this->Id_A;
+        }
+        public function setId_A ($Id_A){
+            $this->Id_A = $Id_A;
         }
     }

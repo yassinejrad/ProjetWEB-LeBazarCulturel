@@ -1,11 +1,11 @@
 <?php
-    require_once '../../../../config.php';
+    require_once '../config.php';
     require_once '../../../../Model/artiste.php';
     class artisteC 
         {
             public function afficherArtiste() {
                 try {
-                    $pdo = config::getConnexion();
+                    $pdo = getConnexion();
                     $query = $pdo->prepare(
                         'SELECT * FROM artiste WHERE id > 0'
                     );
@@ -20,7 +20,7 @@
             public function getArtisteByid($id) {
                 try 
                     {
-                        $db = config::getConnexion();
+                        $db = getConnexion();
                         $requser = $db->prepare("SELECT * FROM artiste WHERE id = ?");
                         $requser->execute(array($id));
                         $userinfo = $requser->fetch();
@@ -33,7 +33,7 @@
     
             public function getArtisteByType($type) {
                 try {
-                    $pdo = config::getConnexion();
+                    $pdo = getConnexion();
                     $query = $pdo->prepare(
                         'SELECT * FROM artiste WHERE Type = :type'
                     );
@@ -48,7 +48,7 @@
     
             public function addArtiste($artiste) {
                 try {
-                    $pdo = config::getConnexion();
+                    $pdo = getConnexion();
                     $query = $pdo->prepare(
                         'INSERT INTO artiste (Nom, Prenom, Email, Code, Numero, Type, Postal, Adresse) 
                     VALUES (:Nom, :Prenom, :Email, :Code, :Numero, :Type, :Postal, :Adresse)'
@@ -71,7 +71,7 @@
             public function updateArtiste($Nom, $Prenom, $Email, $Numero, $Type, $Adresse, $Postal, $Code, $id) 
             {
                 try {
-                    $pdo = config::getConnexion();
+                    $pdo = getConnexion();
                     $query = $pdo->prepare
                     (
                         'UPDATE artiste SET Nom = ?, Prenom = ?, Email = ?, Numero = ?, Type = ?, Adresse = ?, Postal = ?, Code = ? WHERE id = ?'
@@ -87,7 +87,7 @@
     
             public function deleteArtiste($id) {
                 try {
-                    $pdo = config::getConnexion();
+                    $pdo = getConnexion();
                     $query = $pdo->prepare(
                         'DELETE FROM artiste WHERE id = ?'
                     );
@@ -103,7 +103,7 @@
     {
         try 
             {
-                $db = config::getConnexion();
+                $db = getConnexion();
                 $requser = $db-> prepare("SELECT * FROM artiste WHERE Email = ? AND Code = ?");
                 $requser->execute(array($Email, $Code));
                 return $requser;
@@ -117,7 +117,7 @@
     function verifierMailArtiste($Email)
         {
             $sql = "SELECT * FROM artiste WHERE Email = ?";
-            $db = config::getConnexion();
+            $db = getConnexion();
             try
                 {
                     $reqmail = $db-> prepare($sql);
@@ -132,7 +132,7 @@
     function verifierCodeArtiste($Email, $Code)
         {
             $sql = "SELECT Code FROM artiste WHERE Email = ? AND Code = ?";
-            $db = config::getConnexion();
+            $db = getConnexion();
             try
                 {
                     $reqmail = $db-> prepare($sql);
@@ -144,7 +144,7 @@
     function test($id)
     {
         $sql = "SELECT * FROM artiste WHERE id = ?";
-            $db = config::getConnexion();
+            $db = getConnexion();
             try
                 {
                     $reqmail = $db-> prepare($sql);

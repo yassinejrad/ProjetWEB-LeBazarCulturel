@@ -12,8 +12,8 @@ include_once '../../../../config.php';
 
         function  AUTH($EMAIL ,$PASSE) {
          $host="localhost" ; 
-         $user="dhia72" ; 
-         $pass="191JMT1252"  ; 
+         $user="root" ; 
+         $pass=""  ; 
          $db="bazarculturelle" ; 
          $conn=mysqli_connect($host,$user,$pass,$db) ; 
          $query="SELECT * FROM USER WHERE EMAIL='$EMAIL ' AND PASSE='$PASSE' " ; 
@@ -33,12 +33,8 @@ include_once '../../../../config.php';
 
                    header('location:loding.php') ;
 
-             
-   
-     
             }
-       
-        
+
         }
         else  {
           echo ( "not found ") ; 

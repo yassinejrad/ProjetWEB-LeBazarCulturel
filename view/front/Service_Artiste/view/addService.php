@@ -1,5 +1,7 @@
 <?php
-    require '../../../../Controller/serviceC.php';
+session_start();
+    require_once '../../../../Controller/serviceC.php';
+    require_once '../../../../Model/Service.php';
 
     $serviceC =  new serviceC();
     if 
@@ -20,7 +22,8 @@
                 (
                     $Type = $_POST['Type'], 
                     $Prix = (float)$_POST['Prix'], 
-                    $Description = $_POST['Description']
+                    $Description = $_POST['Description'],
+                    $Id_A = $_GET['id']
                 );
                 if 
                     (
@@ -34,7 +37,7 @@
                                 if ((float)$Prix>= 0) 
                                     {
                                         $serviceC->addService($service);
-                                        header('Location:services.php');
+                                        header('Location:servicePerso.php?id='.$_SESSION['id']);
                                     }
                                 else {$erreur = "Entrez une valeur supérieur à 0 pour le prix!!";}
                             }
@@ -93,7 +96,7 @@
                         <label>Prix</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" name = "Prix" step="0.01">
+                        <input type="number" name = "Prix" >
                     </div>
                 </div>
                 <div class="row">
@@ -104,7 +107,14 @@
                         <input type = "textarea" name = "Description">
                     </div>
                 </div>
-                <br>
+                <!--<div class="row">
+                    <div class="col-25">
+                        <label>Artiste Id</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" name = "Id_A" >
+                    </div>
+                </div>--><br>
                 <div class="row">
                     <input type="submit" value="Envoyer!!" class="btn btn-primary" name = "submit">
                 </div>

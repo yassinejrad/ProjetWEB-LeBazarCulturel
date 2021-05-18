@@ -1,5 +1,6 @@
 <?php
 session_start();
+    require_once '../../../../config.php';
     require_once '../../../../Controller/artisteC.php';
     $artisteC =  new artisteC();
 if(isset($_POST['Email']) && isset($_POST['Code']))
