@@ -115,11 +115,11 @@
         {
             $list = array() ; 
             $conn = new mysqli("localhost", "root", "", "bazarculturelle"); 
-            $sql = "select * from artist  ";
+            $sql = "select * from artiste  ";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) 
             {
-                array_push($list,$row['name']);
+                array_push($list,$row['Nom']);
 
             }
             echo"$list[0]" ; 
@@ -149,7 +149,7 @@
         {
             $id =0 ;  
             $conn = new mysqli("localhost", "root", "", "bazarculturelle"); 
-            $sql = "select * from artist where name='$name'  ";
+            $sql = "select * from artiste where Nom='$name'  ";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) 
             {
@@ -190,25 +190,25 @@
 
             $list = array() ; 
             
-            $sql = "select * from artist where id=$id_list[0] ";
+            $sql = "select * from artiste where id=$id_list[0] ";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) 
             {
-                array_push($list,$row['name']);
+                array_push($list,$row['Nom']);
 
             }
-            $sql = "select * from artist where id=$id_list[1] ";
+            $sql = "select * from artiste where id=$id_list[1] ";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) 
             {
-                array_push($list,$row['name']);
+                array_push($list,$row['Nom']);
 
             }
-            $sql = "select * from artist where id=$id_list[2] ";
+            $sql = "select * from artiste where id=$id_list[2] ";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) 
             {
-                array_push($list,$row['name']);
+                array_push($list,$row['Nom']);
 
             }
         

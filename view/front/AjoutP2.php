@@ -250,11 +250,13 @@
                                         <textarea class="form-control" name="DESC" placeholder="Description  du produit"
                                             value=" " //onblur="verifReff(this) " style="width:500px" cols="30"
                                             rows="10" pattern="[0-9a-zA-Z-\.]{3,100}" required> </textarea> </br>
-                                        <label style="font-weight: bold"> Prix dt </label>
+
+                                            <label style="font-weight: bold"> Prix dt </label>
                                         <input type="number" class="form-control" onblur="verifNB(this)"
                                             class="form-control " name="PRIX" value=" " min="0" max=""
                                             placeholder="Prix en Dt " style="width:200px " required></br>
-                                        <label style="font-weight: bold">Date D'Ajout</label> </br>
+                                        
+                                            <label style="font-weight: bold">Date D'Ajout</label> </br>
                                         <input type="date-local" class="form-control" id="DATE" name="DATE" value=""
                                             required>
                                             <script>

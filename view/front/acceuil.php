@@ -1,4 +1,3 @@
-
 <?php 
 include_once '../../controller/categorieC.php';
 include_once '../../model/categorie.php';
@@ -9,11 +8,10 @@ $sql="SELECT * FROM produits  ORDER BY QTE DESC ";
 $result = $conn->query($sql) or die($conn->error);
   $inf1= new categorieC();
   $liste=$inf1->afficherCategories();
- //articles 
+  //articles 
  $articleC = new articleC();
  $listearticle = $articleC->afficherarticles();
 $listearticle = $articleC->triarticleD();
-
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +19,7 @@ $listearticle = $articleC->triarticleD();
 
 <head>
 
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <meta name="description" content="">
@@ -68,119 +66,22 @@ $listearticle = $articleC->triarticleD();
     <link rel="stylesheet" href="css/nivo-lightbox.css">
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
-
-
-    <style>
-   
-   .BC {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    color: #2196f3;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-size: 24px;
-    overflow: hidden;
-    transition: 0.2s;
-}
-
-
-
-.BC:hover {
-    color: #255784;
-    background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-    transition-delay: 1s;
-}
-
-
-.BC span {
-    position: absolute;
-    display: block;
-}
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "60a44303d8a5c2000710e0d6";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<!-- End of ChatBot code -->
 
 
 
 
-.BC span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #2196f3);
-}
 
-
-.BC:hover span:nth-child(1) {
-    left: 100%;
-    transition: 1s;
-}
-
-
-.BC span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #2196f3);
-}
-
-.BC:hover span:nth-child(3) {
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-}
-
-
-
-.BC  span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #2196f3);
-}
-
-.BC :hover span:nth-child(2) {
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-}
-
-
-
-.BC span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #2196f3);
-}
-
-.BC:hover span:nth-child(4) {
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-}
-
-.mouve {
- /* width: 100px;
-  height: 50px;*/
-  font-weight: bold;
-  position: relative;
-  animation: mymove 9s  ;
-}
-
-@keyframes mymove {
-  from {left: -100px;}
-  to {left: 200px;}
-}
-
-
-    
-    
-    </style>
 </head>
 
 <body>
@@ -195,8 +96,7 @@ $listearticle = $articleC->triarticleD();
     ?>
     <header>
 
-        
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -242,294 +142,275 @@ $listearticle = $articleC->triarticleD();
     <!-- Page Content -->
     <div class="container">
 
-        
-        <h2>Nos sélections</h2>
+ 
 
-        <div class="row">
-        <?php
-        $n=0;
-       while($row = $result->fetch_assoc() ) {
-        if($n<=6 && $n==0) {
-            echo' <div class="col-md-4">
-            
-            <div class="card mb-3 product-wap rounded-0" data-aos="fade-right">
-                <div class="card rounded-0">
-                    <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                        <ul class="list-unstyled">
-                        <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                        
-                        <a style="display: block;
-                        text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <i class="far fa-eye"></i></a>
-                        <a style="display: block;
-                        text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        
-                        <i class="far fa-heart"></i></a>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
-                    
-                   
-                   
-                </div>
-            </div>
-            </div>
-            
-     
-     
-            ';
-         }
-         
-             if($n<=6 && $n==1) {
-                 echo' <div class="col-md-4">
-                
-                 <div class="card mb-3 product-wap rounded-0" data-aos="fade-up">
-                     <div class="card rounded-0">
-                         <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                             <ul class="list-unstyled">
-                             <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                             
-                             <a style="display: block;
-                             text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <i class="far fa-eye"></i></a>
-                             <a style="display: block;
-                             text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             
-                             <i class="far fa-heart"></i></a>
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="card-body">
-                         <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
-                         
-                        
-                        
-                     </div>
-                 </div>
-                 </div>
-                 
-          
-          
-                 ';
-              }
-     
-     
-         
-         
-             if($n<=6 && $n==2) {
-                 echo' <div class="col-md-4">
-                 
-                 <div class="card mb-3 product-wap rounded-0 "data-aos="fade-left">
-                     <div class="card rounded-0">
-                         <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                             <ul class="list-unstyled">
-                             <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                             
-                             <a style="display: block;
-                             text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <i class="far fa-eye"></i></a>
-                             <a style="display: block;
-                             text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             
-                             <i class="far fa-heart"></i></a>
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="card-body">
-                         <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
-                         
-                        
-                        
-                     </div>
-                 </div>
-                 </div>
-                 
-          
-          
-                 ';
-              }
-              if($n<=6 && $n==3) {
-                 echo' <div class="col-md-4">
-                 
-                 <div class="card mb-3 product-wap rounded-0 "data-aos="fade-left">
-                     <div class="card rounded-0">
-                         <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                             <ul class="list-unstyled">
-                             <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                             
-                             <a style="display: block;
-                             text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <i class="far fa-eye"></i></a>
-                             <a style="display: block;
-                             text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             
-                             <i class="far fa-heart"></i></a>
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="card-body">
-                         <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
-                         
-                        
-                        
-                     </div>
-                 </div>
-                 </div>
-                
-          
-          
-                 ';
-              }
-              
-              if($n<=6 && $n==4) {
-                 echo' <div class="col-md-4">
-                
-                 <div class="card mb-3 product-wap rounded-0 "data-aos="fade-up">
-                     <div class="card rounded-0">
-                         <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                             <ul class="list-unstyled">
-                             <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                             
-                             <a style="display: block;
-                             text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <i class="far fa-eye"></i></a>
-                             <a style="display: block;
-                             text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             
-                             <i class="far fa-heart"></i></a>
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="card-body">
-                         <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
-                         
-                        
-                        
-                     </div>
-                 </div>
-                 </div>
-                
-          
-          
-                 ';
-              }
-              if($n<=6 && $n==5) {
-                 echo' <div class="col-md-4">
-                 
-                 <div class="card mb-3 product-wap rounded-0 "data-aos="fade-right">
-                     <div class="card rounded-0">
-                         <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
-                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                             <ul class="list-unstyled">
-                             <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
-                             
-                             <a style="display: block;
-                             text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <i class="far fa-eye"></i></a>
-                             <a style="display: block;
-                             text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             <span></span>
-                             
-                             <i class="far fa-heart"></i></a>
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="card-body">
-                         <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
-                         
-                        
-                        
-                     </div>
-                 </div>
-                 </div>
-                 
-          
-          
-                 ';
-              }
-     $n++; 
-    }
-    ?>
-
-            
-         
-        </div>
-        <!--
-<h2>Articles</h2>
+    <h2>Nos sélections</h2>
 
 <div class="row">
-<?PHP
-				//foreach($listearticle as $article){
-			?>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header"><?PHP // echo $article['titre']; ?></h4>
-                     <img class="card-img-top" src="../<?php // echo $article["image"]; ?>"  alt="image">
-                    <div class="card-body">
-                        <p class="card-text"><?PHP // echo substr($article['description'], 0, 36).'...'; ?></p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="readmoreA.php?id=<?PHP  //echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Lire la suite &rarr;</a> 
-                    </div>
-                </div>
-            </div> 
-            </div> 
--->
+<?php
+$n=0;
+while($row = $result->fetch_assoc() ) {
+if($n<=6 && $n==0) {
+    echo' <div class="col-md-4">
+    
+    <div class="card mb-3 product-wap rounded-0" data-aos="fade-right">
+        <div class="card rounded-0">
+            <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
+            <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                <ul class="list-unstyled">
+                <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
+                
+                <a style="display: block;
+                text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="far fa-eye"></i></a>
+                <a style="display: block;
+                text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                
+                <i class="far fa-heart"></i></a>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body">
+            <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+            
+           
+           
+        </div>
+    </div>
+    </div>
+    
 
+
+    ';
+ }
+ 
+     if($n<=6 && $n==1) {
+         echo' <div class="col-md-4">
+        
+         <div class="card mb-3 product-wap rounded-0" data-aos="fade-up">
+             <div class="card rounded-0">
+                 <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
+                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                     <ul class="list-unstyled">
+                     <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
+                     
+                     <a style="display: block;
+                     text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <i class="far fa-eye"></i></a>
+                     <a style="display: block;
+                     text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     
+                     <i class="far fa-heart"></i></a>
+                     </ul>
+                 </div>
+             </div>
+             <div class="card-body">
+                 <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+                 
+                
+                
+             </div>
+         </div>
+         </div>
+         
+  
+  
+         ';
+      }
+
+
+ 
+ 
+     if($n<=6 && $n==2) {
+         echo' <div class="col-md-4">
+         
+         <div class="card mb-3 product-wap rounded-0 "data-aos="fade-left">
+             <div class="card rounded-0">
+                 <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
+                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                     <ul class="list-unstyled">
+                     <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
+                     
+                     <a style="display: block;
+                     text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <i class="far fa-eye"></i></a>
+                     <a style="display: block;
+                     text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     
+                     <i class="far fa-heart"></i></a>
+                     </ul>
+                 </div>
+             </div>
+             <div class="card-body">
+                 <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+                 
+                
+                
+             </div>
+         </div>
+         </div>
+         
+  
+  
+         ';
+      }
+      if($n<=6 && $n==3) {
+         echo' <div class="col-md-4">
+         
+         <div class="card mb-3 product-wap rounded-0 "data-aos="fade-left">
+             <div class="card rounded-0">
+                 <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
+                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                     <ul class="list-unstyled">
+                     <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
+                     
+                     <a style="display: block;
+                     text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <i class="far fa-eye"></i></a>
+                     <a style="display: block;
+                     text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     
+                     <i class="far fa-heart"></i></a>
+                     </ul>
+                 </div>
+             </div>
+             <div class="card-body">
+                 <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+                 
+                
+                
+             </div>
+         </div>
+         </div>
+        
+  
+  
+         ';
+      }
+      
+      if($n<=6 && $n==4) {
+         echo' <div class="col-md-4">
+        
+         <div class="card mb-3 product-wap rounded-0 "data-aos="fade-up">
+             <div class="card rounded-0">
+                 <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
+                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                     <ul class="list-unstyled">
+                     <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
+                     
+                     <a style="display: block;
+                     text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <i class="far fa-eye"></i></a>
+                     <a style="display: block;
+                     text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     
+                     <i class="far fa-heart"></i></a>
+                     </ul>
+                 </div>
+             </div>
+             <div class="card-body">
+                 <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+                 
+                
+                
+             </div>
+         </div>
+         </div>
+        
+  
+  
+         ';
+      }
+      if($n<=6 && $n==5) {
+         echo' <div class="col-md-4">
+         
+         <div class="card mb-3 product-wap rounded-0 "data-aos="fade-right">
+             <div class="card rounded-0">
+                 <img  class="card-img rounded-0 img-fluid"  src="'.$row['IMAGE'].'" style="width: 400px; height: 400px;" >
+                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                     <ul class="list-unstyled">
+                     <a style="color:white;" href="" class="h3 text-decoration-none"> '.$row['DESCP'].'</a>
+                     
+                     <a style="display: block;
+                     text-align: center;"class="BC text-white mt-2"href="readmore.php?REFERENCE='.$row['REFERENCE'].'"id="REFERENCE" name="REFERENCE">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <i class="far fa-eye"></i></a>
+                     <a style="display: block;
+                     text-align: center;" class="BC text-white" href="favo.php?REFERENCE='.$row['REFERENCE'].'">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     
+                     <i class="far fa-heart"></i></a>
+                     </ul>
+                 </div>
+             </div>
+             <div class="card-body">
+                 <a style="color:red;" href="" class="h3 text-decoration-none"> '.$row['NOM'].'</a>
+                 
+                
+                
+             </div>
+         </div>
+         </div>
+         
+  
+  
+         ';
+      }
+$n++; 
+}
+?>
+
+    
+ 
+</div>
+  
+        <!-- /.row -->
 <!-- articles -->
 <h1 class="my-4">Articles</h1>
  
@@ -563,7 +444,6 @@ $listearticle = $articleC->triarticleD();
         <?PHP
 				}
 			?>
- 
         <!-- evenement -->
         <div class="row">
             <div class="col-lg-6">
@@ -588,11 +468,13 @@ $listearticle = $articleC->triarticleD();
 
         <hr>
 
-<!-- comment ça marche -->
-<div class="row">
+        <!-- comment ça marche -->
+
         <div class="services-section" id="services">
             <div class="container">
                 <div class="services-header">
+               
+             
                   
                         <h1 class="partie1"> Essayez gratuitement l’oeuvre chez vous pendant 14 jours:</h1>
                    
@@ -617,12 +499,26 @@ $listearticle = $articleC->triarticleD();
                 </div>
             </div>
      </div>
-    </div>
-    </div>
-           </div>
+     </div>
+     </div>
+    <style>
+        .mouve {
+ /* width: 100px;
+  height: 50px;*/
+  font-weight: bold;
+  position: relative;
+  animation: mymove 9s  ;
+}
+
+@keyframes mymove {
+  from {left: -100px;}
+  to {left: 200px;}
+}
+
+
+    </style>
      <?php include_once 'footer.php'; ?>
      <script src="black.js"></script>
-   
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
   AOS.init({
@@ -631,8 +527,6 @@ $listearticle = $articleC->triarticleD();
         duration: 1000 // values from 0 to 3000, with step 50ms
       });
   </script>
-
-
 </body>
 
 </html>

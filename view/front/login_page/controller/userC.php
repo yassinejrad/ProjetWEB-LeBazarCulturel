@@ -33,12 +33,8 @@ include_once '../../../../config.php';
 
                    header('location:loding.php') ;
 
-             
-   
-     
             }
-       
-        
+
         }
         else  {
           echo ( "not found ") ; 

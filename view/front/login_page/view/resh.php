@@ -1,9 +1,6 @@
 <?php
-
-
-
 $conn = new mysqli("localhost","root","","bazarculturelle") ;
-$Buyer="Buyer" ; 
+$Buyer="Seller" ; 
 $sql = "select * from user where TYPE='$Buyer' ";
 
     if(!empty($_POST["q"]) ) {

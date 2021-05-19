@@ -163,8 +163,12 @@ font: size 21px;
                 <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item active">Products</li>
+            <li class="breadcrumb-item active"> 
+            <a href="trie.php"><i class="fas fa-filter"></i>
+</a> 
+            </li>
             <li class="breadcrumb-item">
-                <a href="AjoutP2.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                <a href="AjouterP2.php"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
             </li>
         </ol>
        

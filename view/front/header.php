@@ -6,6 +6,7 @@ include_once '../../model/categorie.php';
   $liste2=$inf1->afficherCategories();
 
   session_start();
+  $img=  $_SESSION['IMG']; 
 
 ?>
 
@@ -15,11 +16,15 @@ include_once '../../model/categorie.php';
 
         
 <nav class="navbar-expand-lg navbar-light badge-light fixed-top">
+ 
 
 <div class="user-area dropdown float-right">
                      <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         <img class="user-avatar rounded-circle" src="<?php echo $_SESSION['IMG']?>"  width=" 40px" alt="User Avatar">
-                     </a>
+                     <?php
+                       echo'  <img class="user-avatar rounded-circle" src="'.$img.'"  width=" 40px" >' ;
+                     
+                     ?>
+                         </a>
 
                      <div class="user-menu dropdown-menu">
                          <a class="nav-link" href="#"> 
@@ -27,17 +32,30 @@ include_once '../../model/categorie.php';
                     if($_SESSION['TYPE']=='Seller'){
                    echo'<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/profil.php"> Profile </a>';
 }
-else {
+else  if($_SESSION['TYPE']=='Buyer') {
     echo'<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/edit.php"> Profile </a>';
-}
-    
+} 
+if($_SESSION['TYPE']!='administrateur') {
+    echo'  <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/favoris.php">Favoris</a>'
+  ; } 
+   echo' <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/resh.php">Tous les profiles</a>' ; 
+
+    if($_SESSION['TYPE']=='administrateur') {
+    echo'  <a class="dropdown-item" href="http://localhost/2A4/blog6/view/back/index_back.php?img='.$img.'">Back</a>'
+  ; }
+
+  echo'  <a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/goodbye.php">Deconnexion</a>'
+
     ?>  </a>
 
-<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/favoris.php">Favoris</a>
-<a class="dropdown-item" href="http://localhost/2A4/blog6/view/front/login_page/view/resh.php">Tous les profiles</a>
+
+
+
                     
                      </div>
                  </div>
+            
+               
 
 
     
@@ -90,7 +108,7 @@ else {
           
                 </li>
           <li class="nav-item">
-                    <a class="nav-link" href="services.php"> <i class="fa fa-clone"></i> Services</a>
+                    <a class="nav-link" href="../front/Service_Artiste/view/services.php"> <i class="fa fa-clone"></i> Services</a>
                 </li>
                 
                 <li class="nav-justified dropdown">
@@ -115,7 +133,9 @@ else {
                          Artiste
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-                        <a class="dropdown-item" href="Tous les artistes.php">Tous les artistes</a>
+                       
+                        <a class="dropdown-item" href="../front/Service_Artiste/view/ConnexionArtiste.php">Connexion Artiste</a>
+                        <a class="dropdown-item" href="../front/Service_Artiste/view/deconnexion.php">Inscription Artiste</a>
                       
                     </div>
                 </li>

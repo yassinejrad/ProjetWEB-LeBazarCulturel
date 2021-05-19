@@ -9,25 +9,30 @@ $resultz = $conn->query($sqlt) or die($conn->error);
 $e=0; ;
 while ($rowz= $resultz->fetch_assoc()) 
  {
-    if (isset($_POST[$e])) {
-         $d= $rowz["REFERENCE"];
-        $sqld = "delete from favoris where id='$d'  ";
-        $resultd = $conn->query($sqld) or die($conn->error); 
-      header('location:favoris.php') ;   
-    }
+
 $f=$rowz['id_produit'] ;
     
  if (isset($_POST[$rowz['REFERENCE']])) {
     header('location:details.php?id='.$f.'') ;  
 
  }
-
+ if (isset($_POST[$e])) {
+    $d= $rowz["REFERENCE"];
+   $sqld = "delete from favoris where id='$d'  ";
+   $resultd = $conn->query($sqld) or die($conn->error); 
+ header('location:favoris.php?id='.$f.'') ;   
+}
    
 $e++; 
    
  }
 
- 
+ if(isset($_GET['id'])) {
+    $sqld = "delete from favoris where id_produit='$_GET[id]' and  id_user='$id'  ";
+    $resultd = $conn->query($sqld) or die($conn->error); 
+    header('location:favoris.php') ;  
+
+ }
   
  
 
@@ -107,7 +112,7 @@ $e++;
             </div>
             <div class="content">
                
-                <button name="'.$row['REFERENCE'].'" type="sumbit" class="btn btn--left"href="edit.html" >buy it</button>    <button name="'.$n.'" class="btn btn--right" onclick="location.href="edit.html"">delete</button>
+                <button name="'.$row['REFERENCE'].'" type="sumbit" class="btn btn--left"href="edit.html" >buy it</button>    <button name="'.$n.'" class="btn btn--right" "href="edit.html"  ">delete</button>
                 
                 
                 

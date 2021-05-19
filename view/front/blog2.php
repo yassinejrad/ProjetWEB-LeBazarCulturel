@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="utf-8">
     <link href="dark.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,21 +24,21 @@
 <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
-    <script src="js/alertArticle.js"></script><!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <script src="js/alertArticle.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Simple line icons-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles2.css" rel="stylesheet" />
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body >
+        <link href="css/styles2.css" rel="stylesheet" >
+</head>
 
+<body  >
+<!-- Navigation -->
     <?php include_once 'header.php'; ?>
 <!-- Page Content -->
-  <div class="container">
+<div class="container">
 <!-- Page Heading/Breadcrumbs -->
     <p class="mt-4 mb-4">
       <br>
@@ -49,22 +49,17 @@
       </li>
       <li class="breadcrumb-item active">Blog</li>
     </ol>
-                    
-        
-        <!-- Portfolio-->
-        <div class="row">
+    <div class="row">
     <tr></tr>
 <!-- Blog Entries Column -->
       <div class="col-md-8">
-           
-                   
-                    <?PHP
+			<?PHP
 				foreach($listearticle as $article){
 			?>
-           <div class="card mb-4">
-            <div class="container">
-            
-                        <a class="portfolio-item" href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA">
+        
+          <div class="card mb-4">
+          
+          <a class="portfolio-item" href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA">
                             <div class="caption">
                                 <div class="caption-content">
                                 
@@ -73,14 +68,14 @@
                                 </div>
                             </div>
                             
-                            <img class="card-img-top"  src="../<?php echo $article["image"]; ?>"  alt="image"  />
-                            </div>
+                            <img class="card-img-top"  src="<?php echo $article["image"]; ?>"  alt="image"  />
+                            
                             </a>
-                            <div class="card-footer text-muted"  >
+          <div class="card-footer text-muted"  >
           Publier le <?PHP echo $article['dateA']; ?>
           par <?PHP echo $article['nomAuteur']; ?>
-          
-        <div style="text-align: right;">
+<!--modifier / supprimer -->
+          <div style="text-align: right;">
         <a>    <button id="btnPopup" class="btnPopup" >⋮</button> </a>
             </div>
            <div id="overlay" class="overlay">
@@ -94,19 +89,18 @@
            </div>
            </div>
            </div>
-           </div>
+           </div> 
+        </div> 
 
-                        </div>
-                   
-                    <?PHP
+			<?PHP
 				}
 			?>
-             </div>
-             </div>
-             </div>
-             </div>
-             </div>
-             <div class="col-md-4">
+
+        
+        
+      </div>
+<!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
 <!-- recherche-->
 <div class="card mb-4">
           <h5 class="card-header">Recherche</h5>
@@ -125,14 +119,15 @@
         <div class="card my-4">
           <h5 class="card-header">Vous pouvez ajouter un article </h5>
           <div class="card-body">
-          <a href="addarticle.php" ><button type="button" class="btn btn-outline-dark  w-100 p-2" class="btn badge-info " style="color:pink;"><i class="fa fa-plus" aria-hidden="true"></i>Ajouter un article</button>  </a>
+          <a href="ajoutA.php" ><button type="button" class="btn btn-outline-dark  w-100 p-2" class="btn badge-info " style="color:pink;"><i class="fa fa-plus" aria-hidden="true"></i>  Ajouter un article</button>  </a>
 
           </div>
         </div>
       </div>
     </div>
   </div>
-        <style>
+
+  <style>
 .btnPopup{
 
 padding: 0em 0.5em;
@@ -182,14 +177,8 @@ function closeModal() {
 overlay.style.display='none';
 }
 </script>
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top"><i class="fas fa-angle-up"></i></a>
-        <!-- Bootstrap core JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <!-- Custom scripts for this template-->
-        <script src="js/scripts2.js"></script>
-    </body>
+<script src="black.js"></script>
+
+        <?php include_once 'footer.php'; ?>
+</body>
 </html>

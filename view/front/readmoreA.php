@@ -15,20 +15,15 @@
   if (
 
       isset($_POST["message"]) 
-    
-      
   ) {
       if (
- 
           !empty($_POST["message"]) 
          
       ) {
           $commentaire = new commentaire(
- 
               $_POST['message'],
               $_GET['id'],
-         $id
-              
+         $id   
           );
           $commentaireC->ajoutercommentaire($commentaire);
           //header('Location:readmore.php');
@@ -92,10 +87,10 @@
         <p>Publier le <?PHP echo $article['dateA']; ?>
           par <?PHP echo $article['nomAuteur']; ?></p>
         <hr>
-<div class="zoom">
-        <p class="desc"><?PHP echo $article['description']; ?></p>
+<div class="zoom" > 
+        <p class="desc"> <?PHP echo $article['description']; ?> </p>
 </div>
- <div class="hey">
+ <div class="photoo">
  <div class="zoom">
         <img   class="img-fluid rounded" src="../<?php echo $article["image"]; ?>" alt="">
         </div>
@@ -111,7 +106,7 @@
        
 <!--impression-->
      <a href="imprarticle.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary">Imprimer</a>
-
+     <button onclick="myFunction()">Copy text</button>
 <!--commentaire-->
 <div class="card my-4">
           <h5 class="card-header">Laissez un commentaire:</h5>
@@ -140,19 +135,11 @@
           if ($commentaire['idA']==$_GET['id']){
 			?>
           <?PHP echo $commentaire['message']; ?>
-            <div style="text-align: right;">
-            <button id="btnPopup" class="btnPopup" >⋮</button>
-            </div>
-           <div id="overlay" class="overlay">
-           <div id="popup" class="popup">
-           <h2>
-           <span id="btnClose" class="btnClose">&times;</span>
-           </h2>
-           <div>
-           <a href="supprimercommentaire.php?idA=<?PHP echo $_GET['id'];?>&&id=<?PHP echo $commentaire['idCom']; ?>" id="idCom" name="idCom" class="btn btn-primary">Supprimer commentaire</a>    
-           </div>
-           </div>
-           </div>
+          <div style="text-align: right;">
+         
+          <a  href="supprimercommentaire.php?idA=<?PHP echo $_GET['id'];?>&&id=<?PHP echo $commentaire['idCom']; ?>" id="idCom" name="idCom"  ><button type="button" class="btn btn-outline-light  w-2 p-2" class="btn badge-info" style="color:red;"><i class="fa fa-times" aria-hidden="true"></i> </button>  </a>
+           </div> 
+  
 <!-- date et temps -->
             <div class="text-muted" style="text-align: right; font-size: 12px;">
             <SCRIPT LANGUAGE="JavaScript">
@@ -178,35 +165,7 @@
      
 
 <style>
-.btnPopup{
-padding: 0em 0.5em;
-}
-.btnPopup:hover{
-background-color: rgb(192, 192, 192);}
-.overlay {
-position: fixed;
-left: 0px;
-top:0px;
-background-color: rgba(0,0 ,0 , 0);
-width: 100%;
-height: 100%;
-z-index:1; /*permet de placer l'élément overlay au-dessus des autres éléments.*/
-display:none; /*permet de rendre invisible l'élément overlay. il sera visible lorsqu'on clique sur le bouton.*/
-}
-.popup{
-margin: 10% auto;
-width : 70%;
-background-color: rgb(243, 243, 243);
-padding: 1em;
-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-border-radius: 5px;
-}
-.btnClose {
-float: right;
-font-size:16pt;
-cursor: pointer;
-color: rgb(26, 26, 26);
-}
+
 /* zoom*/
 .zoom {
   padding: 50px;
@@ -229,7 +188,7 @@ color: rgb(26, 26, 26);
   fontName: "Lucida Console";
 }
 
-.hey {
+.photoo {
   position: relative;
 left: 550px;
 top:-100px;
@@ -239,7 +198,7 @@ vertical-align:middle;
   transition: width 2s, height 2s, transform 2s;
 }
 
-.hey:hover {
+.photoo:hover {
   
   width: 500px;
   height: 500px;
@@ -247,22 +206,8 @@ vertical-align:middle;
 }
 
 </style>
-<script>
-var btnPopup = document.getElementById('btnPopup');
-var overlay = document.getElementById('overlay');
-btnPopup.addEventListener('click',openMoadl);
-function openMoadl() 
-{
-overlay.style.display='block';
-}
-</script>
-<script>
-var btnClose = document.getElementById('btnClose');
-btnClose.addEventListener('click',closeModal);
-function closeModal() {
-overlay.style.display='none';
-}
-</script>
+
+
 
 
         <?php include_once 'footer.php'; ?>

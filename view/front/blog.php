@@ -31,14 +31,16 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles2.css" rel="stylesheet" />
+        <link href="css/styles2.css" rel="stylesheet" >
+       
+
 </head>
 
 <body  >
 <!-- Navigation -->
     <?php include_once 'header.php'; ?>
 <!-- Page Content -->
-  <div class="container">
+<div class="container">
 <!-- Page Heading/Breadcrumbs -->
     <p class="mt-4 mb-4">
       <br>
@@ -58,7 +60,7 @@
 			?>
         
           <div class="card mb-4">
-          <div class="container">
+          
           <a class="portfolio-item" href="readmoreA.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA">
                             <div class="caption">
                                 <div class="caption-content">
@@ -68,37 +70,26 @@
                                 </div>
                             </div>
                             
-                            <img class="card-img-top"  src="../<?php echo $article["image"]; ?>"  alt="image"  />
-                            </div>
+                            <img class="card-img-top"  src="<?php echo $article["image"]; ?>"  alt="image"  />
+                            
                             </a>
           <div class="card-footer text-muted"  >
           Publier le <?PHP echo $article['dateA']; ?>
           par <?PHP echo $article['nomAuteur']; ?>
 <!--modifier / supprimer -->
           <div style="text-align: right;">
-        <a>    <button id="btnPopup" class="btnPopup" >⋮</button> </a>
-            </div>
-           <div id="overlay" class="overlay">
-           <div id="popup" class="popup">
-           <h2>
-           <span id="btnClose" class="btnClose">&times;</span>
-           </h2>
-           <div>
-           <a href="modifierarticle.php?id=<?PHP echo $article['idA']; ?>" class="btn btn-primary">Modifier un article </a> 
-           <a href="supprimerarticle.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA" class="btn btn-primary" >Supprimer un article </a>    
-           </div>
-           </div>
-           </div>
+          <a href="modifierarticle.php?id=<?PHP echo $article['idA']; ?>"  ><button type="button" class="btn btn-outline-light  w-2 p-2" class="btn badge-info " style="color:blue;" ><i class="fa fa-edit" aria-hidden="true"></i> </button>  </a>
+          <a href="supprimerarticle.php?id=<?PHP echo $article['idA']; ?>" id="idA" name="idA"  ><button type="button" class="btn btn-outline-light  w-2 p-2" class="btn badge-info" style="color:red;"><i class="fa fa-times" aria-hidden="true"></i> </button>  </a>
            </div> 
         </div> 
-
+        </div>
 			<?PHP
 				}
 			?>
 
+</div>
         
-        
-      </div>
+      
 <!-- Sidebar Widgets Column -->
       <div class="col-md-4">
 <!-- recherche-->
@@ -109,7 +100,6 @@
               <div class="input-group">
               <span class="input-group-append">
          <input type="text" name="titre" class="form-control" placeholder="Rechercher un blog..." maxlength="50">
-        <input type="submit" value="recherche" name="rechercher">  
          </form>
               </span>
             </div>
@@ -119,7 +109,7 @@
         <div class="card my-4">
           <h5 class="card-header">Vous pouvez ajouter un article </h5>
           <div class="card-body">
-          <a href="addarticle.php" ><button type="button" class="btn btn-outline-dark  w-100 p-2" class="btn badge-info " style="color:pink;"><i class="fa fa-plus" aria-hidden="true"></i>Ajouter un article</button>  </a>
+          <a href="ajoutA.php" ><button type="button" class="btn btn-outline-dark  w-100 p-2" class="btn badge-info " style="color:pink;"><i class="fa fa-plus" aria-hidden="true"></i>  Ajouter un article</button>  </a>
 
           </div>
         </div>
@@ -127,63 +117,30 @@
     </div>
   </div>
 
-  <style>
-.btnPopup{
 
-padding: 0em 0.5em;
-}
-.btnPopup:hover{
-background-color: rgb(192, 192, 192);}
-.overlay {
-position: fixed;
-left: 0px;
-top:0px;
-background-color: rgba(0,0 ,0 , 0);
-width: 100%;
-height: 100%;
-z-index:1; /*permet de placer l'élément overlay au-dessus des autres éléments.*/
-display:none; /*permet de rendre invisible l'élément overlay. il sera visible lorsqu'on clique sur le bouton.*/
-}
-.popup{
-margin: 10% auto;
-width : 70%;
-background-color: rgb(243, 243, 243);
-padding: 1em;
-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-border-radius: 5px;
-}
-.btnClose {
-float: right;
-font-size:16pt;
-cursor: pointer;
-color: rgb(26, 26, 26);
+  <style> 
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
 
-
+input[type=text]:focus {
+  width: 100%;
+}
 </style>
-<script>
-var btnPopup = document.getElementById('btnPopup');
-var overlay = document.getElementById('overlay');
-btnPopup.addEventListener('click',openMoadl);
-function openMoadl() 
-{
-overlay.style.display='block';
-}
-</script>
-<script>
-var btnClose = document.getElementById('btnClose');
-btnClose.addEventListener('click',closeModal);
-function closeModal() {
-overlay.style.display='none';
-}
-</script>
+ 
 <script src="black.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <!-- Custom scripts for this template-->
-        <script src="js/scripts2.js"></script>
+
         <?php include_once 'footer.php'; ?>
 </body>
 </html>
